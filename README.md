@@ -8,8 +8,6 @@ O sistema deverá ainda apresentar em tempo real indicadores de:
 - preços médios
 - quantidade de alimentos não desperdiçados.
 
-/-------------------------------------------/
-
 # Metodologia
 
 O trabalho é realizado segundo a metodologia SCRUM e contará com vários sprints
@@ -18,15 +16,12 @@ O trabalho é realizado segundo a metodologia SCRUM e contará com vários sprin
 -O trabalho desenvolvido durante o sprint deverá ser apresentado pelo product owner dessa semana
 -O papel de product owner deverá ser atribuído a cada sprint de forma a garantir que cada elemento do grupo possa assumir o papel pelo menos duas vezes durante da realização do projeto.
 
-/-------------------------------------------/
-
 # Conteúdo da Sprint
 
 -Cada grupo será responsável pelo sprint backlog
 -A cada sprint será possível introduzir melhorias em funcionalidades endereçadas em sprints anteriores
 -A cada sprint, um dos elementos do grupo irá assumir o papel de product owner (responsável pelo sprint) e o mesmo deverá ser refletido nos entregáveis.
 
-/-------------------------------------------/
 
 # Submissão da Sprint
 
