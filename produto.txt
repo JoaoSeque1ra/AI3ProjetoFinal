@@ -1,0 +1,8 @@
+produto,
+data validade,
+data producao,
+tipo(categoria),
+preco,
+nome,
+codigo,
+marca

@@ -1,1 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+    <xsd:element name="produto">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="nome" type="xsd:string" />
+                <xsd:element name="categoria" type="xsd:string" />
+                <xsd:element ref="descricao"/>
+                <xsd:element name="preco" type="xsd:double" />
+                <xsd:element name="dataValidade" type="xsd:date" />
+                <xsd:element name="dataProducao" type="xsd:date" />
+                <xsd:element name="codigoBarras" type="xsd:integer" />
+                <xsd:element name="marca" type="xsd:string" />
+            </xsd:sequence>
+            <xsd:attribute name="id" type="xsd:integer" use="required"/>
+        </xsd:complexType>
+    </xsd:element>
+
+    <xsd:element name="descricao">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element ref="descricaoCurta" />
+                <xsd:element ref="descricaoComprida" />
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+
+    <xsd:element name="descricaoCurta">
+        <xsd:simpleType>
+            <xsd:restriction base="xsd:string">
+                <xsd:maxLength value="100"/>
+            </xsd:restriction>
+        </xsd:simpleType>
+    </xsd:element>
+
+    <xsd:element name="descricaoComprida">
+        <xsd:simpleType>
+            <xsd:restriction base="xsd:string">
+                <xsd:maxLength value="500"/>
+            </xsd:restriction>
+        </xsd:simpleType>
+    </xsd:element>
+
+
+</xsd:schema>

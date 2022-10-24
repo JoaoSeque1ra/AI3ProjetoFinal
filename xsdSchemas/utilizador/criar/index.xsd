@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <xsd:element name="utilizador">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element ref="email" />
+                <xsd:element name="passeword" type="xsd:string" />
+            </xsd:sequence>
+            <xsd:attribute name="id" type="idPessoa" use="required" />
+        </xsd:complexType>
+    </xsd:element>
+
+    <xsd:element name="email">
+        <xsd:simpleType>        
+            <xsd:restriction base="xsd:string">
+                <xsd:pattern value="[^@ \t\r\n]+@[^@ \t\r\n]+\.[^@ \t\r\n]+" />
+            </xsd:restriction>
+        </xsd:simpleType>
+    </xsd:element>
+
+    <xsd:simpleType name="idPessoa">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="gestor" />
+            <xsd:enumeration value="utlizador" />
+        </xsd:restriction>
+    </xsd:simpleType>
+
+</xsd:schema>
