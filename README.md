@@ -8,6 +8,18 @@ O sistema deverá ainda apresentar em tempo real indicadores de:
 - preços médios
 - quantidade de alimentos não desperdiçados.
 
+# Personas
+
+O consumidor final manifesta o seu interesse em determinados produtos e recebe notificações de promoções.
+
+O gestor de produto regista produtos em promoção.
+
+# Serviços externos
+
+A gateway de SMS envia informação de produtos em promoção para utilizadores subscritores.
+
+Os produtos em promoção são publicados automaticamente na rede social FaceBlocks. A autenticação poderá ser realizada utilizando as credenciais do sistema ou por oAuth através do serviço da FaceBlocks.
+
 # Metodologia
 
 O trabalho é realizado segundo a metodologia SCRUM e contará com vários sprints
