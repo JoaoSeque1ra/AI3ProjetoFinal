@@ -1,5 +1,5 @@
 # AI3ProjetoFinal
-Gestão de produtos perecíveis
+# Gestão de produtos perecíveis
 
 A empresa Promo-Validade necessita de uma plataforma de gestão do processo promocional de produtos perecíveis. A plataforma deverá reduzir o desperdício alimentar destes produtos, promovendo a sua aquisição antes da validade expirar, através do envio de alertas SMS para o consumidor final relacionadas com produtos em fim de vida.
 
@@ -10,7 +10,7 @@ O sistema deverá ainda apresentar em tempo real indicadores de:
 
 /-------------------------------------------/
 
-Metodologia
+# Metodologia
 
 O trabalho é realizado segundo a metodologia SCRUM e contará com vários sprints
 -Cada sprint terá duração de 1 a 2 semanas, com início a 14 de outubro. As datas limite para submissão das tarefas do sprint são indicadas no cartão correspondente da board do Trello
@@ -20,7 +20,7 @@ O trabalho é realizado segundo a metodologia SCRUM e contará com vários sprin
 
 /-------------------------------------------/
 
-Conteúdo da Sprint
+# Conteúdo da Sprint
 
 -Cada grupo será responsável pelo sprint backlog
 -A cada sprint será possível introduzir melhorias em funcionalidades endereçadas em sprints anteriores
@@ -28,7 +28,7 @@ Conteúdo da Sprint
 
 /-------------------------------------------/
 
-Submissão da Sprint
+# Submissão da Sprint
 
 -No final de cada sprint o grupo terá de submeter no Moodle, até às 23h55 do dia previsto para cada a entrega de cada sprint
 -O não cumprimento do prazo previsto para cada sprint implicará uma penalização de 2 valores por cada dia de atraso.
