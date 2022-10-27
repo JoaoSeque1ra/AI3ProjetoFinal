@@ -1,62 +1,143 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<produto id="1">
-    <nome>Papel Scottex Higiénico Húmido Fresh Jumbo 74un</nome>
-    <categoria>Lenços Bolso e Toalhitas</categoria>
-    <descricao>
-        <descricaoCurta>Scottex® Fresh é o complemento ideal do Papel Higiénico Seco Scottex que sempre conheceu.</descricaoCurta>
-        <descricaoComprida>Scottex® Fresh é o complemento ideal do Papel Higiénico Seco Scottex que sempre conheceu. Utilize-o na sua rotina diária de higiene para conseguir uma limpeza mais cuidada e com maior sensação de frescura. Enriquecido com vitamina E. Dermatologicamente Testado Fibras 100% Naturais. Descartável no WC.</descricaoComprida>
-    </descricao>
-    <preco>2.99</preco>
-    <dataValidade>2022-11-07</dataValidade>
-    <dataProducao>2022-10-20</dataProducao>
-    <codigoBarras>051000012517</codigoBarras>
-    <marca>
-        <nome>Auchn</nome>
-        <empresa></empresa>
-        <morada>
-            <rua></rua>
-            <numero></numero>
-            <codigoPostal></codigoPostal>
-            <cidade></cidade>
-            <pais></pais>
-        </morada>
-        <contactos>
-            <telefone></telefone>
-            <email></email>
-        </contactos>
-        <website></website>
-    </marca>
-</produto>
+<produtos>
+    <produto id="1">
+        <nome>Hamburgers Auchan Mmm! Dop 100% Bovino Alentejano 400g</nome>
+        <categoria>Hambúrgueres</categoria>
+        <informacao>
+            <informacaoCurta>Denominação de Origem Protegida.</informacaoCurta>
+            <informacaoComprida>Denominação de Origem Protegida. Relação colagénio/proteína de carne inferior a: 15%. Percentagem de matérias gordas inferiores a: 20%</informacaoComprida>
+        </informacao>
+        <precoUnitario>4.73</precoUnitario>
+        <quantidadeLiquida>400</quantidadeLiquida>
+        <precoPromocional>4</precoPromocional>
+        <precoKilo>11.83</precoKilo>
+        <composicao>100% carne de bovino Carnalentejana DOP</composicao>
+        <informacaoNutricional>
+            <peso>100</peso>
+            <energia>225</energia>
+            <lipidos>17</lipidos>
+            <saturados>6.5</saturados>
+            <hidratosDeCarbono>0</hidratosDeCarbono>
+            <acucar>0</acucar>
+            <proteina>18</proteina>
+            <sal>0</sal>
+        </informacaoNutricional>
+        <conservacao>Conservar a <temperatura>18</temperatura>ºC. Uma vez descongelado não volte a congelar</conservacao>
+        <origem>Portugal</origem>
+        <nutricaoPontuacao>A</nutricaoPontuacao>
+        <dataValidade>2022-11-07</dataValidade>
+        <dataProducao>2022-10-20</dataProducao>
+        <codigoBarras>051000012517</codigoBarras>
+        <marca>
+            <nome>Auchan Gourmet</nome>
+            <empresa>
+                <nome>Auchan</nome>
+                <morada>
+                    <rua>Shopping Palácio do Gelo, R. Q.ta da Alagoa</rua>
+                    <codigoPostal>3500-606</codigoPostal>
+                    <cidade>Viseu</cidade>
+                    <pais>Portugal</pais>
+                </morada>
+                <contactos>
+                    <telefone>232 247 100</telefone>
+                    <email>Auchan@gmail.com</email>
+                </contactos>
+                <website>www.auchan.pt</website>
+            </empresa>
+        </marca>
+    </produto>
 
-<?xml version="1.0" encoding="UTF-8"?>
-<produtoVendido id="1">
-    <nome>Papel Scottex lenços de bolso Jumbo 20un</nome>
-    <categoria>Lenços de Bolso</categoria>
-    <descricao>
-        <descricaoCurta>Scottex® Fresh é o complemento ideal dos lenços de bolso Scottex que sempre conheceu.</descricaoCurta>
-        <descricaoComprida>Scottex® Fresh é o complemento ideal dos lenços de bolso Seco Scottex que sempre conheceu. Utilize-o na sua rotina diária de higiene para conseguir uma limpeza mais cuidada e com maior sensação de frescura. Enriquecido com vitamina E. Dermatologicamente Testado Fibras 100% Naturais. Descartável.</descricaoComprida>
-    </descricao>
-    <quantidade></quantidade>
-    <precoInicialUnidade>2.99</precoInicialUnidade>
-    <precoPromocao>1.99</precoPromocao>
-    <precoKilo></precoKilo>
-    <dataValidade>2022-11-07</dataValidade>
-    <dataProducao>2023-10-20</dataProducao>
-    <codigoBarras>091000012517</codigoBarras>
-    <marca>
-        <nome>Continente</nome>
-        <empresa>Sonae</empresa>
-        <morada>
-            <rua></rua>
-            <numero></numero>
-            <codigoPostal></codigoPostal>
-            <cidade></cidade>
-            <pais></pais>
-        </morada>
-        <contactos>
-            <telefone></telefone>
-            <email></email>
-        </contactos>
-        <website></website>
-    </marca>
-</produto>
+    <produto id="2">
+        <nome>Iced Tea Auchan Pêssego Brick 1.5l</nome>
+        <categoria>Ice Tea e Tisanas</categoria>
+        <informacao>
+            <informacaoCurta>Refrigerante de extratos vegetais com sabor a pêssego.</informacaoCurta>
+            <informacaoComprida>Refrigerante de extratos vegetais com sabor a pêssego. Contém açúcar e edulcorante.</informacaoComprida>
+        </informacao>
+        <precoUnitario>0.85</precoUnitario>
+        <quantidadeLiquida>1.5</quantidadeLiquida>
+        <precoPromocional>0.75</precoPromocional>
+        <precoKilo>0.57</precoKilo>
+        <composicao>Água açúcar sumo de pêssego obtido a partir de um produto concentrado (0 26%) acidificante (ácido cítrico) extrato de chá (0 12%) aromas edulcorante (sucralose) regulador de acidez (citratos de sódio).</composicao>
+        <informacaoNutricional>
+            <peso>100</peso>
+            <energia>20</energia>
+            <lipidos>0</lipidos>
+            <saturados>0</saturados>
+            <hidratosDeCarbono>4.90</hidratosDeCarbono>
+            <acucar>4.9</acucar>
+            <proteina>0</proteina>
+            <sal>0.01</sal>
+        </informacaoNutricional>
+        <conservacao>Conservar em local seco fresco e arejado ao abrigo da luz solar direta. Depois de aberta a embalagem conservar no frigorífico e consumir no prazo máximo de 3 dias.</conservacao>
+        <origem>Portugal</origem>
+        <nutricaoPontuacao>D</nutricaoPontuacao>
+        <dataValidade>2022-12-24</dataValidade>
+        <dataProducao>2021-09-03</dataProducao>
+        <codigoBarras>071006502657</codigoBarras>
+        <marca>
+            <nome>Auchan Essencial</nome>
+            <empresa>
+                <nome>Auchan</nome>
+                <morada>
+                    <rua>Shopping Palácio do Gelo, R. Q.ta da Alagoa</rua>
+                    <codigoPostal>3500-606</codigoPostal>
+                    <cidade>Viseu</cidade>
+                    <pais>Portugal</pais>
+                </morada>
+                <contactos>
+                    <telefone>232 247 100</telefone>
+                    <email>Auchan@gmail.com</email>
+                </contactos>
+                <website>www.auchan.pt</website>
+            </empresa>
+        </marca>
+    </produto>
+    <produto id="3">
+        <nome>Salame De Chocolate Auchan Fatias 550g</nome>
+        <categoria>Sobremesas</categoria>
+        <informacao>
+            <informacaoCurta>Refrigerante de extratos vegetais com sabor a pêssego.</informacaoCurta>
+            <informacaoComprida>Refrigerante de extratos vegetais com sabor a pêssego. Contém açúcar e edulcorante.</informacaoComprida>
+        </informacao>
+        <precoUnitario>2.99</precoUnitario>
+        <quantidadeLiquida>0.55</quantidadeLiquida>
+        <precoPromocional>2.5</precoPromocional>
+        <precoKilo>4.55</precoKilo>
+        <composicao>Bolacha 29% [farinha de TRIGO (GLÚTEN) açúcar óleo de girassol e gordura de palma xarope de glicose e frutose levedantes (bicarbonato de sódio e bicarbonato de amónio) sal emulsionante (lecitina de girassol) agente de tratamento da farinha (METABIS SULFITO de sódio) e corante (E150d)] chocolate 26% [cacau em pó açúcar em pó vanilina] margarina [óleo de girassol e óleo de SOJA gordura de palma água sal soro de LEITE em pó emulsionantes (mono e diglicéridos de ácidos gordos e lecitina de SOJA ) corante (betacaroteno) conservante (sorbato de potássio) Vitamina A antioxidantes (extrato natural rico em tocoferóis e palmitato de ascorbilo) regulador de acidez (ácido cítrico)] OVO líquido pasteurizado e açúcar granulado.</composicao>
+        <informacaoNutricional>
+            <peso>100</peso>
+            <energia>447</energia>
+            <lipidos>22.7</lipidos>
+            <saturados>9.9</saturados>
+            <hidratosDeCarbono>53.6</hidratosDeCarbono>
+            <acucar>36.4</acucar>
+            <fibra>3.7</fibra>
+            <proteina>5.3</proteina>
+            <sal>0.89</sal>
+        </informacaoNutricional>
+        <conservacao>Conservar no frio entre <temperatura>0</temperatura>ºC e <temperatura>5</temperatura>ºC.</conservacao>
+        <origem>Portugal</origem>
+        <nutricaoPontuacao>E</nutricaoPontuacao>
+        <dataValidade>2022-10-27</dataValidade>
+        <dataProducao>2022-10-20</dataProducao>
+        <codigoBarras>071006502657</codigoBarras>
+        <marca>
+            <nome>Auchan Essencial</nome>
+            <empresa>
+                <nome>Auchan</nome>
+                <morada>
+                    <rua>Shopping Palácio do Gelo, R. Q.ta da Alagoa</rua>
+                    <codigoPostal>3500-606</codigoPostal>
+                    <cidade>Viseu</cidade>
+                    <pais>Portugal</pais>
+                </morada>
+                <contactos>
+                    <telefone>232 247 100</telefone>
+                    <email>Auchan@gmail.com</email>
+                </contactos>
+                <website>www.auchan.pt</website>
+            </empresa>
+        </marca>
+    </produto>
+</produtos>
