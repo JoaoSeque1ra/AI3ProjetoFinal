@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dadosMensagem id="01">
+    <remetente>
+        <nome></nome>
+        <numero></numero>
+    </remetente>
+    <destinatario>
+        <nome></nome>
+        <numero></numero>
+    </destinatario>
+    <mensagem>
+        <texto>
+            <produtosPromocao>
+            </produtosPromocao>
+        </texto>
+    </mensagem>
+    <data></data>
+    <hora></hora>
+</dadosMensagem>
+

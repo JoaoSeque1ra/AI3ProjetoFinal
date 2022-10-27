@@ -10,5 +10,53 @@
     <dataValidade>2022-11-07</dataValidade>
     <dataProducao>2022-10-20</dataProducao>
     <codigoBarras>051000012517</codigoBarras>
-    <marca>Auchn</marca>
+    <marca>
+        <nome>Auchn</nome>
+        <empresa></empresa>
+        <morada>
+            <rua></rua>
+            <numero></numero>
+            <codigoPostal></codigoPostal>
+            <cidade></cidade>
+            <pais></pais>
+        </morada>
+        <contactos>
+            <telefone></telefone>
+            <email></email>
+        </contactos>
+        <website></website>
+    </marca>
+</produto>
+
+<?xml version="1.0" encoding="UTF-8"?>
+<produtoVendido id="1">
+    <nome>Papel Scottex lenços de bolso Jumbo 20un</nome>
+    <categoria>Lenços de Bolso</categoria>
+    <descricao>
+        <descricaoCurta>Scottex® Fresh é o complemento ideal dos lenços de bolso Scottex que sempre conheceu.</descricaoCurta>
+        <descricaoComprida>Scottex® Fresh é o complemento ideal dos lenços de bolso Seco Scottex que sempre conheceu. Utilize-o na sua rotina diária de higiene para conseguir uma limpeza mais cuidada e com maior sensação de frescura. Enriquecido com vitamina E. Dermatologicamente Testado Fibras 100% Naturais. Descartável.</descricaoComprida>
+    </descricao>
+    <quantidade></quantidade>
+    <precoInicialUnidade>2.99</precoInicialUnidade>
+    <precoPromocao>1.99</precoPromocao>
+    <precoKilo></precoKilo>
+    <dataValidade>2022-11-07</dataValidade>
+    <dataProducao>2023-10-20</dataProducao>
+    <codigoBarras>091000012517</codigoBarras>
+    <marca>
+        <nome>Continente</nome>
+        <empresa>Sonae</empresa>
+        <morada>
+            <rua></rua>
+            <numero></numero>
+            <codigoPostal></codigoPostal>
+            <cidade></cidade>
+            <pais></pais>
+        </morada>
+        <contactos>
+            <telefone></telefone>
+            <email></email>
+        </contactos>
+        <website></website>
+    </marca>
 </produto>
