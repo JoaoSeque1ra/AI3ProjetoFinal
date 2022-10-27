@@ -1,0 +1,13 @@
+Logar
+
+email,
+passe,
+tipo
+
+Criar
+
+primeiro nome,
+ultimo nome,
+email,
+passe,
+tipo

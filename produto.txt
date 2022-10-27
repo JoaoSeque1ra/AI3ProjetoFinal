@@ -5,4 +5,5 @@ tipo(categoria),
 preco,
 nome,
 codigo,
-marca
+marca,
+descricao,
