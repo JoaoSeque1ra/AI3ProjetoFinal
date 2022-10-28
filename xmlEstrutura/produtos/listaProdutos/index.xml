@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<produtos>
+<listaProdutos>
     <produto id="1">
         <nome>Hamburgers Auchan Mmm! Dop 100% Bovino Alentejano 400g</nome>
         <categoria>Hambúrgueres</categoria>
@@ -50,4 +50,4 @@
             <nome>Auchan Essencial</nome>
         </marca>
     </produto>
-</produtos>
+</listaProdutos>
