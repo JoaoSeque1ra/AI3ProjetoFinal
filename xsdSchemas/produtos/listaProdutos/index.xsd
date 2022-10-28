@@ -18,7 +18,7 @@
                 <xsd:element name="precoUnitario" type="xsd:double" />
                 <xsd:element name="quantidadeLiquida" type="xsd:double" />
                 <xsd:element name="precoPromocional" type="xsd:double" />
-                <xsd:element name="percentagemDesconto" type="xsd:integer" />
+                <xsd:element ref="percentagemDesconto" />
                 <xsd:element name="precoKilo" type="xsd:double" />
                 <xsd:element name="origem" type="xsd:string" />
                 <xsd:element name="nutricaoPontuacao" type="xsd:string" />
