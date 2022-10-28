@@ -1,21 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
 
-    <xsd:element name="produtos">
-        <xsd:complexType>
-            <xsd:sequence>
-                <xsd:element ref="produto" minOccurs="1" maxOccurs="unbounded" />
-            </xsd:sequence>
-        </xsd:complexType>
-    </xsd:element>
-
-
-    <xsd:element name="produto">
+<xsd:element name="produto">
         <xsd:complexType>
             <xsd:sequence>
                 <xsd:element name="nome" type="xsd:string" minOccurs="1" maxOccurs="1" />
                 <xsd:element name="categoria" type="xsd:string" minOccurs="1" maxOccurs="1" />
-                <xsd:element ref="informacao" minOccurs="0" maxOccurs="2" />
+                <xsd:element ref="informacao" minOccurs="0" maxOccurs="1" />
                 <xsd:element name="precoUnitario" type="xsd:double" minOccurs="1" maxOccurs="1" />
                 <xsd:element name="quantidadeLiquida" type="xsd:double" minOccurs="1" maxOccurs="1" />
                 <xsd:element name="precoPromocional" type="xsd:double" minOccurs="1" maxOccurs="1" />
@@ -30,14 +21,13 @@
                 <xsd:element name="codigoBarras" type="xsd:integer" minOccurs="1" maxOccurs="1" />
                 <xsd:element ref="marca" minOccurs="1" maxOccurs="1" />
             </xsd:sequence>
-            <xsd:attribute name="id" type="xsd:integer" use="required"/>
         </xsd:complexType>
     </xsd:element>
 
     <xsd:element name="informacaoNutricional">
         <xsd:complexType>
             <xsd:sequence>
-                <xsd:element name="peso" minOccurs="1" />
+                <xsd:element name="peso" minOccurs="1" maxOccurs="1"/>
                 <xsd:element name="energia" minOccurs="1" maxOccurs="1" />
                 <xsd:element name="lipidos" minOccurs="1" maxOccurs="1" />
                 <xsd:element name="saturados" minOccurs="1" maxOccurs="1" />
@@ -53,7 +43,8 @@
     <xsd:element name="conservacao">
         <xsd:complexType mixed="true">
             <xsd:choice>
-                <xsd:element name="temperatura" minOccurs="0" maxOccurs="2" />
+                <xsd:element name="temperaturaMinima" minOccurs="0" maxOccurs="1" />
+                <xsd:element name="temperaturaMaxima" minOccurs="0" maxOccurs="1" />
             </xsd:choice>
         </xsd:complexType>
     </xsd:element>

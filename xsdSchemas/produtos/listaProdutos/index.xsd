@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+    <xsd:element name="produtos">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element ref="produto" minOccurs="1" maxOccurs="unbounded" />
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+
+
+    <xsd:element name="produto">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="nome" type="xsd:string" />
+                <xsd:element name="categoria" type="xsd:string" />
+                <xsd:element name="precoUnitario" type="xsd:double" />
+                <xsd:element name="quantidadeLiquida" type="xsd:double" />
+                <xsd:element name="precoPromocional" type="xsd:double" />
+                <xsd:element name="percentagemDesconto" type="xsd:integer" />
+                <xsd:element name="precoKilo" type="xsd:double" />
+                <xsd:element name="origem" type="xsd:string" />
+                <xsd:element name="nutricaoPontuacao" type="xsd:string" />
+                <xsd:element name="dataValidade" type="xsd:date" />
+                <xsd:element name="dataProducao" type="xsd:date" />
+                <xsd:element ref="marca" />
+            </xsd:sequence>
+            <xsd:attribute name="id" type="xsd:integer" use="required"/>
+        </xsd:complexType>
+    </xsd:element>
+
+    <xsd:element name="percentagemDesconto">
+        <xsd:simpleType>
+            <xsd:restriction base="xsd:integer">
+                <xsd:minExclusive value="1" />
+                <xsd:maxExclusive value="100" />
+            </xsd:restriction>
+        </xsd:simpleType>
+    </xsd:element>
+
+    <xsd:element name="marca">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="nome" type="xsd:string" />
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+
+</xsd:schema>

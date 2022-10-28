@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<produtos>
+    <produto id="1">
+        <nome>Hamburgers Auchan Mmm! Dop 100% Bovino Alentejano 400g</nome>
+        <categoria>Hambúrgueres</categoria>
+        <precoUnitario>4.73</precoUnitario>
+        <quantidadeLiquida>400</quantidadeLiquida>
+        <precoPromocional>4</precoPromocional>
+        <percentagemDesconto>10</percentagemDesconto>
+        <precoKilo>11.83</precoKilo>
+        <origem>Portugal</origem>
+        <nutricaoPontuacao>A</nutricaoPontuacao>
+        <dataValidade>2022-11-07</dataValidade>
+        <dataProducao>2022-10-20</dataProducao>
+        <marca>
+            <nome>Auchan Gourmet</nome>
+        </marca>
+    </produto>
+
+    <produto id="2">
+        <nome>Iced Tea Auchan Pêssego Brick 1.5l</nome>
+        <categoria>Ice Tea e Tisanas</categoria>
+        <precoUnitario>0.85</precoUnitario>
+        <quantidadeLiquida>1.5</quantidadeLiquida>
+        <precoPromocional>0.75</precoPromocional>
+        <percentagemDesconto>10</percentagemDesconto>
+        <precoKilo>0.57</precoKilo>
+        <origem>Portugal</origem>
+        <nutricaoPontuacao>D</nutricaoPontuacao>
+        <dataValidade>2022-12-24</dataValidade>
+        <dataProducao>2021-09-03</dataProducao>
+        <marca>
+            <nome>Auchan Essencial</nome>
+        </marca>
+    </produto>
+
+    <produto id="3">
+        <nome>Salame De Chocolate Auchan Fatias 550g</nome>
+        <categoria>Sobremesas</categoria>
+        <precoUnitario>2.99</precoUnitario>
+        <quantidadeLiquida>0.55</quantidadeLiquida>
+        <precoPromocional>2.5</precoPromocional>
+        <percentagemDesconto>10</percentagemDesconto>
+        <precoKilo>4.55</precoKilo>
+        <origem>Portugal</origem>
+        <nutricaoPontuacao>E</nutricaoPontuacao>
+        <dataValidade>2022-10-27</dataValidade>
+        <dataProducao>2022-10-20</dataProducao>
+        <marca>
+            <nome>Auchan Essencial</nome>
+        </marca>
+    </produto>
+</produtos>
