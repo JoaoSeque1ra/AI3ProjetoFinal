@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+attributeFormDefault="unqualified" 
+elementFormDefault="qualified">
+
+    <xsd:element name="listaProdutosVendidos">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element ref="utilizador" maxOccurs="unbounded" minOccurs="0"/>   
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>   
+
+    <xsd:element name="utilizador">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="nome" type="xsd:string"/>
+                <xsd:element name="apelido" type="xsd:string"/>
+                <xsd:element name="email" type="xsd:string"/>
+                <xsd:element ref="listaProdutos"/>
+            </xsd:sequence>
+            <xsd:attribute type="xsd:integer" name="id" use="required"/>
+        </xsd:complexType>
+    </xsd:element>
+
+    <xsd:element name="listaProdutos">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element ref="produto" maxOccurs="unbounded" minOccurs="0"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+
+    <xsd:element name="produto">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="nome" type="xsd:string"/>
+                <xsd:element name="categoria" type="xsd:string"/>
+                <xsd:element name="quantidade" type="xsd:integer"/>
+                <xsd:element name="precoCompra" type="xsd:double"/>
+                <xsd:element name="precoUnitario" type="xsd:double"/>
+                <xsd:element ref="percentagemDesconto"/>
+                <xsd:element ref="data"/>
+                <xsd:element ref="marca"/>
+            </xsd:sequence>
+            <xsd:attribute type="xsd:integer" name="id" use="required"/>
+        </xsd:complexType>
+    </xsd:element>
+    
+    <xsd:element name="percentagemDesconto">
+        <xsd:simpleType>
+            <xsd:restriction base="xsd:integer">
+                <xsd:minExclusive value="1" />
+                <xsd:maxExclusive value="100" />
+            </xsd:restriction>
+        </xsd:simpleType>
+    </xsd:element>
+
+    <xsd:element name="data">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="dataCompra" type="xsd:date"/>
+                <xsd:element name="dataValidade" type="xsd:date"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+
+    <xsd:element name="marca">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="nome" type="xsd:string"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+</xsd:schema>
