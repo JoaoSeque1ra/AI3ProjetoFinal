@@ -5,8 +5,11 @@
             <xsd:sequence>
                 <xsd:element ref="email" />
                 <xsd:element name="passeword" type="xsd:string" />
+                <xsd:element name="nome" type="xsd:string" />
+                <xsd:element name="apelido" type="xsd:string" />
+                <xsd:element ref="contacto" />
             </xsd:sequence>
-            <xsd:attribute name="id" type="idPessoa" use="required" />
+            <xsd:attribute name="tipo" type="idPessoa" use="required" />
         </xsd:complexType>
     </xsd:element>
 
@@ -18,10 +21,18 @@
         </xsd:simpleType>
     </xsd:element>
 
+    <xsd:element name="contacto">
+        <xsd:simpleType>        
+            <xsd:restriction base="xsd:string">
+                <xsd:pattern value="^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{3}$" />
+            </xsd:restriction>
+        </xsd:simpleType>
+    </xsd:element>
+
     <xsd:simpleType name="idPessoa">
         <xsd:restriction base="xsd:string">
             <xsd:enumeration value="gestor" />
-            <xsd:enumeration value="utlizador" />
+            <xsd:enumeration value="utilizador" />
         </xsd:restriction>
     </xsd:simpleType>
 

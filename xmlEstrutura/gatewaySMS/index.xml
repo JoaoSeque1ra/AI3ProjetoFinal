@@ -1,20 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dadosMensagem id="01">
-    <remetente>
-        <nome></nome>
-        <numero></numero>
+<dadosMensagem>
+    Olá somos os <remetente>
+        <nome>PromoValidade</nome>
     </remetente>
     <destinatario>
         <nome></nome>
-        <numero></numero>
     </destinatario>
-    <mensagem>
-        <texto>
-            <produtosPromocao>
-            </produtosPromocao>
-        </texto>
-    </mensagem>
+    <produtosPromocao>
+        <percentagemDesconto></percentagemDesconto>
+        <validade></validade>
+    </produtosPromocao>
     <data></data>
     <hora></hora>
 </dadosMensagem>
-
