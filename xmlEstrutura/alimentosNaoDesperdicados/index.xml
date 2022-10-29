@@ -1,1 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<alimentosNaoDesperdicados>
+    <produto id="1">
+        <nome>Hamburgers Auchan Mmm! Dop 100% Bovino Alentejano 400g</nome>
+        <valorPoupado>10</valorPoupado>
+        <quantidadeNaoDesperdicada>10</quantidadeNaoDesperdicada>
+        <pesoLiquido>50</pesoLiquido>
+    </produto>
+</alimentosNaoDesperdicados>
+
+
+
