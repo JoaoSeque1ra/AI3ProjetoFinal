@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<listaProdutosVendidos>
+    <utilizador id="1">
+        <nome>Guilherme</nome>
+        <apelido>Afonso</apelido>
+        <email>guizinho@hotmail.com</email>
+        <listaProdutos>
+            <produto id="1">
+                <nome>Hamburgers Auchan Mmm! Dop 100% Bovino Alentejano 400g</nome>
+                <categoria>Hambúrgueres</categoria>
+                <quantidade>2</quantidade>
+                <precoCompra>4</precoCompra>
+                <precoUnitario>2</precoUnitario>
+                <percentagemDesconto>10</percentagemDesconto>
+                <data>
+                    <dataCompra>2022-11-05</dataCompra>
+                    <dataValidade>2022-11-07</dataValidade>
+                </data>
+                <marca>
+                    <nome>Auchan Gourmet</nome>
+                </marca>
+            </produto>
+            <produto id="2">
+                <nome>Iced Tea Auchan Pêssego Brick 1.5l</nome>
+                <categoria>Ice Tea e Tisanas</categoria>
+                <quantidade>1</quantidade>
+                <precoCompra>4</precoCompra>
+                <precoUnitario>0.85</precoUnitario>
+                <percentagemDesconto>10</percentagemDesconto>
+                <data>
+                    <dataCompra>2022-12-18</dataCompra>
+                    <dataValidade>2022-12-24</dataValidade>
+                </data>
+                <marca>
+                    <nome>Auchan Essencial</nome>
+                </marca>
+            </produto>
+            <produto id="3">
+                <nome>Salame De Chocolate Auchan Fatias 550g</nome>
+                <categoria>Sobremesas</categoria>
+                <quantidade>4</quantidade>
+                <precoCompra>4</precoCompra>
+                <precoUnitario>0.85</precoUnitario>
+                <percentagemDesconto>10</percentagemDesconto>
+                <data>
+                    <dataCompra>2022-10-09</dataCompra>
+                    <dataValidade>2022-10-27</dataValidade>
+                </data>
+                <marca>
+                    <nome>Auchan Essencial</nome>
+                </marca>
+            </produto>
+        </listaProdutos>
+    </utilizador>
+</listaProdutosVendidos>
