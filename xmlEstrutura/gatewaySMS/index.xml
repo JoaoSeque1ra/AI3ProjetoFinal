@@ -1,15 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dadosMensagem>
-    Olá somos os <remetente>
-        <nome>PromoValidade</nome>
-    </remetente>
+<dadosMensagem id="01">
+    Promoções, promoções a 
+    <remetente>
+        <nome>Promo-Validade</nome>
+    </remetente> tem para si
     <destinatario>
-        <nome></nome>
+        <nome>Luisa Gomes</nome>
     </destinatario>
-    <produtosPromocao>
-        <percentagemDesconto></percentagemDesconto>
-        <validade></validade>
-    </produtosPromocao>
-    <data></data>
-    <hora></hora>
+        a um preco bombástico
+    <produtosPromocao>Couve de Bruxelas,</produtosPromocao>
+        com descontos até
+    <percentagemDesconto>75</percentagemDesconto>
+        %, aproveite até dia
+    <dataPromo>2023-02-02</dataPromo>
+        para mais informações visite aceda ao link:
+    <website>faceblocks.com</website>
 </dadosMensagem>
