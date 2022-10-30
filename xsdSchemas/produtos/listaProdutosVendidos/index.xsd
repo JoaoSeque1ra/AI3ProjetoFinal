@@ -16,11 +16,19 @@ elementFormDefault="qualified">
             <xsd:sequence>
                 <xsd:element name="nome" type="xsd:string"/>
                 <xsd:element name="apelido" type="xsd:string"/>
-                <xsd:element name="email" type="xsd:string"/>
-                <xsd:element ref="listaProdutos"/>
+                <xsd:element ref="email" />
+                <xsd:element ref="listaProdutos" minOccurs="1" maxOccurs="1"/>
             </xsd:sequence>
             <xsd:attribute type="xsd:integer" name="id" use="required"/>
         </xsd:complexType>
+    </xsd:element>
+
+    <xsd:element name="email">
+        <xsd:simpleType>        
+            <xsd:restriction base="xsd:string">
+                <xsd:pattern value="[^@ \t\r\n]+@[^@ \t\r\n]+\.[^@ \t\r\n]+" />
+            </xsd:restriction>
+        </xsd:simpleType>
     </xsd:element>
 
     <xsd:element name="listaProdutos">
