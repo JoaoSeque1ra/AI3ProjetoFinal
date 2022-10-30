@@ -2,11 +2,23 @@
 <alimentosNaoDesperdicados>
     <produto id="1">
         <nome>Hamburgers Auchan Mmm! Dop 100% Bovino Alentejano 400g</nome>
-        <valorPoupado>10</valorPoupado>
-        <quantidadeNaoDesperdicada>10</quantidadeNaoDesperdicada>
-        <pesoLiquido>50</pesoLiquido>
+        <valorPoupado>100</valorPoupado>
+        <quantidadeNaoDesperdicada>1000</quantidadeNaoDesperdicada>
+        <pesoLiquidoNaoDesperdicado>950</pesoLiquidoNaoDesperdicado>
+        <mediaDesconto>35</mediaDesconto>
+    </produto>
+    <produto id="2">
+        <nome>Iced Tea Auchan Pêssego Brick 1.5l</nome>
+        <valorPoupado>53</valorPoupado>
+        <quantidadeNaoDesperdicada>35</quantidadeNaoDesperdicada>
+        <pesoLiquidoNaoDesperdicado>29</pesoLiquidoNaoDesperdicado>
+        <mediaDesconto>25</mediaDesconto>
+    </produto>
+    <produto id="3">
+        <nome>Salame De Chocolate Auchan Fatias 550g</nome>
+        <valorPoupado>26</valorPoupado>
+        <quantidadeNaoDesperdicada>12</quantidadeNaoDesperdicada>
+        <pesoLiquidoNaoDesperdicado>10</pesoLiquidoNaoDesperdicado>
+        <mediaDesconto>32.5</mediaDesconto>
     </produto>
 </alimentosNaoDesperdicados>
-
-
-

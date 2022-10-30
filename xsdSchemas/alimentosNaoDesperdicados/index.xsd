@@ -3,18 +3,53 @@
     <xsd:element name="alimentosNaoDesperdicados">
         <xsd:complexType>
             <xsd:sequence>
-                <xsd:element name="produto">
+                <xsd:element name="produto" minOccurs="0" maxOccurs="unbounded">
                     <xsd:complexType>
                         <xsd:sequence>
-                            <xsd:element name="valorPoupado" type="xsd:double"/>
-                            <xsd:element name="quantidadeNaoDesperdicada" type="xsd:double"/>
-                            <xsd:element name="pesoLiquido" type="xsd:double"/>
+                            <xsd:element name="nome" type="xsd:string" />
+                            <xsd:element ref="valorPoupado"/>
+                            <xsd:element ref="quantidadeNaoDesperdicada" />
+                            <xsd:element ref="pesoLiquidoNaoDesperdicado" />
+                            <xsd:element ref="mediaDesconto" />
                         </xsd:sequence>
                          <xsd:attribute name="id" type="xsd:integer" use="required"/>
                     </xsd:complexType>
                 </xsd:element>
             </xsd:sequence>
         </xsd:complexType>
+    </xsd:element>
+
+    <xsd:element name="valorPoupado">
+        <xsd:simpleType>
+            <xsd:restriction base="xsd:double">
+                <xsd:minInclusive value="0" />
+            </xsd:restriction>
+        </xsd:simpleType>
+    </xsd:element>
+
+    <xsd:element name="quantidadeNaoDesperdicada">
+        <xsd:simpleType>
+            <xsd:restriction base="xsd:double">
+                <xsd:minInclusive value="0" />
+            </xsd:restriction>
+        </xsd:simpleType>
+    </xsd:element>
+
+    <xsd:element name="pesoLiquidoNaoDesperdicado">
+        <xsd:simpleType>
+            <xsd:restriction base="xsd:double">
+                <xsd:minInclusive value="0" />
+            </xsd:restriction>
+        </xsd:simpleType>
+    </xsd:element>
+
+    <xsd:element name="mediaDesconto">
+        <xsd:simpleType>
+            <xsd:restriction base="xsd:double">
+                <xsd:minInclusive value="0" />
+                <xsd:maxInclusive value="100" />
+            </xsd:restriction>
+        </xsd:simpleType>
     </xsd:element>
 
 </xsd:schema>

@@ -3,7 +3,7 @@
     <xsd:element name="login">
         <xsd:complexType>
             <xsd:sequence>
-                <xsd:element name="email" type="xsd:string"/>
+                <xsd:element ref="email" />
                 <xsd:element name="passeword" type="xsd:string"/>
             </xsd:sequence>
         </xsd:complexType>
