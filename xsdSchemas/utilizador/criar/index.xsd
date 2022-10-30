@@ -7,7 +7,7 @@
                 <xsd:element name="passeword" type="xsd:string" />
                 <xsd:element name="nome" type="xsd:string" />
                 <xsd:element name="apelido" type="xsd:string" />
-                <xsd:element ref="contacto" />
+                <xsd:element name="contacto" type="xsd:string" />
             </xsd:sequence>
             <xsd:attribute name="tipo" type="idPessoa" use="required" />
         </xsd:complexType>
