@@ -1,2 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<precoMedio>52</precoMedio>
+<listaPrecoMedio>
+    <produto id="1">
+        <precoMedio>4</precoMedio>
+    </produto>
+    <produto id="2">
+        <precoMedio>2</precoMedio>
+    </produto>
+    <produto id="3">
+        <precoMedio>4.25</precoMedio>
+    </produto>
+    <produto id="4">
+        <precoMedio>5.02</precoMedio>
+    </produto>
+    <produto id="5">
+        <precoMedio>7.69</precoMedio>
+    </produto>
+    <produto id="6">
+        <precoMedio>10.10</precoMedio>
+    </produto>
+</listaPrecoMedio>

@@ -16,17 +16,22 @@
                 <xsd:element name="nome" type="xsd:string" />
                 <xsd:element name="categoria" type="xsd:string" />
                 <xsd:element name="precoUnitario" type="xsd:double" />
-                <xsd:element name="quantidadeLiquida" type="xsd:double" />
                 <xsd:element name="precoPromocional" type="xsd:double" />
                 <xsd:element ref="percentagemDesconto" />
                 <xsd:element name="precoKilo" type="xsd:double" />
                 <xsd:element name="origem" type="xsd:string" />
-                <xsd:element name="nutricaoPontuacao" type="xsd:string" />
-                <xsd:element name="dataValidade" type="xsd:date" />
-                <xsd:element name="dataProducao" type="xsd:date" />
-                <xsd:element ref="marca" />
+                <xsd:element ref="data" />
             </xsd:sequence>
             <xsd:attribute name="id" type="xsd:integer" use="required"/>
+        </xsd:complexType>
+    </xsd:element>
+
+    <xsd:element name="data">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="dataValidade" type="xsd:date" />
+                <xsd:element name="dataProducao" type="xsd:date" />
+            </xsd:sequence>
         </xsd:complexType>
     </xsd:element>
 
@@ -37,14 +42,6 @@
                 <xsd:maxExclusive value="100" />
             </xsd:restriction>
         </xsd:simpleType>
-    </xsd:element>
-
-    <xsd:element name="marca">
-        <xsd:complexType>
-            <xsd:sequence>
-                <xsd:element name="nome" type="xsd:string" />
-            </xsd:sequence>
-        </xsd:complexType>
     </xsd:element>
 
 </xsd:schema>

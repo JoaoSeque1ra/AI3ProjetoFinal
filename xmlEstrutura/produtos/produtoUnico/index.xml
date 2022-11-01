@@ -7,10 +7,8 @@
         <informacaoComprida>Denominação de Origem Protegida. Relação colagénio/proteína de carne inferior a: 15%. Percentagem de matérias gordas inferiores a: 20%</informacaoComprida>
     </informacao>
     <precoUnitario>4.73</precoUnitario>
-    <quantidadeLiquida>400</quantidadeLiquida>
     <precoPromocional>4</precoPromocional>
     <precoKilo>11.83</precoKilo>
-    <composicao>100% carne de bovino Carnalentejana DOP</composicao>
     <informacaoNutricional>
         <peso>100</peso>
         <energia>225</energia>
@@ -21,27 +19,13 @@
         <proteina>18</proteina>
         <sal>0</sal>
     </informacaoNutricional>
-    <conservacao>Conservar a <temperaturaMinima>18</temperaturaMinima>ºC. Uma vez descongelado não volte a congelar</conservacao>
     <origem>Portugal</origem>
     <nutricaoPontuacao>A</nutricaoPontuacao>
-    <dataValidade>2022-11-07</dataValidade>
-    <dataProducao>2022-10-20</dataProducao>
+    <data>
+        <dataValidade>2022-11-07</dataValidade>
+        <dataProducao>2022-10-20</dataProducao>
+    </data>
     <codigoBarras>051000012517</codigoBarras>
-    <marca>
-        <nome>Auchan Gourmet</nome>
-        <empresa>
-            <nome>Auchan</nome>
-            <morada>
-                <rua>Shopping Palácio do Gelo, R. Q.ta da Alagoa</rua>
-                <codigoPostal>3500-606</codigoPostal>
-                <cidade>Viseu</cidade>
-                <pais>Portugal</pais>
-            </morada>
-            <contactos>
-                <telefone>232 247 100</telefone>
-                <email>Auchan@gmail.com</email>
-            </contactos>
-            <website>www.auchan.pt</website>
-        </empresa>
-    </marca>
 </produto>
+
+<!-- Aplicar informação nutricional caso de -->
