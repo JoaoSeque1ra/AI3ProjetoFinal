@@ -13,6 +13,7 @@
     <xsd:element name="produto">
         <xsd:complexType>
             <xsd:sequence>
+                <xsd:element name="produtoId" type="xsd:integer" />
                 <xsd:element name="nome" type="xsd:string" />
                 <xsd:element name="categoria" type="xsd:string" />
                 <xsd:element name="precoUnitario" type="xsd:double" />
@@ -22,7 +23,6 @@
                 <xsd:element name="origem" type="xsd:string" />
                 <xsd:element ref="data" />
             </xsd:sequence>
-            <xsd:attribute name="id" type="xsd:integer" use="required"/>
         </xsd:complexType>
     </xsd:element>
 

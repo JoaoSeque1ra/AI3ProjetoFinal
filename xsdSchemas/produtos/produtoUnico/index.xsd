@@ -4,6 +4,7 @@
 <xsd:element name="produto">
         <xsd:complexType>
             <xsd:sequence>
+                <xsd:element name="produtoId" type="xsd:integer" minOccurs="1" maxOccurs="1" />
                 <xsd:element name="nome" type="xsd:string" minOccurs="1" maxOccurs="1" />
                 <xsd:element name="categoria" type="xsd:string" minOccurs="1" maxOccurs="1" />
                 <xsd:element ref="informacao" minOccurs="0" maxOccurs="1" />

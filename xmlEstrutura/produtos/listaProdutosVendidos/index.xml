@@ -1,31 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <listaProdutosAssociados>
-    <utilizador idUtilizador="1">
-        <nome>Guilherme</nome>
-        <apelido>Afonso</apelido>
-        <listaProdutos>
-            <produto idProduto="1">
-                <nome>Hamburgers Auchan Mmm! Dop 100% Bovino Alentejano 400g</nome>
-                <categoria>Hambúrgueres</categoria>
-                <precoUnitario>4.73</precoUnitario>
-                <precoKilo>11.83</precoKilo>
-                <origem>Portugal</origem>
-                <data>
-                    <dataValidade>2022-11-07</dataValidade>
-                    <dataProducao>2022-10-20</dataProducao>
-                </data>
-            </produto>
-            <produto idProduto="2">
-                <nome>Iced Tea Auchan Pêssego Brick 1.5l</nome>
-                <categoria>Ice Tea e Tisanas</categoria>
-                <precoUnitario>0.85</precoUnitario>
-                <precoKilo>0.57</precoKilo>
-                <origem>Portugal</origem>
-                <data>
-                    <dataValidade>2022-11-07</dataValidade>
-                    <dataProducao>2022-10-20</dataProducao>
-                </data>
-            </produto>
-        </listaProdutos>
-    </utilizador>
+    <utilizadorId>1</utilizadorId>
+    <nome>Guilherme</nome>
+    <apelido>Afonso</apelido>
+    <listaProdutos>
+        <produto>
+            <produtoId>1</produtoId>
+            <nome>Hamburgers Auchan Mmm! Dop 100% Bovino Alentejano 400g</nome>
+            <categoria>Hambúrgueres</categoria>
+            <precoUnitario>4.73</precoUnitario>
+            <precoKilo>11.83</precoKilo>
+            <origem>Portugal</origem>
+            <data>
+                <dataValidade>2022-11-07</dataValidade>
+                <dataProducao>2022-10-20</dataProducao>
+            </data>
+        </produto>
+        <produto>
+            <produtoId>2</produtoId>
+            <nome>Iced Tea Auchan Pêssego Brick 1.5l</nome>
+            <categoria>Ice Tea e Tisanas</categoria>
+            <precoUnitario>0.85</precoUnitario>
+            <precoKilo>0.57</precoKilo>
+            <origem>Portugal</origem>
+            <data>
+                <dataValidade>2022-11-07</dataValidade>
+                <dataProducao>2022-10-20</dataProducao>
+            </data>
+        </produto>
+    </listaProdutos>
 </listaProdutosAssociados>

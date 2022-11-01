@@ -6,21 +6,13 @@ elementFormDefault="qualified">
     <xsd:element name="listaProdutosAssociados">
         <xsd:complexType>
             <xsd:sequence>
-                <xsd:element ref="utilizador" maxOccurs="unbounded" minOccurs="0"/>   
+                <xsd:element name="utilizadorId" type="xsd:integer" />
+                <xsd:element name="nome" type="xsd:string"/>
+                <xsd:element name="apelido" type="xsd:string"/>
+                <xsd:element ref="listaProdutos" minOccurs="1" maxOccurs="1"/> 
             </xsd:sequence>
         </xsd:complexType>
     </xsd:element>   
-
-    <xsd:element name="utilizador">
-        <xsd:complexType>
-            <xsd:sequence>
-                <xsd:element name="nome" type="xsd:string"/>
-                <xsd:element name="apelido" type="xsd:string"/>
-                <xsd:element ref="listaProdutos" minOccurs="1" maxOccurs="1"/>
-            </xsd:sequence>
-            <xsd:attribute type="xsd:integer" name="idUtilizador" use="required"/>
-        </xsd:complexType>
-    </xsd:element>
 
     <xsd:element name="listaProdutos">
         <xsd:complexType>
@@ -33,6 +25,7 @@ elementFormDefault="qualified">
     <xsd:element name="produto">
         <xsd:complexType>
             <xsd:sequence>
+                <xsd:element name="produtoId" type="xsd:integer"/>
                 <xsd:element name="nome" type="xsd:string"/>
                 <xsd:element name="categoria" type="xsd:string"/>
                 <xsd:element name="precoUnitario" type="xsd:double"/>
@@ -40,7 +33,6 @@ elementFormDefault="qualified">
                 <xsd:element name="origem" type="xsd:string"/>
                 <xsd:element ref="data"/>
             </xsd:sequence>
-            <xsd:attribute type="xsd:integer" name="idProduto" use="required"/>
         </xsd:complexType>
     </xsd:element>
     

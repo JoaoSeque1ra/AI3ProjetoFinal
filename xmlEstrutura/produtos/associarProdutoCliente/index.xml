@@ -1,19 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <associarProduto>
-    <utilizador idUtilizador="1">
-        <listaProduto>
-            <produto idProduto="1">
-                <subscricao>true</subscricao>
-            </produto>
-            <produto idProduto="2">
-                <subscricao>true</subscricao>
-            </produto>
-            <produto idProduto="3">
-                <subscricao>false</subscricao>
-            </produto>
-            <produto idProduto="4">
-                <subscricao>true</subscricao>
-            </produto>
-        </listaProduto>
-    </utilizador>
+    <utilizadorId>1</utilizadorId>
+    <listaProduto>
+        <produto>
+            <produtoId>1</produtoId>
+            <subscricao>true</subscricao>
+        </produto>
+        <produto>
+            <produtoId>2</produtoId>
+            <subscricao>true</subscricao>
+        </produto>
+        <produto>
+            <produtoId>3</produtoId>
+            <subscricao>false</subscricao>
+        </produto>
+        <produto>
+            <produtoId>4</produtoId>
+            <subscricao>true</subscricao>
+        </produto>
+    </listaProduto>
 </associarProduto>

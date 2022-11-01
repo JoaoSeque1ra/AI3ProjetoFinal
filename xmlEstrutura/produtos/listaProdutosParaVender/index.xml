@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <listaProdutos>
-    <produto id="1">
+    <produto>
+        <produtoId>1</produtoId>
         <nome>Hamburgers Auchan Mmm! Dop 100% Bovino Alentejano 400g</nome>
         <categoria>Hambúrgueres</categoria>
         <precoUnitario>4.73</precoUnitario>
@@ -14,7 +15,8 @@
         </data>
     </produto>
 
-    <produto id="2">
+    <produto>
+        <produtoId>2</produtoId>
         <nome>Iced Tea Auchan Pêssego Brick 1.5l</nome>
         <categoria>Ice Tea e Tisanas</categoria>
         <precoUnitario>0.85</precoUnitario>
@@ -28,7 +30,8 @@
         </data>
     </produto>
 
-    <produto id="3">
+    <produto>
+        <produtoId>3</produtoId>
         <nome>Salame De Chocolate Auchan Fatias 550g</nome>
         <categoria>Sobremesas</categoria>
         <precoUnitario>2.99</precoUnitario>

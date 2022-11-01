@@ -4,24 +4,16 @@
     <xsd:element name="associarProduto">
         <xsd:complexType>
             <xsd:sequence>
-                <xsd:element ref="utilizador" minOccurs="1" maxOccurs="1" />
-            </xsd:sequence>
-        </xsd:complexType>
-    </xsd:element>
-
-    <xsd:element name="utilizador">
-        <xsd:complexType>
-            <xsd:sequence>
+                <xsd:element name="utilizadorId" type="xsd:integer" minOccurs="1" maxOccurs="1" />
                 <xsd:element ref="listaProduto" minOccurs="1" maxOccurs="1" />
             </xsd:sequence>
-            <xsd:attribute name="idUtilizador" type="xsd:string" use="required" />
         </xsd:complexType>
     </xsd:element>
 
     <xsd:element name="listaProduto">
         <xsd:complexType>
             <xsd:sequence>
-                <xsd:element ref="produto" minOccurs="0" maxOccurs="unbounded" />
+                <xsd:element ref="produto" minOccurs="1" maxOccurs="unbounded" />
             </xsd:sequence>
         </xsd:complexType>
     </xsd:element>
@@ -29,9 +21,9 @@
     <xsd:element name="produto">
         <xsd:complexType>
             <xsd:sequence>
+                <xsd:element name="produtoId" type="xsd:integer" />
                 <xsd:element ref="subscricao" />
             </xsd:sequence>
-            <xsd:attribute name="idProduto" type="xsd:string" use="required" />
         </xsd:complexType>
     </xsd:element>
 
