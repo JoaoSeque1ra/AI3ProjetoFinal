@@ -8,18 +8,13 @@
                 <xsd:element name="categoria" type="xsd:string" minOccurs="1" maxOccurs="1" />
                 <xsd:element ref="informacao" minOccurs="0" maxOccurs="1" />
                 <xsd:element name="precoUnitario" type="xsd:double" minOccurs="1" maxOccurs="1" />
-                <xsd:element name="quantidadeLiquida" type="xsd:double" minOccurs="1" maxOccurs="1" />
                 <xsd:element name="precoPromocional" type="xsd:double" minOccurs="1" maxOccurs="1" />
                 <xsd:element name="precoKilo" type="xsd:double" minOccurs="1" maxOccurs="1" />
-                <xsd:element name="composicao" type="xsd:string" minOccurs="1" maxOccurs="1" />
                 <xsd:element ref="informacaoNutricional" minOccurs="1" maxOccurs="1" />
-                <xsd:element ref="conservacao" minOccurs="1" maxOccurs="1" />
                 <xsd:element name="origem" type="xsd:string" minOccurs="1" maxOccurs="1" />
                 <xsd:element name="nutricaoPontuacao" type="xsd:string" minOccurs="1" maxOccurs="1" />
-                <xsd:element name="dataValidade" type="xsd:date" minOccurs="1" maxOccurs="1" />
-                <xsd:element name="dataProducao" type="xsd:date" minOccurs="1" maxOccurs="1" />
+                <xsd:element ref="data" minOccurs="1" maxOccurs="1" />
                 <xsd:element name="codigoBarras" type="xsd:integer" minOccurs="1" maxOccurs="1" />
-                <xsd:element ref="marca" minOccurs="1" maxOccurs="1" />
             </xsd:sequence>
         </xsd:complexType>
     </xsd:element>
@@ -40,12 +35,12 @@
         </xsd:complexType>
     </xsd:element>
 
-    <xsd:element name="conservacao">
-        <xsd:complexType mixed="true">
-            <xsd:choice>
-                <xsd:element name="temperaturaMinima" minOccurs="0" maxOccurs="1" />
-                <xsd:element name="temperaturaMaxima" minOccurs="0" maxOccurs="1" />
-            </xsd:choice>
+    <xsd:element name="data">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="dataValidade" type="xsd:date" minOccurs="1" maxOccurs="1" />
+                <xsd:element name="dataProducao" type="xsd:date" minOccurs="1" maxOccurs="1" />
+            </xsd:sequence>
         </xsd:complexType>
     </xsd:element>
 
@@ -72,46 +67,6 @@
                 <xsd:maxLength value="500"/>
             </xsd:restriction>
         </xsd:simpleType>
-    </xsd:element>
-
-    <xsd:element name="marca">
-        <xsd:complexType>
-            <xsd:sequence>
-                <xsd:element name="nome" type="xsd:string" />
-                <xsd:element ref="empresa" />
-            </xsd:sequence>
-        </xsd:complexType>
-    </xsd:element>
-
-    <xsd:element name="empresa">
-        <xsd:complexType>
-            <xsd:sequence>
-                <xsd:element name="nome" type="xsd:string" />
-                <xsd:element ref="morada" />
-                <xsd:element ref="contactos" />
-                <xsd:element name="website" type="xsd:string" />
-            </xsd:sequence>
-        </xsd:complexType>
-    </xsd:element>
-
-    <xsd:element name="morada">
-        <xsd:complexType>
-            <xsd:sequence>
-                <xsd:element name="rua" type="xsd:string" />
-                <xsd:element name="codigoPostal" type="xsd:string" />
-                <xsd:element name="cidade" type="xsd:string" />
-                <xsd:element name="pais" type="xsd:string" />
-            </xsd:sequence>
-        </xsd:complexType>
-    </xsd:element>
-
-    <xsd:element name="contactos">
-        <xsd:complexType>
-            <xsd:sequence>
-                <xsd:element name="telefone" type="xsd:string" />
-                <xsd:element name="email" type="xsd:string" />
-            </xsd:sequence>
-        </xsd:complexType>
     </xsd:element>
 
 </xsd:schema>
