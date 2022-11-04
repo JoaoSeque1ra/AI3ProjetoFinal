@@ -1,18 +1,60 @@
 {
     "listaProdutos":{
-        "produto":{
-            "produtoId":"1",
-            "nome":"Hamburgers Auchan Mmm! Dop 100% Bovino Alentejano 400g",
-            "categoria":"Hambúrgueres",
-            "precoUnitario":"4.73",
-            "precoPromocional":"",
-            "percentagemDesconto":"",
-            "precoKilo":"11.83",
-            "origem":"Portugal",
-            "data":{
-                "dataValidade":"2022-11-07",
-                "dataProducao":"2022-10-20"
+        "produto0":
+        {
+            "produtoId":
+            {
+                "nome":"Hamburgers Auchan Mmm! Dop 100% Bovino Alentejano 400g",
+                "categoria":"Hambúrgueres",
+                "precoUnitario":"4.73",
+                "precoPromocional":"4",
+                "percentagemDesconto":"10",
+                "precoKilo":"11.83",
+                "origem":"Portugal",
+                "data":
+                {
+                    "dataValidade":"2022-11-07",
+                    "dataProducao":"2022-10-20"
+                }
+            }
+                
+        },
+        "produto1":
+        {
+            "produtoId":
+            {
+                "nome":"Iced Tea Auchan Pêssego Brick 1.5l",
+                "categoria":"Ice Tea e Tisanas",
+                "precoUnitario":"0.85",
+                "precoPromocional":"0.75",
+                "percentagemDesconto":"10",
+                "precoKilo":"0.57",
+                "origem":"Portugal",
+                "data":
+                {
+                    "dataValidade":"2022-12-24",
+                    "dataProducao":"2022-01-24"
+                } 
+            }
+        },
+        "produto2":
+        {
+            "produtoId":
+            {
+                "nome":"Salame De Chocolate Auchan Fatias 550g",
+                "categoria":"Sobremesas",
+                "precoUnitario":"2.99",
+                "precoPromocional":"2.5",
+                "percentagemDesconto":"10",
+                "precoKilo":"4.55",
+                "origem":"Portugal",
+                "data":
+                {
+                    "dataValidade":"2022-12-22",
+                    "dataProducao":"2022-11-22"
+                } 
             }
         }
+
     }
 }
