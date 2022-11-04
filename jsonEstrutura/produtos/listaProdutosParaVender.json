@@ -1,25 +1,22 @@
 {
     "listaProdutos":{
-        "produto0":
+        "produto":
         {
-            "produtoId":
+            "produtoId":1,
+            "nome":"Hamburgers Auchan Mmm! Dop 100% Bovino Alentejano 400g",
+            "categoria":"Hambúrgueres",
+            "precoUnitario":"4.73",
+            "precoPromocional":"4",
+            "percentagemDesconto":"10",
+            "precoKilo":"11.83",
+            "origem":"Portugal",
+            "data":
             {
-                "nome":"Hamburgers Auchan Mmm! Dop 100% Bovino Alentejano 400g",
-                "categoria":"Hambúrgueres",
-                "precoUnitario":"4.73",
-                "precoPromocional":"4",
-                "percentagemDesconto":"10",
-                "precoKilo":"11.83",
-                "origem":"Portugal",
-                "data":
-                {
-                    "dataValidade":"2022-11-07",
-                    "dataProducao":"2022-10-20"
-                }
-            }
-                
+                "dataValidade":"2022-11-07",
+                "dataProducao":"2022-10-20"
+            }     
         },
-        "produto1":
+        "produtoA":
         {
             "produtoId":
             {

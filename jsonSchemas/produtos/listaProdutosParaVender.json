@@ -3,139 +3,68 @@
     "title": "Product",
     "description": "A product from Acme's catalog",
     "type": "object",
-    "properties": {
-        "escola":{
-            "allOf":[
-                {
-                    "items": 
-                    {
-                        "type":"string",
-                        "enum": ["estgv","ess","esa"]
-
-                    }
-                },
-                {
-                    "maxItems":1
-                }                     
-            ]
-        },
-        "telefone":{
-            "oneOf":[
-                {
-                    "type": "integer",
-                    "pattern": "[0-9]+"
-                }
-            ]
-        },
-        "morada":{
-            "allOf":[
-                {
-                    "type":"string"
-                },
-                {
-                    "minLength": 10,
-                    "maxLength": 50
-                }
-            ]
-        },
-        "cursosDi":{
-            "allOf":[
-                {
-                    "type":"array",
-                    "items": 
-                    {
-                        "type":"string",
-                        "enum": ["tdm","ei","msti","rsi"],
-                        "maxItems":2,
-                        "minItems":2
-                    }
-                }
-            ]  
-        },
-        "disciplinas": {
+    "properties": 
+    {
+        "listaProdutos": 
+        {
             "type": "object",
-            "properties": {
-                "TDM": {
+            "properties": 
+            {
+                "produto": 
+                {
                     "type": "object",
-                    "properties": {
-                        "1anoDi": 
-                        {
-                            "anyOf":
-                            [
-                                { 
-                                    "type":"array",
-                                    "items": {
-                                        "type":"string",
-                                        "enum":["ADM1", "API1", "BD1"]
-                                    },
-                                    "minItems":3,
-                                    "maxItems":3,
-                                    "uniqueItems": true
-                                },
-                                {
-                                    "type":"array",
-                                    "items": {
-                                        "type":"string",
-                                        "enum":["ID1", "SI1", "SD1"]
-                                    },
-                                    "minItems":3,
-                                    "maxItems":3,
-                                    "uniqueItems": true
-                                }     
-                            ]
-                        },
 
-                        "2anoDi": 
-                        {
-                            "type": "array",
-                            "pattern": "[A-Za-z]+[0-9]+",
-                            "items":
+                    "anyOf":
+                    [
+                        { 
+                            "type":"array",
+                            "items": 
                             {
-                                "type":"string",
-                                "maxItems":2,
-                                "enum": ["ADM2", "API2", "BD2","ID2", "SI2", "SD2"]
-                            }
-                        },
-                        "3anoDi": 
-                        {
-                            "type": "array",
-                            "items":
-                            {
-                            
-                                "ADM3":
+                                "produtoId":
+                                {
+                                    "type": "integer"
+                                },
+                                "nome":
+                                {
+                                    "type":"string"
+                                },
+                                "categoria":
                                 {
                                     "type": "string"
                                 },
-                                "API3":
+                                "precoUnitario":
                                 {
+                                    "type":"integer"
+                                },
+                                "precoPromocional":
+                                {
+                                    "type":"integer"
+                                },
+                                "percentagemDesconto":
+                                {
+                                    "type":"integer"
+                                },
+                                "precoKilo":
+                                {
+                                    "type":"integer"
+                                },
+                                "origem":{
                                     "type":"string"
                                 },
-                                "BD3":
-                                {
-                                    "type":"string"
-                                },
-                                "minItems": 2,
-                                "maxItems":3 
-                            }
-                        }
-                    }   
-                },
-                "gestao":
-                {
-                    "type":"object",
-                    "properties": 
-                    {
-                        "diretor":{"type":"string"},
-                        "sala":{"type":"string"},
-                        "horario":{"type":"string"}
-                    },
-                    "dependencies": {
-                        "sala": ["horario"]
-                    },
-                    "required": ["diretor"]
+                                "data":{
+                                    "type":"object",
+                                    "properties":{
+                                        "dataValidade":{"type":"string"},
+                                        "dataProducao":{"type":"string"}
 
-                }
-            }      
+                                    }
+                                }
+
+                            }            
+                        }
+                    ]
+                }      
+            }
         }
     }
 }
