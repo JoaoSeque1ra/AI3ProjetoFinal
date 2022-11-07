@@ -1,69 +1,77 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
-    "title": "Product",
-    "description": "A product from Acme's catalog",
     "type": "object",
-    "properties": 
-    {
-        "listaProdutos": 
-        {
+    "properties": {
+        "listaProdutos": {
             "type": "object",
-            "properties": 
-            {
-                "produto": 
-                {
-                    "type": "object",
-
-                    "anyOf":
-                    [
-                        { 
-                            "type":"array",
-                            "items": 
-                            {
-                                "produtoId":
-                                {
-                                    "type": "integer"
-                                },
-                                "nome":
-                                {
-                                    "type":"string"
-                                },
-                                "categoria":
-                                {
-                                    "type": "string"
-                                },
-                                "precoUnitario":
-                                {
-                                    "type":"integer"
-                                },
-                                "precoPromocional":
-                                {
-                                    "type":"integer"
-                                },
-                                "percentagemDesconto":
-                                {
-                                    "type":"integer"
-                                },
-                                "precoKilo":
-                                {
-                                    "type":"integer"
-                                },
-                                "origem":{
-                                    "type":"string"
-                                },
-                                "data":{
-                                    "type":"object",
-                                    "properties":{
-                                        "dataValidade":{"type":"string"},
-                                        "dataProducao":{"type":"string"}
-
+            "properties": {
+                "produto": {
+                    "type": "array",
+                    "minItems": 0,
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "produtoId": 
+                            { 
+                                "type": "string" 
+                            },
+                            "nome": 
+                            { 
+                                "type": "string" 
+                            },
+                            "categoria": 
+                            { 
+                                "type": "string" 
+                            },
+                            "precoUnitario": 
+                            { 
+                                "type": "number" 
+                            },
+                            "precoPromocional": 
+                            { 
+                                "type": "number" 
+                            },
+                            "percentagemDesconto": 
+                            { 
+                                "type": "number" 
+                            },
+                            "precoKilo": 
+                            { 
+                                "type": "number" 
+                            },
+                            "origem": 
+                            { 
+                                "type": "string" 
+                            },
+                            "data": {
+                                "type": "object",
+                                "properties": {
+                                    "dataValidade": {
+                                        "type": "string",
+                                        "pattern": "^(19[0-9]{2}|2[0-9]{3})-(0[1-9]|1[012])-([123]0|[012][1-9]|31)$"
+                                    },
+                                    "dataProducao": {
+                                        "type": "string",
+                                        "pattern": "^(19[0-9]{2}|2[0-9]{3})-(0[1-9]|1[012])-([123]0|[012][1-9]|31)$"
                                     }
-                                }
-
-                            }            
-                        }
-                    ]
-                }      
+                                },
+                                "required": [
+                                    "dataValidade",
+                                    "dataProducao"
+                                ]
+                            }
+                        },
+                        "required": [
+                            "produtoId",
+                            "nome",
+                            "categoria",
+                            "precoUnitario",
+                            "precoKilo",
+                            "origem",
+                            "data"
+                        ]
+                    }
+                }
             }
         }
     }
