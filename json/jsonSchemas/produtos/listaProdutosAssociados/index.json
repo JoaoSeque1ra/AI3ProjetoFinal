@@ -1,0 +1,55 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "type": "object",
+    "properties": {
+        "listaProdutosAssociados": {
+            "type": "object",
+            "properties": {
+                "utilizadorId": { "type": "string" },
+                "nome": { "type": "string" },
+                "apelido": { "type": "string" },
+                "listaProdutos": {
+                    "type": "array",
+                    "minItems": 0,
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "produtoId": { "type": "string" },
+                            "nome": { "type": "string" },
+                            "categoria": { "type": "string" },
+                            "precoUnitario": { "type": "number" },
+                            "precoKilo": { "type": "number" },
+                            "origem": { "type": "string" },
+                            "data": {
+                                "type": "object",
+                                "properties": {
+                                    "dataValidade": {
+                                        "type": "string",
+                                        "pattern": "^(19[0-9]{2}|2[0-9]{3})-(0[1-9]|1[012])-([123]0|[012][1-9]|31)$"
+                                    },
+                                    "dataProducao": {
+                                        "type": "string",
+                                        "pattern": "^(19[0-9]{2}|2[0-9]{3})-(0[1-9]|1[012])-([123]0|[012][1-9]|31)$"
+                                    }
+                                },
+                                "required": [
+                                    "dataValidade",
+                                    "dataProducao"
+                                ]
+                            }
+                        },
+                        "required": [
+                            "produtoId",
+                            "nome",
+                            "categoria",
+                            "precoUnitario",
+                            "precoKilo",
+                            "origem",
+                            "data"
+                        ]
+                    }
+                }
+            }
+        }
+    }
+}

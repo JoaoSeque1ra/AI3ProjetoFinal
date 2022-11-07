@@ -3,25 +3,28 @@
     <produto>
         <produtoId>1</produtoId>
         <precoMedio>4</precoMedio>
+        <detalhe>
+            <nome>Hamburgers Auchan Mmm! Dop 100% Bovino Alentejano 400g</nome>
+            <descricao>hambuerguer hummm</descricao>
+            <codigo>5026689557</codigo>
+        </detalhe>
     </produto>
     <produto>
         <produtoId>1</produtoId>
         <precoMedio>2</precoMedio>
+        <detalhe>
+            <nome>Iced Tea Auchan Pêssego Brick 1.5l</nome>
+            <descricao>iced tea de limão que sabe a pessego</descricao>
+            <codigo>653526465323</codigo>
+        </detalhe>
     </produto>
     <produto>
         <produtoId>3</produtoId>
         <precoMedio>4.25</precoMedio>
-    </produto>
-    <produto>
-        <produtoId>4</produtoId>
-        <precoMedio>5.02</precoMedio>
-    </produto>
-    <produto>
-        <produtoId>5</produtoId>
-        <precoMedio>7.69</precoMedio>
-    </produto>
-    <produto>
-        <produtoId>6</produtoId>
-        <precoMedio>10.10</precoMedio>
+        <detalhe>
+            <nome>Salame De Chocolate Auchan Fatias 550g</nome>
+            <descricao>salam de chocolate</descricao>
+            <codigo>653526465323</codigo>
+        </detalhe>
     </produto>
 </listaPrecoMedio>

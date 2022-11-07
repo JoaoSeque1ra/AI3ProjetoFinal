@@ -1,5 +1,5 @@
 {
-    "listaProdutos":{
+    "listaProdutos":[{
         "produto":
         {
             "produtoId":1,
@@ -53,5 +53,5 @@
             }
         }
 
-    }
+    }]
 }

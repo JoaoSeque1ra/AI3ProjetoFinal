@@ -5,31 +5,27 @@
         "apelido": "Afonso",
         "listaProdutos": [
             {
-                "produto": {
-                    "produtoId": 1,
-                    "nome": "Hamburgers Auchan Mmm! Dop 100% Bovino Alentejano 400g",
-                    "categoria": "Hambúrgueres",
-                    "precoUnitario": 4.73,
-                    "precoKilo": 11.83,
-                    "origem": "Portugal",
-                    "data": {
-                        "dataValidade": "2022-11-07",
-                        "dataProducao": "2022-10-20"
-                    }
+                "produtoId": "1",
+                "nome": "Hamburgers Auchan Mmm! Dop 100% Bovino Alentejano 400g",
+                "categoria": "Hambúrgueres",
+                "precoUnitario": 4.73,
+                "precoKilo": 11.83,
+                "origem": "Portugal",
+                "data": {
+                    "dataValidade": "2022-11-07",
+                    "dataProducao": "2022-10-20"
                 }
             },
             {
-                "produto": {
-                    "produtoId": 2,
-                    "nome": "Iced Tea Auchan Pêssego Brick 1.5l",
-                    "categoria": "Ice Tea e Tisanas",
-                    "precoUnitario": 0.85,
-                    "precoKilo": 0.87,
-                    "origem": "Portugal",
-                    "data": {
-                        "dataValidade": "2022-11-07",
-                        "dataProducao": "2022-10-09"
-                    }
+                "produtoId": "2",
+                "nome": "Iced Tea Auchan Pêssego Brick 1.5l",
+                "categoria": "Ice Tea e Tisanas",
+                "precoUnitario": 0.85,
+                "precoKilo": 0.87,
+                "origem": "Portugal",
+                "data": {
+                    "dataValidade": "2022-11-07",
+                    "dataProducao": "2022-10-09"
                 }
             }
         ]
