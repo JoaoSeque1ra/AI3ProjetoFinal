@@ -1,0 +1,33 @@
+{
+    "produto":{
+       "produtoId":"1",
+       "nome":"Hamburgers Auchan Mmm! Dop 100% Bovino Alentejano 400g",
+       "categoria":"Hambúrgueres",
+       "informacao":[
+        {
+            "informacaoCurta":"Denominação de Origem Protegida.",
+            "informacaoComprida":"Denominação de Origem Protegida. Relação colagénio/proteína de carne inferior a: 15%. Percentagem de matérias gordas inferiores a: 20%"
+        }
+       ],
+       "precoUnitario":"4.73",
+       "precoPromocional":"4",
+       "precoKilo":"11.83",
+       "informacaoNutricional":{
+        "peso":100,
+        "energia":225,
+        "lipidos":17,
+        "saturados":6.5,
+        "hidratosDeCarbono":0,
+        "acucar":0,
+        "proteina":18,
+        "sal":0
+       },
+       "origem":"Portugal",
+       "nutricaoPontuacao":"A",
+       "data":{
+        "dataValidade":"2022-11-07",
+        "dataProducao":"2022-10-20"
+       },
+       "codigoBarras":"051000012517"
+    }
+}
