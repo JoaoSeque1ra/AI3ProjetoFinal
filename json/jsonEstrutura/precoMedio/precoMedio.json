@@ -1,20 +1,18 @@
 {
-    "listaPrecoMedio":[
+    "listaPrecoMedio": [
         {
             "produtoId":"1",
             "precoMedio":"4",
-            "detalhe":{
+            "detalhe": {
                 "nome":"Hamburgers Auchan Mmm! Dop 100% Bovino Alentejano 400g",
                 "descricao":"hambuerguer hummm",
                 "codigo":"5026689557"
             }
-            
-
         },
         {
             "produtoId":"2",
             "precoMedio":"2",
-            "detalhe":{
+            "detalhe": {
                 "nome":"Iced Tea Auchan Pêssego Brick 1.5l",
                 "descricao":"iced tea de limão que sabe a pessego",
                 "codigo":"653526465323"
@@ -23,7 +21,7 @@
         {
             "produtoId":"3",
             "precoMedio":"4.25",
-            "detalhe":{
+            "detalhe": {
                 "nome":"Salame De Chocolate Auchan Fatias 550g",
                 "descricao":"salam de chocolate",
                 "codigo":"653526465323"
