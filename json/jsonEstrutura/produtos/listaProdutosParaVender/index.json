@@ -1,25 +1,24 @@
 {
-    "listaProdutos":[{
+    "listaProdutos":{
         "produto":
-        {
-            "produtoId":1,
-            "nome":"Hamburgers Auchan Mmm! Dop 100% Bovino Alentejano 400g",
-            "categoria":"Hambúrgueres",
-            "precoUnitario":"4.73",
-            "precoPromocional":"4",
-            "percentagemDesconto":"10",
-            "precoKilo":"11.83",
-            "origem":"Portugal",
-            "data":
+        [
             {
-                "dataValidade":"2022-11-07",
-                "dataProducao":"2022-10-20"
-            }     
-        },
-        "produtoA":
-        {
-            "produtoId":
-            {
+                "produtoId":1,
+                "nome":"Hamburgers Auchan Mmm! Dop 100% Bovino Alentejano 400g",
+                "categoria":"Hambúrgueres",
+                "precoUnitario":"4.73",
+                "precoPromocional":"4",
+                "percentagemDesconto":"10",
+                "precoKilo":"11.83",
+                "origem":"Portugal",
+                "data":
+                {
+                    "dataValidade":"2022-11-07",
+                    "dataProducao":"2022-10-20"
+                }     
+            },
+            {   
+                "produtoId":2,
                 "nome":"Iced Tea Auchan Pêssego Brick 1.5l",
                 "categoria":"Ice Tea e Tisanas",
                 "precoUnitario":"0.85",
@@ -32,12 +31,9 @@
                     "dataValidade":"2022-12-24",
                     "dataProducao":"2022-01-24"
                 } 
-            }
-        },
-        "produto2":
-        {
-            "produtoId":
-            {
+            },
+            {   
+                "produtoId":3,
                 "nome":"Salame De Chocolate Auchan Fatias 550g",
                 "categoria":"Sobremesas",
                 "precoUnitario":"2.99",
@@ -51,7 +47,6 @@
                     "dataProducao":"2022-11-22"
                 } 
             }
-        }
-
-    }]
+        ]
+    }
 }
