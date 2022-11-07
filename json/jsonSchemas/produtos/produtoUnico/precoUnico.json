@@ -1,0 +1,92 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "type": "object",
+    "properties": {
+        "produto":{
+            "type":"object",
+            "properties": {
+                "produtoId":{
+                    "type":"string"
+                },
+                "nome":{
+                    "type":"string"
+                },
+                "categoria":{
+                    "type":"string"
+                },
+                "informacao":{
+                    "type":"object",
+                    "properties": {
+                        "informacaoCurta":{
+                            "type":"string"
+                        },
+                        "informacaoComprida":{
+                            "type":"string"
+                        }
+                    }
+                },
+                "precoUnitario":{
+                    "type":"string"
+                },
+                "precoPromocional":{
+                    "type":"string"
+                },
+                "precoKilo":{
+                    "type":"string"
+                },
+                "informacaoNutricional":{
+                    "type":"object",
+                    "properties": {
+                        "peso":{
+                            "type":"number"
+                        },
+                        "energia":{
+                            "type":"number"
+                        },
+                        "lipidos":{
+                            "type":"number"
+                        },
+                        "saturados":{
+                            "type":"number"
+                        },
+                        "hidratosDeCarbono":{
+                            "type":"number"
+                        },
+                        "acucar":{
+                            "type":"number"
+                        },
+                        "proteina":{
+                            "type":"number"
+                        },
+                        "sal":{
+                            "type":"number"
+                        }
+                    }
+                },
+                "origem":{
+                    "type":"string"
+                },
+                "nutricaoPontuacao":{
+                    "type":"string"
+                },
+                "data":{
+                    "type":"object",
+                    "properties":{
+                        "dataValidade":{
+                            "type": "string",
+                            "pattern": "^(19[0-9]{2}|2[0-9]{3})-(0[1-9]|1[012])-([123]0|[012][1-9]|31)$"
+                        },
+                        "dataProducao":{
+                            "type": "string",
+                            "pattern": "^(19[0-9]{2}|2[0-9]{3})-(0[1-9]|1[012])-([123]0|[012][1-9]|31)$"                                                        
+                        }
+                    },
+                    "required": [
+                        "dataValidade",
+                        "dataProducao"
+                    ]
+                }
+            }
+        }
+    }    
+}
