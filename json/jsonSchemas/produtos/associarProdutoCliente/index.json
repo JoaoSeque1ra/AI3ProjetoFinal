@@ -1,0 +1,24 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "type": "object",
+    "properties": {
+        "associarProduto": {
+            "type": "object",
+            "properties": {
+                "utilizadorId": { "type": "string" },
+                "listaProduto": {
+                    "type": "array",
+                    "minItems": 0,
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "produtoId": { "type": "string" },
+                            "subscricao": { "type": "boolean" } 
+                        },
+                        "required": ["produtoId", "subscricao"]
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,23 @@
+{
+    "associarProduto": {
+        "utilizadorId": "1",
+        "listaProduto": [
+            {
+                "produtoId": "1",
+                "subscricao": true
+            },
+            {
+                "produtoId": "2",
+                "subscricao": true
+            },
+            {
+                "produtoId": "3",
+                "subscricao": false
+            },
+            {
+                "produtoId": "4",
+                "subscricao": true
+            }
+        ]
+    }
+}
