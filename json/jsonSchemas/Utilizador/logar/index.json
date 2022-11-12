@@ -3,17 +3,17 @@
     "type": "object",
     "properties": 
     {
-        "Login": 
+        "login": 
         {
             "type": "object",
             "properties": 
             {
-                "Email": 
+                "email": 
                 {
                     "type": "string",
-                    "pattern":"[^@ \t\r\n]+@[^@ \t\r\n]+\.[^@ \t\r\n]+"
+                    "pattern":"[^@ \t\r\n]+@[^@ \t\r\n]+[^@ \t\r\n]+"
                 },
-                "Password": 
+                "password": 
                 {
                     "type": "string"
                 }

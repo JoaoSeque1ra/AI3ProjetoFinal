@@ -1,10 +1,9 @@
 {
-    "Utilizador": 
-    {
-      "Email": "guizinho@hotmail.com",
-      "Password": "cvd12d",
-      "Nome": "Guiherme",
-      "Apelido": "Afonso",
-      "Contacto": "910933857"
-    }
+  "utilizador": {
+    "email": "guizinho@hotmail.com",
+    "password": "cvd12d",
+    "nome": "Guilherme",
+    "apelido": "Afonso",
+    "contacto": "910933857"
+  }
 }

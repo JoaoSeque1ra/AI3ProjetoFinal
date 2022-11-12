@@ -3,32 +3,32 @@
     "type": "object",
     "properties": 
     {
-        "Utilizador": 
+        "utilizador": 
         {
             "type": "object",
             "properties": 
             {
-                "Email": 
+                "email": 
                 {
                     "type": "string",
-                    "pattern":"[^@ \t\r\n]+@[^@ \t\r\n]+/.[^@ \t\r\n]+"
+                    "pattern":"[^@ \t\r\n]+@[^@ \t\r\n]+[^@ \t\r\n]+"
                 },
-                "Password": 
+                "password": 
                 {
                     "type": "string"
                 },
-                "Nome": 
+                "nome": 
                 {
                     "type": "string"
                 },
-                "Apelido": 
+                "apelido": 
                 {
                     "type": "string"
                 },
-                "Contacto": 
+                "contacto": 
                 {
                     "type": "string",
-                    "pattern": "^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{3}$"
+                    "pattern": "[9]{1}[0-9]{2}[0-9]{3}[0-9]{3}$"
                 }
             }
         }

@@ -1,7 +1,6 @@
 {
-    "Login": 
-    {
-      "Email": "guizinho@hotmail.com",
-      "Password": "cvd12d"
-    }
+  "login": {
+    "email": "guizinho@hotmail.com",
+    "password": "cvd12d"
+  }
 }
