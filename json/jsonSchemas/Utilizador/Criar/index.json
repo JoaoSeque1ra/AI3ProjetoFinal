@@ -1,7 +1,5 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
-    "title": "Product",
-    "description": "A product from Acme's catalog",
     "type": "object",
     "properties": 
     {
@@ -30,9 +28,8 @@
                 "Contacto": 
                 {
                     "type": "string",
-                    "pattern": ""
+                    "pattern": "^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{3}$"
                 }
-                
             }
         }
     }
