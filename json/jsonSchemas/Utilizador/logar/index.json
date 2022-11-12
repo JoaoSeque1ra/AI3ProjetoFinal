@@ -11,7 +11,7 @@
                 "Email": 
                 {
                     "type": "string",
-                    "pattern":"[^@ \t\r\n]+@[^@ \t\r\n]+/.[^@ \t\r\n]+"
+                    "pattern":"[^@ \t\r\n]+@[^@ \t\r\n]+\.[^@ \t\r\n]+"
                 },
                 "Password": 
                 {
