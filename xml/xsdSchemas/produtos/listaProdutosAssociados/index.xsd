@@ -7,8 +7,6 @@ elementFormDefault="qualified">
         <xsd:complexType>
             <xsd:sequence>
                 <xsd:element name="utilizadorId" type="xsd:integer" />
-                <xsd:element name="nome" type="xsd:string"/>
-                <xsd:element name="apelido" type="xsd:string"/>
                 <xsd:element ref="listaProdutos" minOccurs="1" maxOccurs="1"/> 
             </xsd:sequence>
         </xsd:complexType>

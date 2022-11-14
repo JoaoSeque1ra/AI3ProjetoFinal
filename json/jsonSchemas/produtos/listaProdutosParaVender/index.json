@@ -59,7 +59,8 @@
                                     "dataValidade",
                                     "dataProducao"
                                 ]
-                            }
+                            },
+                            "subscricao": { "type": "boolean" }
                         },
                         "required": [
                             "produtoId",
@@ -68,7 +69,8 @@
                             "precoUnitario",
                             "precoKilo",
                             "origem",
-                            "data"
+                            "data",
+                            "subscricao"
                         ]
                     }
                 }

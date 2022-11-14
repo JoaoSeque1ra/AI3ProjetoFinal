@@ -9,13 +9,13 @@
                 "listaProduto": {
                     "type": "array",
                     "minItems": 0,
+                    "uniqueItems": true,
                     "items": {
                         "type": "object",
                         "properties": {
-                            "produtoId": { "type": "string" },
-                            "subscricao": { "type": "boolean" } 
+                            "produtoId": { "type": "string" }
                         },
-                        "required": ["produtoId", "subscricao"]
+                        "required": ["produtoId"]
                     }
                 }
             }

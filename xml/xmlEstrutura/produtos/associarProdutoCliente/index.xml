@@ -2,21 +2,9 @@
 <associarProduto>
     <utilizadorId>1</utilizadorId>
     <listaProduto>
-        <produto>
-            <produtoId>1</produtoId>
-            <subscricao>true</subscricao>
-        </produto>
-        <produto>
-            <produtoId>2</produtoId>
-            <subscricao>true</subscricao>
-        </produto>
-        <produto>
-            <produtoId>3</produtoId>
-            <subscricao>false</subscricao>
-        </produto>
-        <produto>
-            <produtoId>4</produtoId>
-            <subscricao>true</subscricao>
-        </produto>
+        <produtoId>1</produtoId>
+        <produtoId>2</produtoId>
+        <produtoId>3</produtoId>
+        <produtoId>4</produtoId>
     </listaProduto>
 </associarProduto>

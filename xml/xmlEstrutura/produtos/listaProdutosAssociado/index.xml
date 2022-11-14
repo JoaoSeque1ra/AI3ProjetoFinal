@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <listaProdutosAssociados>
     <utilizadorId>1</utilizadorId>
-    <nome>Guilherme</nome>
-    <apelido>Afonso</apelido>
     <listaProdutos>
         <produto>
             <produtoId>1</produtoId>

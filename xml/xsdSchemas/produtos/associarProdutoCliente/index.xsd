@@ -13,26 +13,9 @@
     <xsd:element name="listaProduto">
         <xsd:complexType>
             <xsd:sequence>
-                <xsd:element ref="produto" minOccurs="1" maxOccurs="unbounded" />
+                <xsd:element name="produtoId" type="xsd:integer" minOccurs="0" maxOccurs="unbounded" />
             </xsd:sequence>
         </xsd:complexType>
     </xsd:element>
 
-    <xsd:element name="produto">
-        <xsd:complexType>
-            <xsd:sequence>
-                <xsd:element name="produtoId" type="xsd:integer" />
-                <xsd:element ref="subscricao" />
-            </xsd:sequence>
-        </xsd:complexType>
-    </xsd:element>
-
-    <xsd:element name="subscricao">
-        <xsd:simpleType>
-            <xsd:restriction base="xsd:string">
-                <xsd:enumeration value="true" />
-                <xsd:enumeration value="false" />
-            </xsd:restriction>
-        </xsd:simpleType>
-    </xsd:element>
 </xsd:schema>

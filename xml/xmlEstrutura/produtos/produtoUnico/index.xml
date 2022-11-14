@@ -9,6 +9,7 @@
     </informacao>
     <precoUnitario>4.73</precoUnitario>
     <precoPromocional>4</precoPromocional>
+    <percentagemDesconto>10</percentagemDesconto>
     <precoKilo>11.83</precoKilo>
     <informacaoNutricional>
         <peso>100</peso>

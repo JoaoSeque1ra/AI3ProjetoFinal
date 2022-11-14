@@ -6,8 +6,6 @@
             "type": "object",
             "properties": {
                 "utilizadorId": { "type": "string" },
-                "nome": { "type": "string" },
-                "apelido": { "type": "string" },
                 "listaProdutos": {
                     "type": "array",
                     "minItems": 0,

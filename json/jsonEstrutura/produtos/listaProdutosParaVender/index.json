@@ -15,7 +15,8 @@
                 {
                     "dataValidade":"2022-11-07",
                     "dataProducao":"2022-10-20"
-                }     
+                },
+                "subscricao": false
             },
             {   
                 "produtoId":"2",
@@ -30,7 +31,8 @@
                 {
                     "dataValidade":"2022-12-24",
                     "dataProducao":"2022-01-24"
-                } 
+                },
+                "subscricao": false
             },
             {   
                 "produtoId":"3",
@@ -45,7 +47,8 @@
                 {
                     "dataValidade":"2022-12-22",
                     "dataProducao":"2022-11-22"
-                } 
+                },
+                "subscricao": true
             }
         ]
     }

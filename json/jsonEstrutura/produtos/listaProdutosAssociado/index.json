@@ -1,8 +1,6 @@
 {
     "listaProdutosAssociados": {
         "utilizadorId": "1",
-        "nome": "Guilherme",
-        "apelido": "Afonso",
         "listaProdutos": [
             {
                 "produtoId": "1",

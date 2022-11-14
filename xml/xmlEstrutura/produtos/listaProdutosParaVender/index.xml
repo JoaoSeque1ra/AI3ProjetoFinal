@@ -13,6 +13,7 @@
             <dataValidade>2022-11-07</dataValidade>
             <dataProducao>2022-10-20</dataProducao>
         </data>
+        <subscricao>false</subscricao>
     </produto>
 
     <produto>
@@ -28,6 +29,7 @@
             <dataValidade>2022-12-24</dataValidade>
             <dataProducao>2021-09-03</dataProducao>
         </data>
+        <subscricao>false</subscricao>
     </produto>
 
     <produto>
@@ -43,5 +45,6 @@
             <dataValidade>2022-10-27</dataValidade>
             <dataProducao>2022-10-20</dataProducao>
         </data>
+        <subscricao>true</subscricao>
     </produto>
 </listaProdutos>

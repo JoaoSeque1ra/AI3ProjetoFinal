@@ -9,6 +9,7 @@
         },
         "precoUnitario": "4.73",
         "precoPromocional": "4",
+        "percentagemDesconto": 10,
         "precoKilo": "11.83",
         "informacaoNutricional": {
             "peso": 100,

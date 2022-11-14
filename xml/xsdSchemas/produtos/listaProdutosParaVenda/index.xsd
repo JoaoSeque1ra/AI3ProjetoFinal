@@ -22,6 +22,7 @@
                 <xsd:element name="precoKilo" type="xsd:double" />
                 <xsd:element name="origem" type="xsd:string" />
                 <xsd:element ref="data" />
+                <xsd:element name="subscricao" type="xsd:boolean" minOccurs="1" maxOccurs="1" />
             </xsd:sequence>
         </xsd:complexType>
     </xsd:element>
