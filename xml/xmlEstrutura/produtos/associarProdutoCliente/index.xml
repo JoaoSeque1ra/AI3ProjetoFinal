@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<associarProduto>
+<associarProdutoCliente>
     <utilizadorId>1</utilizadorId>
     <listaProduto>
         <produtoId>1</produtoId>
@@ -7,4 +7,4 @@
         <produtoId>3</produtoId>
         <produtoId>4</produtoId>
     </listaProduto>
-</associarProduto>
+</associarProdutoCliente>

@@ -1,0 +1,72 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "type": "object",
+    "properties": {
+        "listaProdutos": {
+            "type": "array",
+            "minItems": 0,
+            "items": {
+                "type": "object",
+                "items": {
+                    "type": "object",
+                    "properties": {
+                        "produtoId": {
+                            "type": "string"
+                        },
+                        "nome": {
+                            "type": "string"
+                        },
+                        "categoria": {
+                            "type": "string"
+                        },
+                        "precoUnitario": {
+                            "type": "number"
+                        },
+                        "precoPromocional": {
+                            "type": "number"
+                        },
+                        "percentagemDesconto": {
+                            "type": "number"
+                        },
+                        "precoKilo": {
+                            "type": "number"
+                        },
+                        "origem": {
+                            "type": "string"
+                        },
+                        "data": {
+                            "type": "object",
+                            "properties": {
+                                "dataValidade": {
+                                    "type": "string",
+                                    "pattern": "^(19[0-9]{2}|2[0-9]{3})-(0[1-9]|1[012])-([123]0|[012][1-9]|31)$"
+                                },
+                                "dataProducao": {
+                                    "type": "string",
+                                    "pattern": "^(19[0-9]{2}|2[0-9]{3})-(0[1-9]|1[012])-([123]0|[012][1-9]|31)$"
+                                }
+                            },
+                            "required": [
+                                "dataValidade",
+                                "dataProducao"
+                            ]
+                        },
+                        "subscricao": {
+                            "type": "boolean"
+                        }
+                    },
+                    "required": [
+                        "produtoId",
+                        "nome",
+                        "categoria",
+                        "precoUnitario",
+                        "precoKilo",
+                        "origem",
+                        "data",
+                        "subscricao"
+                    ]
+                }
+            }
+        }
+    }
+}
