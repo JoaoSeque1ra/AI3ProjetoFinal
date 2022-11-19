@@ -18,7 +18,8 @@
                     "type":"object",
                     "properties": {
                         "informacaoCurta":{
-                            "type":"string"
+                            "type":"string",
+                            "maxLength": 150
                         },
                         "informacaoComprida":{
                             "type":"string"
