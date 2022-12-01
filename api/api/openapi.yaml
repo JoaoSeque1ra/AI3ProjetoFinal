@@ -14,24 +14,25 @@ externalDocs:
   description: Find out more about Swagger
   url: http://swagger.io
 servers:
-- url: https://virtserver.swaggerhub.com/RAQUELALMEIDA15/promo-validade/1.0.0
-  description: Encontra aqui os produtos perecíveis que estão perto do fim de validade
-    e contribuí para a redução de alimentos desperdiçados
-- url: https://promovalidade.swagger.io/v2
+  - url: https://virtserver.swaggerhub.com/RAQUELALMEIDA15/promo-validade/1.0.0
+    description:
+      Encontra aqui os produtos perecíveis que estão perto do fim de validade
+      e contribuí para a redução de alimentos desperdiçados
+  - url: https://promovalidade.swagger.io/v2
 tags:
-- name: produto
-  description: Operação de produtos perecíveis
-- name: utilizador
-  description: Operação dos utilizadores
+  - name: produto
+    description: Operação de produtos perecíveis
+  - name: utilizador
+    description: Operação dos utilizadores
 paths:
   /produto:
     post:
       tags:
-      - produto
+        - produto
       summary: Adicionar um novo produto
       operationId: addProduto
       requestBody:
-        $ref: '#/components/requestBodies/Produto'
+        $ref: "#/components/requestBodies/Produto"
       responses:
         "200":
           description: Produto adicionado com sucesso
@@ -40,59 +41,59 @@ paths:
         "401":
           description: Sem autorização
       security:
-      - promovalidade_auth:
-        - write:produtos
-        - read:produtos
+        - promovalidade_auth:
+            - write:produtos
+            - read:produtos
       x-swagger-router-controller: Produto
   /produto/{produtoId}:
     get:
       tags:
-      - produto
+        - produto
       summary: Encontrar um produto pelo produtoId
       description: Retorna um único produto mais detalhado
       operationId: getProdutoById
       parameters:
-      - name: produtoId
-        in: path
-        description: produtoId necessário
-        required: true
-        style: simple
-        explode: false
-        schema:
-          type: integer
+        - name: produtoId
+          in: path
+          description: produtoId necessário
+          required: true
+          style: simple
+          explode: false
+          schema:
+            type: integer
       responses:
         "200":
           description: Produto enviado com sucesso
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Produto'
+                $ref: "#/components/schemas/Produto"
             application/xml:
               schema:
-                $ref: '#/components/schemas/Produto'
+                $ref: "#/components/schemas/Produto"
         "400":
           description: Erro no envio da informação do produto
         "404":
           description: "Produto não encontrado {produtoId inválido}"
       security:
-      - api_key: []
+        - api_key: []
       x-swagger-router-controller: Produto
     put:
       tags:
-      - produto
+        - produto
       summary: Atualizar um produto através do produtoId
       operationId: updateProduto
       parameters:
-      - name: produtoId
-        in: path
-        description: produtoId necessário
-        required: true
-        style: simple
-        explode: false
-        schema:
-          type: integer
+        - name: produtoId
+          in: path
+          description: produtoId necessário
+          required: true
+          style: simple
+          explode: false
+          schema:
+            type: integer
       requestBody:
-        $ref: '#/components/requestBodies/Produto'
+        $ref: "#/components/requestBodies/Produto"
       responses:
         "200":
           description: Produto atualizado com sucesso
@@ -101,24 +102,24 @@ paths:
         "404":
           description: "Produto não encontrado {produtoId inválido}"
       security:
-      - promovalidade_auth:
-        - write:produtos
-        - read:produtos
+        - promovalidade_auth:
+            - write:produtos
+            - read:produtos
       x-swagger-router-controller: Produto
     delete:
       tags:
-      - produto
+        - produto
       summary: Eliminar um produto pelo produtoId
       operationId: deleteProduto
       parameters:
-      - name: produtoId
-        in: path
-        description: produtoId necessário para eliminar
-        required: true
-        style: simple
-        explode: false
-        schema:
-          type: integer
+        - name: produtoId
+          in: path
+          description: produtoId necessário para eliminar
+          required: true
+          style: simple
+          explode: false
+          schema:
+            type: integer
       responses:
         "200":
           description: Produto eliminado com sucesso
@@ -127,14 +128,14 @@ paths:
         "404":
           description: "Produto não encontrado {produtoId inválido}"
       security:
-      - promovalidade_auth:
-        - write:produtos
-        - read:produtos
+        - promovalidade_auth:
+            - write:produtos
+            - read:produtos
       x-swagger-router-controller: Produto
   /produto/listProduto:
     get:
       tags:
-      - produto
+        - produto
       summary: Listar todos os produtos
       description: Retorna todos os produtos na base dados
       operationId: getListProdutos
@@ -144,10 +145,10 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ListaPodutos'
+                $ref: "#/components/schemas/ListaProdutos"
             application/xml:
               schema:
-                $ref: '#/components/schemas/ListaPodutos'
+                $ref: "#/components/schemas/ListaProdutos"
         "400":
           description: Erro ao enviar lista
         "404":
@@ -156,7 +157,7 @@ paths:
   /produto/listPrecoMedio:
     get:
       tags:
-      - produto
+        - produto
       summary: Listar produtos com o preço médio
       description: Retorna todos os produtos e o seu preço médio
       operationId: getListPrecoMedio
@@ -166,10 +167,10 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ListaPrecoMedio'
+                $ref: "#/components/schemas/ListaPrecoMedio"
             application/xml:
               schema:
-                $ref: '#/components/schemas/ListaPrecoMedio'
+                $ref: "#/components/schemas/ListaPrecoMedio"
         "400":
           description: Erro ao enviar a lista com o preço médio
         "404":
@@ -178,33 +179,34 @@ paths:
   /produto/findByCategoria/{categoria}:
     get:
       tags:
-      - produto
+        - produto
       summary: Encontrar produtos por categoria
       description: Múltiplos produtos enviados consoante a categoria selecionada
       operationId: findByCategoria
       parameters:
-      - name: categoria
-        in: path
-        description: É necessário o envio da categoria para puder ser enviado a lista
-          de produtos correta
-        required: true
-        style: simple
-        explode: true
-        schema:
-          type: array
-          items:
-            type: string
-            default: todos
+        - name: categoria
+          in: path
+          description:
+            É necessário o envio da categoria para puder ser enviado a lista
+            de produtos correta
+          required: true
+          style: simple
+          explode: true
+          schema:
+            type: array
+            items:
+              type: string
+              default: todos
       responses:
         "200":
           description: "Lista de produtos enviado consoante a {categoria}"
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ListaPodutos'
+                $ref: "#/components/schemas/ListaProdutos"
             application/xml:
               schema:
-                $ref: '#/components/schemas/ListaPodutos'
+                $ref: "#/components/schemas/ListaProdutos"
         "400":
           description: "Input {categoria} é inválido"
         "404":
@@ -213,9 +215,10 @@ paths:
   /produto/listarNaoDesperdicados:
     get:
       tags:
-      - produto
+        - produto
       summary: Listar todos os produtos e as suas quantidades não desperdiçadas
-      description: "Listar todos os produtos e as suas quantidades não desperdiçadas,\
+      description:
+        "Listar todos os produtos e as suas quantidades não desperdiçadas,\
         \ divido por peso líquido e peso bruto"
       operationId: getListProdutosNaoDesperdicados
       responses:
@@ -224,10 +227,10 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ListaProdutosNaoDesperdicados'
+                $ref: "#/components/schemas/ListaProdutosNaoDesperdicados"
             application/xml:
               schema:
-                $ref: '#/components/schemas/ListaProdutosNaoDesperdicados'
+                $ref: "#/components/schemas/ListaProdutosNaoDesperdicados"
         "400":
           description: Erro ao enviar a lista dos produtos não desperdiçados
         "404":
@@ -236,7 +239,7 @@ paths:
   /produto/associarProdutoUtilizador:
     post:
       tags:
-      - produto
+        - produto
       summary: Associar um produto ao cliente
       description: Associar um ou mais produtos a lista de favoritos do cliente
       operationId: associarProdutoCliente
@@ -244,10 +247,10 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/AssociarProdutoCliente'
+              $ref: "#/components/schemas/AssociarProdutoCliente"
           application/xml:
             schema:
-              $ref: '#/components/schemas/AssociarProdutoCliente'
+              $ref: "#/components/schemas/AssociarProdutoCliente"
       responses:
         "200":
           description: Associação do produto feita com sucesso
@@ -256,50 +259,51 @@ paths:
         "404":
           description: "Input do {utilizadorId} inválido"
       security:
-      - promovalidade_auth:
-        - write:produtos
-        - read:produtos
+        - promovalidade_auth:
+            - write:produtos
+            - read:produtos
       x-swagger-router-controller: Produto
   /produto/associarProdutoUtilizador/{utilizadorId}:
     get:
       tags:
-      - produto
+        - produto
       summary: Listar produtos favoritos do utilizador
       description: Lista com algum detalhe dos produtos favoritos do utilizador
       operationId: listarAssociarProdutoUtilizador
       parameters:
-      - name: utilizadorId
-        in: path
-        description: É necessário o envio do utilizadorId para puder ser enviado a
-          lista de produtos correta
-        required: true
-        style: simple
-        explode: true
-        schema:
-          type: array
-          items:
-            type: string
+        - name: utilizadorId
+          in: path
+          description:
+            É necessário o envio do utilizadorId para puder ser enviado a
+            lista de produtos correta
+          required: true
+          style: simple
+          explode: true
+          schema:
+            type: array
+            items:
+              type: string
       responses:
         "200":
           description: Enviada a lista de produtos associados com sucesso
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ListaProdutosAssociados'
+                $ref: "#/components/schemas/ListaProdutosAssociados"
             application/xml:
               schema:
-                $ref: '#/components/schemas/ListaProdutosAssociados'
+                $ref: "#/components/schemas/ListaProdutosAssociados"
         "400":
           description: "Input {utilizadorId} inválido"
       security:
-      - promovalidade_auth:
-        - write:produtos
-        - read:produtos
+        - promovalidade_auth:
+            - write:produtos
+            - read:produtos
       x-swagger-router-controller: Produto
   /utilizador:
     post:
       tags:
-      - utilizador
+        - utilizador
       summary: Criar utilizador
       description: Criação de um novo utilizador
       operationId: createUtilizador
@@ -307,10 +311,10 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/Utilizador'
+              $ref: "#/components/schemas/Utilizador"
           application/xml:
             schema:
-              $ref: '#/components/schemas/Utilizador'
+              $ref: "#/components/schemas/Utilizador"
         required: true
       responses:
         "200":
@@ -321,26 +325,26 @@ paths:
   /utilizador/login:
     get:
       tags:
-      - utilizador
+        - utilizador
       summary: Login do utilizador
       operationId: loginUtilizador
       parameters:
-      - name: utilizador
-        in: query
-        description: nome do utilizador
-        required: true
-        style: form
-        explode: true
-        schema:
-          type: string
-      - name: password
-        in: query
-        description: palavra passe do utilizador
-        required: true
-        style: form
-        explode: true
-        schema:
-          type: string
+        - name: utilizador
+          in: query
+          description: nome do utilizador
+          required: true
+          style: form
+          explode: true
+          schema:
+            type: string
+        - name: password
+          in: query
+          description: palavra passe do utilizador
+          required: true
+          style: form
+          explode: true
+          schema:
+            type: string
       responses:
         "200":
           description: Login efetuado com sucesso
@@ -358,7 +362,7 @@ paths:
   /utilizador/logout:
     get:
       tags:
-      - utilizador
+        - utilizador
       summary: Logout do utilizador
       operationId: logoutUtilizador
       responses:
@@ -368,52 +372,52 @@ paths:
   /utilizador/{email}:
     get:
       tags:
-      - utilizador
+        - utilizador
       summary: Encontrar utilizador
       operationId: getUtilizadorByEmail
       parameters:
-      - name: email
-        in: path
-        description: Necessário enviar o email do utilizador pretendido
-        required: true
-        style: simple
-        explode: false
-        schema:
-          type: string
+        - name: email
+          in: path
+          description: Necessário enviar o email do utilizador pretendido
+          required: true
+          style: simple
+          explode: false
+          schema:
+            type: string
       responses:
         "200":
           description: Enviado utilizador com sucesso
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Utilizador'
+                $ref: "#/components/schemas/Utilizador"
             application/xml:
               schema:
-                $ref: '#/components/schemas/Utilizador'
+                $ref: "#/components/schemas/Utilizador"
         "400":
           description: "Input {email} inválido"
         "404":
           description: Utilizador não existe
       security:
-      - promovalidade_auth:
-        - write:produtos
-        - read:produtos
+        - promovalidade_auth:
+            - write:produtos
+            - read:produtos
       x-swagger-router-controller: Utilizador
     delete:
       tags:
-      - utilizador
+        - utilizador
       summary: Eliminar utilizador
       description: Só consegue ser realizado por um utilizador logado
       operationId: deleteUtilizador
       parameters:
-      - name: email
-        in: path
-        description: Email necessário
-        required: true
-        style: simple
-        explode: false
-        schema:
-          type: string
+        - name: email
+          in: path
+          description: Email necessário
+          required: true
+          style: simple
+          explode: false
+          schema:
+            type: string
       responses:
         "200":
           description: Elimiado com sucesso
@@ -422,33 +426,33 @@ paths:
         "404":
           description: Utilizador não encontrado
       security:
-      - promovalidade_auth:
-        - write:utilizador
-        - read:utilizador
+        - promovalidade_auth:
+            - write:utilizador
+            - read:utilizador
       x-swagger-router-controller: Utilizador
     patch:
       tags:
-      - utilizador
+        - utilizador
       summary: Updated utilizador
       description: So consegue ser realizado por um utilizador logado
       operationId: updateUtilizador
       parameters:
-      - name: email
-        in: path
-        description: Email do utilizador necessário
-        required: true
-        style: simple
-        explode: false
-        schema:
-          type: string
+        - name: email
+          in: path
+          description: Email do utilizador necessário
+          required: true
+          style: simple
+          explode: false
+          schema:
+            type: string
       requestBody:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/Utilizador'
+              $ref: "#/components/schemas/Utilizador"
           application/xml:
             schema:
-              $ref: '#/components/schemas/Utilizador'
+              $ref: "#/components/schemas/Utilizador"
         required: true
       responses:
         "200":
@@ -458,27 +462,27 @@ paths:
         "404":
           description: Utilizador não existe
       security:
-      - promovalidade_auth:
-        - write:produtos
-        - read:produtos
+        - promovalidade_auth:
+            - write:produtos
+            - read:produtos
       x-swagger-router-controller: Utilizador
 components:
   schemas:
     Produto:
       required:
-      - categoria
-      - codigoBarras
-      - data
-      - informacao
-      - informacaoNutricional
-      - nome
-      - nutricaoPontuacao
-      - origem
-      - percentagemDesconto
-      - precoKilo
-      - precoPromocional
-      - precoUnitario
-      - produtoId
+        - categoria
+        - codigoBarras
+        - data
+        - informacao
+        - informacaoNutricional
+        - nome
+        - nutricaoPontuacao
+        - origem
+        - percentagemDesconto
+        - precoKilo
+        - precoPromocional
+        - precoUnitario
+        - produtoId
       type: object
       properties:
         produtoId:
@@ -486,9 +490,9 @@ components:
         nome:
           type: string
         categoria:
-          $ref: '#/components/schemas/Categoria'
+          $ref: "#/components/schemas/Categoria"
         informacao:
-          $ref: '#/components/schemas/Informacao'
+          $ref: "#/components/schemas/Informacao"
         precoUnitario:
           type: number
         precoPromocional:
@@ -498,13 +502,13 @@ components:
         precoKilo:
           type: number
         informacaoNutricional:
-          $ref: '#/components/schemas/InformacaoNutricional'
+          $ref: "#/components/schemas/InformacaoNutricional"
         origem:
           type: string
         nutricaoPontuacao:
           type: string
         data:
-          $ref: '#/components/schemas/Data'
+          $ref: "#/components/schemas/Data"
         codigoBarras:
           type: number
       example:
@@ -573,8 +577,8 @@ components:
         name: detalhe
     Categoria:
       required:
-      - id
-      - name
+        - id
+        - name
       type: object
       properties:
         id:
@@ -631,72 +635,85 @@ components:
       xml:
         name: data
     ListaPrecoMedio:
-      minItems: 0
       type: array
+      minItems: 0
+      items:
+        type: object
+        properties:
+          produtoId:
+            type: number
+          precoMedio:
+            type: number
+          detalhe:
+            $ref: "#/components/schemas/Detalhe"
       xml:
         name: ListaPrecoMedio
-      items:
-        $ref: '#/components/schemas/ListaPrecoMedio_inner'
-    ListaPodutos:
-      minItems: 0
-      required:
-      - produto
+    ListaProdutos:
       type: array
-      xml:
-        name: Produto
+      minItems: 0
       items:
-        $ref: '#/components/schemas/ListaPodutos_inner'
+        $ref: "#/components/schemas/Produto"
+      xml:
+        name: ListaProdutos
     AssociarProdutoCliente:
       type: object
       properties:
         utilizadorId:
-          type: string
+          type: number
         listaProduto:
           minItems: 1
           uniqueItems: true
           type: array
           items:
-            $ref: '#/components/schemas/AssociarProdutoCliente_listaProduto'
+            type: object
+            properties:
+              produtoId:
+                type: number
       xml:
         name: AssociarProdutoCliente
     ListaProdutosAssociados:
       type: object
       properties:
         utilizadorId:
-          type: string
+          type: number
         listaProduto:
           minItems: 0
           type: array
           items:
-            $ref: '#/components/schemas/ListaProdutosAssociados_listaProduto'
-      example:
-        listaProduto:
-        - produto:
-            precoUnitario: 6.02745618307040320615897144307382404804229736328125
-            codigo: codigo
-            nome: nome
-            precoKilo: 1.46581298050294517310021547018550336360931396484375
-            descricao: descricao
-        - produto:
-            precoUnitario: 6.02745618307040320615897144307382404804229736328125
-            codigo: codigo
-            nome: nome
-            precoKilo: 1.46581298050294517310021547018550336360931396484375
-            descricao: descricao
-        utilizadorId: utilizadorId
+            $ref: '#/components/schemas/Detalhe'
       xml:
         name: ListaProdutosAssociados
     ListaProdutosNaoDesperdicados:
       minItems: 0
       type: array
+      items:
+        type: object
+        required:
+        - mediaDesconto
+        - nome
+        - pesoLiquidoNaoDesperdicado
+        - produtoId
+        - quantidadeNaoDesperdicada
+        - valorPoupado
+        properties:
+          produtoId:
+            type: number
+          nome:
+            type: string
+          valorPoupado:
+            type: number
+          quantidadeNaoDesperdicada:
+            type: number
+          pesoLiquidoNaoDesperdicado:
+            type: number
+          mediaDesconto:
+            type: number
       xml:
         name: ListaProdutosNaoDesperdicados
-      items:
-        $ref: '#/components/schemas/ListaProdutosNaoDesperdicados_inner'
     Utilizador:
       required:
-      - email
-      - password
+        - email
+        - password
       type: object
       properties:
         nome:
@@ -719,8 +736,8 @@ components:
         name: Utilizador
     Login:
       required:
-      - email
-      - password
+        - email
+        - password
       type: object
       properties:
         email:
@@ -729,117 +746,16 @@ components:
           type: string
       xml:
         name: Login
-    ListaPrecoMedio_inner:
-      type: object
-      properties:
-        produtoId:
-          type: string
-        precoMedio:
-          type: integer
-        detalhe:
-          $ref: '#/components/schemas/Detalhe'
-      example:
-        produtoId: produtoId
-        precoMedio: 0
-        detalhe:
-          precoUnitario: 6.02745618307040320615897144307382404804229736328125
-          codigo: codigo
-          nome: nome
-          precoKilo: 1.46581298050294517310021547018550336360931396484375
-          descricao: descricao
-    ListaPodutos_inner:
-      type: object
-      properties:
-        produto:
-          $ref: '#/components/schemas/Produto'
-      example:
-        produto:
-          precoUnitario: 6.02745618307040320615897144307382404804229736328125
-          precoPromocional: 1.46581298050294517310021547018550336360931396484375
-          produtoId: produtoId
-          percentagemDesconto: 5.962133916683182377482808078639209270477294921875
-          data:
-            dataValidade: 2000-01-23
-            dataProducao: 2000-01-23
-          categoria:
-            name: name
-            id: 0
-          origem: origem
-          nome: nome
-          precoKilo: 5.63737665663332876420099637471139430999755859375
-          informacao:
-            informacaoCurta: informacaoCurta
-            informacaoComprida: informacaoComprida
-          nutricaoPontuacao: nutricaoPontuacao
-          informacaoNutricional:
-            hidratosDeCarbono: 2.027123023002321833274663731572218239307403564453125
-            peso: 2.3021358869347654518833223846741020679473876953125
-            energia: 7.061401241503109105224211816675961017608642578125
-            saturados: 3.61607674925191080461672754609026014804840087890625
-            proteina: 7.3862819483858839220147274318151175975799560546875
-            lipidos: 9.301444243932575517419536481611430644989013671875
-            acucar: 4.1456080298839363962315474054776132106781005859375
-            sal: 1.231513536777255612975068288506008684635162353515625
-          codigoBarras: 1.024645700144157789424070870154537260532379150390625
-    AssociarProdutoCliente_listaProduto:
-      required:
-      - produtoId
-      type: object
-      properties:
-        produtoId:
-          type: string
-    ListaProdutosAssociados_listaProduto:
-      required:
-      - produto
-      type: object
-      properties:
-        produto:
-          $ref: '#/components/schemas/Detalhe'
-      example:
-        produto:
-          precoUnitario: 6.02745618307040320615897144307382404804229736328125
-          codigo: codigo
-          nome: nome
-          precoKilo: 1.46581298050294517310021547018550336360931396484375
-          descricao: descricao
-    ListaProdutosNaoDesperdicados_inner:
-      required:
-      - mediaDesconto
-      - nome
-      - pesoLiquidoNaoDesperdicado
-      - produtoId
-      - quantidadeNaoDesperdicada
-      - valorPoupado
-      properties:
-        produtoId:
-          type: string
-        nome:
-          type: string
-        valorPoupado:
-          type: number
-        quatidadeNaoDesperdicada:
-          type: number
-        pesoLiquidoNaoDesperdicado:
-          type: number
-        mediaDesconto:
-          type: number
-      example:
-        quatidadeNaoDesperdicada: 6.02745618307040320615897144307382404804229736328125
-        produtoId: produtoId
-        mediaDesconto: 5.962133916683182377482808078639209270477294921875
-        valorPoupado: 0.80082819046101150206595775671303272247314453125
-        nome: nome
-        pesoLiquidoNaoDesperdicado: 1.46581298050294517310021547018550336360931396484375
   requestBodies:
     Produto:
       description: Produto object que precisa de ser adicionado
       content:
         application/json:
           schema:
-            $ref: '#/components/schemas/Produto'
+            $ref: "#/components/schemas/Produto"
         application/xml:
           schema:
-            $ref: '#/components/schemas/Produto'
+            $ref: "#/components/schemas/Produto"
       required: true
     UserArray:
       description: Lista de utilizador object
@@ -848,7 +764,7 @@ components:
           schema:
             type: array
             items:
-              $ref: '#/components/schemas/Utilizador'
+              $ref: "#/components/schemas/Utilizador"
       required: true
   securitySchemes:
     promovalidade_auth:
