@@ -19,6 +19,7 @@
     "express": "^4.18.2",
     "js-yaml": "^3.3.0",
     "nodemon": "^2.0.20",
-    "oas3-tools": "^2.2.3"
+    "oas3-tools": "^2.2.3",
+    "sequelize": "^6.26.0"
   }
 }
