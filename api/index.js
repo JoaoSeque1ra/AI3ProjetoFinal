@@ -3,7 +3,6 @@
 var path = require('path');
 var http = require('http');
 
-
 var oas3Tools = require('oas3-tools');
 var serverPort = 8080;
 
@@ -14,13 +13,8 @@ var options = {
     },
 };
 
-const produtoRoutes = require ("./routes/ProdutoRoutes")
-
-
 var expressAppConfig = oas3Tools.expressAppConfig(path.join(__dirname, 'api/openapi.yaml'), options);
 var app = expressAppConfig.getApp();
-
-app.use('/produto', produtoRoutes)
 
 // Initialize the Swagger middleware
 http.createServer(app).listen(serverPort, function () {
