@@ -2,12 +2,14 @@
 
 const sequelize = require("../config/database")
 
-const Produto = require("../model/Produto")
+const ProdutoTable = require("../model/Produto")
 
 var utils = require('../utils/writer.js');
-var Produto = require('../service/ProdutoService');
+const Produto = require('../service/ProdutoService');
 
-//sequelize.sync()
+sequelize.sync({
+  // force:true
+})
 
 module.exports.addProduto = function addProduto(req, res, next, body) {
   Produto.addProduto(body)
@@ -60,9 +62,10 @@ module.exports.getListPrecoMedio = function getListPrecoMedio(req, res, next) {
 };
 
 module.exports.getListProdutos = function getListProdutos(req, res, next) {
-  Produto.findAll()
+  ProdutoTable.findAll()
     .then((response) => {
-      if(!response)
+      console.log(!!response)
+      if(!!response)
         return res.json({status: 404})
       utils.writeJson(res, response)
     })
