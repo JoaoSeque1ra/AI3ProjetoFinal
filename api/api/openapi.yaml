@@ -482,7 +482,7 @@ components:
       type: object
       properties:
         produtoId:
-          type: string
+          type: number
         nome:
           type: string
         categoria:
@@ -554,7 +554,7 @@ components:
       type: object
       properties:
         nome:
-          type: string
+          type: number
         descricao:
           type: string
         codigo:
@@ -578,7 +578,7 @@ components:
       type: object
       properties:
         id:
-          type: integer
+          type: number
         name:
           type: string
       example:
