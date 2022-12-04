@@ -89,10 +89,12 @@ module.exports.postAssociarProdutoCliente = function postAssociarProdutoCliente(
 module.exports.postProduto = function postProduto(req, res, next, body) {
   Produto.postProduto(body)
     .then(function (response) {
-      res.status(200).send("Produto adicionado com sucesso");
+      if(!response)
+        return res.status(200).send("Produto adicionado com sucesso");
+      res.status(400).send("Request body do produto invalido");
     })
     .catch(function (response) {
-      res.status(400).send("Request body do produto invalido");
+      res.status(401).send("Sem autorização");
     });
 };
 
