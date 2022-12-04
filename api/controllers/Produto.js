@@ -1,37 +1,9 @@
 'use strict';
 
-const sequelize = require("../config/database")
-
-const ProdutoTable = require("../model/Produto")
-
 var utils = require('../utils/writer.js');
-const Produto = require('../service/ProdutoService');
+var Produto = require('../service/ProdutoService');
 
-sequelize.sync({
-  // force:true
-})
-
-module.exports.addProduto = function addProduto(req, res, next, body) {
-  Produto.addProduto(body)
-    .then(function (response) {
-      utils.writeJson(res, response);
-    })
-    .catch(function (response) {
-      utils.writeJson(res, response);
-    });
-};
-
-module.exports.associarProdutoCliente = function associarProdutoCliente(req, res, next, body) {
-  Produto.associarProdutoCliente(body)
-    .then(function (response) {
-      utils.writeJson(res, response);
-    })
-    .catch(function (response) {
-      utils.writeJson(res, response);
-    });
-};
-
-module.exports.deleteProduto = function deleteProduto(req, res, next, produtoId) {
+module.exports.deleteProduto = function deleteProduto (req, res, next, produtoId) {
   Produto.deleteProduto(produtoId)
     .then(function (response) {
       utils.writeJson(res, response);
@@ -41,17 +13,7 @@ module.exports.deleteProduto = function deleteProduto(req, res, next, produtoId)
     });
 };
 
-module.exports.findByCategoria = function findByCategoria(req, res, next, categoria) {
-  Produto.findByCategoria(categoria)
-    .then(function (response) {
-      utils.writeJson(res, response);
-    })
-    .catch(function (response) {
-      utils.writeJson(res, response);
-    });
-};
-
-module.exports.getListPrecoMedio = function getListPrecoMedio(req, res, next) {
+module.exports.getListPrecoMedio = function getListPrecoMedio (req, res, next) {
   Produto.getListPrecoMedio()
     .then(function (response) {
       utils.writeJson(res, response);
@@ -61,20 +23,17 @@ module.exports.getListPrecoMedio = function getListPrecoMedio(req, res, next) {
     });
 };
 
-module.exports.getListProdutos = function getListProdutos(req, res, next) {
-  ProdutoTable.findAll()
-    .then((response) => {
-      console.log(!!response)
-      if(!!response)
-        return res.json({status: 404})
-      utils.writeJson(res, response)
+module.exports.getListProdutos = function getListProdutos (req, res, next) {
+  Produto.getListProdutos()
+    .then(function (response) {
+      utils.writeJson(res, response);
     })
     .catch(function (response) {
       utils.writeJson(res, response);
     });
 };
 
-module.exports.getListProdutosNaoDesperdicados = function getListProdutosNaoDesperdicados(req, res, next) {
+module.exports.getListProdutosNaoDesperdicados = function getListProdutosNaoDesperdicados (req, res, next) {
   Produto.getListProdutosNaoDesperdicados()
     .then(function (response) {
       utils.writeJson(res, response);
@@ -84,8 +43,8 @@ module.exports.getListProdutosNaoDesperdicados = function getListProdutosNaoDesp
     });
 };
 
-module.exports.getProdutoById = function getProdutoById(req, res, next, produtoId) {
-  Produto.getProdutoById(produtoId)
+module.exports.getListarAssociarProdutoUtilizador = function getListarAssociarProdutoUtilizador (req, res, next, utilizadorId) {
+  Produto.getListarAssociarProdutoUtilizador(utilizadorId)
     .then(function (response) {
       utils.writeJson(res, response);
     })
@@ -94,8 +53,8 @@ module.exports.getProdutoById = function getProdutoById(req, res, next, produtoI
     });
 };
 
-module.exports.listarAssociarProdutoUtilizador = function listarAssociarProdutoUtilizador(req, res, next, utilizadorId) {
-  Produto.listarAssociarProdutoUtilizador(utilizadorId)
+module.exports.getProduto = function getProduto (req, res, next, produtoId) {
+  Produto.getProduto(produtoId)
     .then(function (response) {
       utils.writeJson(res, response);
     })
@@ -104,8 +63,38 @@ module.exports.listarAssociarProdutoUtilizador = function listarAssociarProdutoU
     });
 };
 
-module.exports.updateProduto = function updateProduto(req, res, next, body, produtoId) {
-  Produto.updateProduto(body, produtoId)
+module.exports.getProdutoByCategoria = function getProdutoByCategoria (req, res, next, categoria) {
+  Produto.getProdutoByCategoria(categoria)
+    .then(function (response) {
+      utils.writeJson(res, response);
+    })
+    .catch(function (response) {
+      utils.writeJson(res, response);
+    });
+};
+
+module.exports.postAssociarProdutoCliente = function postAssociarProdutoCliente (req, res, next, body) {
+  Produto.postAssociarProdutoCliente(body)
+    .then(function (response) {
+      utils.writeJson(res, response);
+    })
+    .catch(function (response) {
+      utils.writeJson(res, response);
+    });
+};
+
+module.exports.postProduto = function postProduto (req, res, next, body) {
+  Produto.postProduto(body)
+    .then(function (response) {
+      utils.writeJson(res, response);
+    })
+    .catch(function (response) {
+      utils.writeJson(res, response);
+    });
+};
+
+module.exports.putProduto = function putProduto (req, res, next, body, produtoId) {
+  Produto.putProduto(body, produtoId)
     .then(function (response) {
       utils.writeJson(res, response);
     })

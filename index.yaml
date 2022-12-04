@@ -26,7 +26,7 @@ paths:
       tags:
         - produto
       summary: Adicionar um novo produto
-      operationId: addProduto
+      operationId: postProduto
       responses:
         '200':
           description: Produto adicionado com sucesso
@@ -66,7 +66,7 @@ paths:
         - produto
       summary: Encontrar um produto pelo produtoId
       description: Retorna um único produto mais detalhado
-      operationId: getProdutoById
+      operationId: getProduto
       parameters:
         - name: produtoId
           in: path
@@ -92,7 +92,8 @@ paths:
       tags:
         - produto
       summary: Atualizar um produto através do produtoId
-      operationId: updateProduto
+      description: Atualiza um produto
+      operationId: putProduto
       parameters:
         - name: produtoId
           in: path
@@ -163,7 +164,7 @@ paths:
         - produto
       summary: Encontrar produtos por categoria
       description: Múltiplos produtos enviados consoante a categoria selecionada
-      operationId: findByCategoria
+      operationId: getProdutoByCategoria
       parameters:
         - name: categoria
           in: path
@@ -216,7 +217,7 @@ paths:
         - produto
       summary: Associar um produto ao cliente
       description: Associar um ou mais produtos a lista de favoritos do cliente
-      operationId: associarProdutoCliente
+      operationId: postAssociarProdutoCliente
       responses:
         '200':
           description: Associação feita com sucesso
@@ -242,7 +243,7 @@ paths:
         - produto
       summary: Listar produtos favoritos do utilizador
       description: Lista com algum detalhe os produtos favoritos do utilizador
-      operationId: listarAssociarProdutoUtilizador
+      operationId: getListarAssociarProdutoUtilizador
       parameters:
         - name: utilizadorId
           in: path
@@ -277,7 +278,7 @@ paths:
         - utilizador
       summary: Criar utilizador
       description: Criação de um novo utilizador
-      operationId: createUtilizador
+      operationId: postUtilizador
       responses:
         '200':
           description: Utilizador criado com sucesso
@@ -296,7 +297,7 @@ paths:
       tags:
         - utilizador
       summary: Login do utilizador
-      operationId: loginUtilizador
+      operationId: getUtilizador
       parameters:
         - name: utilizador
           in: query
@@ -313,13 +314,6 @@ paths:
       responses:
         '200':
           description: Utilizador logado com sucesso
-          content:
-            application/json:
-              schema:
-                type: string
-            application/xml:
-              schema:
-                type: string
         '400':
           description: Utilizador invalido
   /utilizador/logout:
@@ -363,7 +357,7 @@ paths:
         - utilizador
       summary: Updated utilizador
       description: So consegue ser realizado por um utilizador logado
-      operationId: updateUtilizador
+      operationId: patchUtilizador
       parameters:
         - name: email
           in: path
