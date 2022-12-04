@@ -1,0 +1,19 @@
+{
+  "name": "gestao-produtos",
+  "version": "1.0.0",
+  "description": "API para a gestão de produtos pereciveis",
+  "main": "app.js",
+  "scripts": {
+    "prestart": "npm i",
+    "start": "nodemon ./src/app.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "nodemon": "^2.0.20",
+    "pg": "^8.8.0",
+    "postgres": "^3.3.2",
+    "sequelize": "^6.26.0"
+  }
+}
