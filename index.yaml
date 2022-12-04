@@ -693,6 +693,11 @@ components:
     Utilizador:
       type: object
       properties:
+        tipo:
+          type: string
+          enum:
+            - utilizador
+            - admin
         nome:
           type: string
         apelido:
@@ -701,16 +706,17 @@ components:
           type: string
           format: email
           example: user@exemple.com
-          
         password:
           type: string
         contacto:
           type: string
           pattern: '[9]{1}[0-9]{2}[0-9]{3}[0-9]{3}$'
-          
       required:
+        - tipo
+        - nome
+        - apelido
         - email
-        - password  
+        - password
       #xml utilizador criar conta
       xml:
         name: Utilizador
@@ -725,10 +731,9 @@ components:
           type: string
           format: email
           example: user@exemple.com
-          
         password:
           type: string
-      #xml utilizador iniciar sessao
+      #xml utilizador iniciar sessão
       xml:
         name: Login
   requestBodies:
