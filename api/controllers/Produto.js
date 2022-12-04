@@ -5,7 +5,7 @@ var Produto = require('../service/ProdutoService');
 
 module.exports.deleteProduto = function deleteProduto(req, res) {
   const { produtoId } = res.locals.oas?.params;
-  
+
   Produto.deleteProduto(produtoId)
     .then(function (response) {
       res.status(200).send("Produto eliminado");
@@ -53,7 +53,7 @@ module.exports.getListProdutosNaoDesperdicados = function getListProdutosNaoDesp
     });
 };
 
-module.exports.getListarAssociarProdutoUtilizador = function getListarAssociarProdutoUtilizador(req, res, next, utilizadorId) {
+module.exports.getListarAssociarProdutoUtilizador = function getListarAssociarProdutoUtilizador(req, res) {
     const { utilizadorId } = req.swagger.params
     Produto.getListarAssociarProdutoUtilizador(utilizadorId)
     .then(function (response) {

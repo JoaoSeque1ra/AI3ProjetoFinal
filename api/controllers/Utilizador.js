@@ -43,7 +43,7 @@ module.exports.getUtilizadorByEmail = function getUtilizadorByEmail(req, res, ne
     });
 };
 
-module.exports.logoutUtilizador = function logoutUtilizador(req, res, next) {
+module.exports.logoutUtilizador = function logoutUtilizador(req, res) {
   Utilizador.logoutUtilizador()
     .then(function (response) {
       utils.writeJson(res, response);
@@ -53,7 +53,8 @@ module.exports.logoutUtilizador = function logoutUtilizador(req, res, next) {
     });
 };
 
-module.exports.patchUtilizador = function patchUtilizador(req, res, next, body, email) {
+module.exports.patchUtilizador = function patchUtilizador(req, res, next, body) {
+  
   const { email } = res.locals.oas?.params;
   Utilizador.patchUtilizador(body, email)
     .then(function (response) {
