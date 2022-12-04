@@ -643,12 +643,14 @@ components:
           type: string
         email:
           type: string
-          pattern: 
+          format: email
+          example: user@exemple.com
           
         password:
           type: string
         contacto:
           type: string
+          
       required:
         - email
         - password  
