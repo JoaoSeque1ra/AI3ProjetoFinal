@@ -1,5 +1,6 @@
 {
   "utilizador": {
+    "tipo":"utilizador",    
     "email": "guilhermesilva@hotmail.com",
     "password": "cvd12d",
     "nome": "Guilherme",

@@ -8,6 +8,10 @@
             "type": "object",
             "properties": 
             {
+                "tipo":{
+                  "type":"string",
+                  "enum": ["utilizador","admin"]  
+                },
                 "email": 
                 {
                     "type": "string",
