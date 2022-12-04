@@ -699,10 +699,15 @@ components:
           type: string
         email:
           type: string
+          format: email
+          example: user@exemple.com
+          
         password:
           type: string
         contacto:
           type: string
+          pattern: '[9]{1}[0-9]{2}[0-9]{3}[0-9]{3}$'
+          
       required:
         - email
         - password  
@@ -718,6 +723,9 @@ components:
       properties:
         email:
           type: string
+          format: email
+          example: user@exemple.com
+          
         password:
           type: string
       #xml utilizador iniciar sessao
