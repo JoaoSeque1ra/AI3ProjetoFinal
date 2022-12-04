@@ -34,13 +34,16 @@ module.exports.getListProdutos = function getListProdutos(req, res, next) {
     });
 };
 
-module.exports.getListProdutosNaoDesperdicados = function getListProdutosNaoDesperdicados(req, res, next) {
+module.exports.getListProdutosNaoDesperdicados = function getListProdutosNaoDesperdicados(req, res) {
   Produto.getListProdutosNaoDesperdicados()
     .then(function (response) {
-      res.status(200).send("OLA");
+      if(!response)
+        return res.status(200).send("Lista de produtos não desperdicados enviada");
+      
+      return res.status(404).send("Não existe produtos na base de dados");
     })
     .catch(function (response) {
-      res.status(200).send("OLA");
+      res.status(400).send("Erro ao enviar a lista");
     });
 };
 
@@ -65,13 +68,18 @@ module.exports.getProduto = function getProduto(req, res, next) {
     });
 };
 
-module.exports.getProdutoByCategoria = function getProdutoByCategoria(req, res, next, categoria) {
+module.exports.getProdutoByCategoria = function getProdutoByCategoria(req, res) {
+  const { categoria } = req.swagger.params
+
   Produto.getProdutoByCategoria(categoria)
     .then(function (response) {
-      res.status(200).send("OLA");
+      if(!response)
+        return res.status(404).send("Lista de produtos enviado consoante a categoria");
+
+      res.status(200).send("Lista de produtos enviado consoante a categoria");
     })
     .catch(function (response) {
-      res.status(200).send("OLA");
+      res.status(400).send("Invalido");
     });
 };
 
@@ -95,12 +103,17 @@ module.exports.postProduto = function postProduto(req, res, next, body) {
     });
 };
 
-module.exports.putProduto = function putProduto(req, res, next, body, produtoId) {
+module.exports.putProduto = function putProduto(req, res) {
+  const { produtoId } = req.swagger.params
+  const body = req.swagger.params
+
   Produto.putProduto(body, produtoId)
     .then(function (response) {
-      res.status(200).send("OLA");
+      res.status(200).send("Produto atualizado com sucesso");
     })
     .catch(function (response) {
-      res.status(200).send("OLA");
+      if(!!response)
+        return res.status(404).send("Produto não encontrado")
+      res.status(400).send("Erro na atualização do produto");
     });
 };

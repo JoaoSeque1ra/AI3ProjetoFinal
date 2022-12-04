@@ -3,23 +3,30 @@
 var utils = require('../utils/writer.js');
 var Utilizador = require('../service/UtilizadorService');
 
-module.exports.deleteUtilizador = function deleteUtilizador(req, res, next, email) {
+module.exports.deleteUtilizador = function deleteUtilizador(req, res) {
+  const { email } = req.swagger.params
+
   Utilizador.deleteUtilizador(email)
     .then(function (response) {
-      utils.writeJson(res, response);
+      res.status(200).send("Utilizador eliminado com sucesso")
     })
     .catch(function (response) {
-      utils.writeJson(res, response);
+      if(!!response)
+        return res.status(400).send("Utilizador não foi eliminado")
+      
+      res.status(400).send("Utilizador não foi eliminado")
     });
 };
 
-module.exports.getUtilizador = function getUtilizador(req, res, next, utilizador, password) {
+module.exports.getUtilizador = function getUtilizador(req, res) {
+  const { utilizador, password } = req.swagger.params
+
   Utilizador.getUtilizador(utilizador, password)
     .then(function (response) {
-      utils.writeJson(res, response);
+      res.status(200).send("Utilizador logado com sucesso")
     })
     .catch(function (response) {
-      utils.writeJson(res, response);
+      res.status(400).send("Utilizador invalido")
     });
 };
 
@@ -53,12 +60,14 @@ module.exports.patchUtilizador = function patchUtilizador(req, res, next, body, 
     });
 };
 
-module.exports.postUtilizador = function postUtilizador(req, res, next, body) {
+module.exports.postUtilizador = function postUtilizador(req, res) {
+  const body = req.swagger.body
+
   Utilizador.postUtilizador(body)
     .then(function (response) {
-      utils.writeJson(res, response);
+      res.status(200).send("Utilizador criado com sucesso")
     })
     .catch(function (response) {
-      utils.writeJson(res, response);
+      res.status(400).send("Erro na criacao de um utilizador")
     });
 };
