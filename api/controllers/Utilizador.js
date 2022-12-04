@@ -11,9 +11,9 @@ module.exports.deleteUtilizador = function deleteUtilizador(req, res) {
       res.status(200).send("Utilizador eliminado com sucesso")
     })
     .catch(function (response) {
-      if(!!response)
-        return res.status(400).send("Utilizador não foi eliminado")
-      
+      if (!!response)
+        return res.status(404).send("Utilizador não existe")
+
       res.status(400).send("Utilizador não foi eliminado")
     });
 };
@@ -23,9 +23,9 @@ module.exports.getUtilizador = function getUtilizador(req, res) {
 
   Utilizador.getUtilizador(utilizador, password)
     .then(function (response) {
-      if(!response)
+      if (!response)
         return res.status(404).send("utilizador não existe");
-        
+
       res.status(200).send("Utilizador logado com sucesso");
     })
     .catch(function (response) {
@@ -33,35 +33,44 @@ module.exports.getUtilizador = function getUtilizador(req, res) {
     });
 };
 
-module.exports.getUtilizadorByEmail = function getUtilizadorByEmail(req, res, next, email) {
+module.exports.getUtilizadorByEmail = function getUtilizadorByEmail(req, res) {
+  const { email } = req.swagger.params
+
   Utilizador.getUtilizadorByEmail(email)
     .then(function (response) {
-      utils.writeJson(res, response);
+      if (!response)
+        return res.status(404).send("Utilizador não existe");
+
+      res.status(200).send("Utilizador enviado com sucesso");
     })
     .catch(function (response) {
-      utils.writeJson(res, response);
+      res.status(400).send("Input inválido")
     });
 };
 
 module.exports.logoutUtilizador = function logoutUtilizador(req, res) {
   Utilizador.logoutUtilizador()
     .then(function (response) {
-      utils.writeJson(res, response);
+      res.status(200).send("Logout efetuado com sucesso");
     })
     .catch(function (response) {
-      utils.writeJson(res, response);
+      res.status(400).send("Input inválido")
     });
 };
 
-module.exports.patchUtilizador = function patchUtilizador(req, res, next, body) {
-  
+module.exports.patchUtilizador = function patchUtilizador(req, res) {
   const { email } = res.locals.oas?.params;
+  const body = req.swagger.body
+
   Utilizador.patchUtilizador(body, email)
     .then(function (response) {
+      if(!response)
+        return res.status(404).send("Utilizador não existe");
+
       res.status(200).send("Atualizado utilizador com sucesso");
     })
     .catch(function (response) {
-      res.status(404).send("Utilizador não foi encontrado");
+      res.status(400).send("Input inválido");
     });
 };
 
