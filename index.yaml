@@ -418,7 +418,7 @@ components:
       type: object
       properties:
         produtoId:
-          type: number
+          type: integer
           minimum: 1
           maximum: 1
         nome:
@@ -488,27 +488,37 @@ components:
       minimum: 0
       maximum: 1
       properties:
+        id:
+          type: number
         informacaoCurta:
           type: string
           maxLength: 150
         informacaoComprida:
           type: string
+      required:
+        - id
       xml: 
         name: informacao
     # json referencia detalhe
     Detalhe:
       type: object
       properties:
+        id:
+          type: integer
         nome:
           type: string
         descricao:
           type: string
         codigo: 
-          type: string
+          type: integer
         precoUnitario:
           type: number
+          format: double
         precoKilo:
           type: number
+          format: double
+      required:
+        - id
       xml: 
         name: detalhe  
     #json referencia categoria
@@ -523,7 +533,6 @@ components:
           type: string
       required: 
         - id
-        - name
       #xml categoria
       xml:
         name: Categoria
@@ -533,28 +542,41 @@ components:
       minimum: 1
       maximum: 1
       properties:
+        id:
+          type: integer
         peso:
-          type: number
+          type: integer
         energia:
           type: number
+          format: double
         lipidos:
           type: number
+          format: double
         saturados:
           type: number
+          format: double
         hidratosDeCarbono:
           type: number
+          format: double
         acucar:
           type: number
+          format: double
         proteina:
           type: number
+          format: double
         sal:
           type: number
+          format: double
+      required:
+        - id
       xml:
         name: informacaoNutricional
     #json referencia data
     Data:
       type: object
       properties:
+        id: 
+          type: integer
         dataValidade:
           type: string
           minimum: 1
@@ -565,6 +587,8 @@ components:
           minimum: 1
           maximum: 1
           format: date
+      required:
+        - id
       #xml categoria
       xml:
         name: data

@@ -40,7 +40,7 @@
                     "type":"object",
                     "properties": {
                         "peso":{
-                            "type":"number"
+                            "type":"number",
                         },
                         "energia":{
                             "type":"number"
