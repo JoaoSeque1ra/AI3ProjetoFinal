@@ -17,7 +17,7 @@ servers:
   - url: 'https://promovalidade.swagger.io/v2'
 tags:
   - name: produto
-    description: Operação de produtos pereciveis
+    description: Operação de produtos perecíveis
   - name: utilizador
     description: Operação dos utilizadores
 paths:
@@ -131,10 +131,10 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ListaPodutos'
+                $ref: '#/components/schemas/ListaProdutos'
             application/xml:
               schema:
-                $ref: '#/components/schemas/ListaPodutos'
+                $ref: '#/components/schemas/ListaProdutos'
         '400':
           description: Erro ao enviar lista
         '404':
@@ -184,10 +184,10 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ListaPodutos'
+                $ref: '#/components/schemas/ListaProdutos'
             application/xml:
               schema:
-                $ref: '#/components/schemas/ListaPodutos'
+                $ref: '#/components/schemas/ListaProdutos'
         '400':
           description: Invalido
         '404':
@@ -544,7 +544,7 @@ components:
         type: object
         properties:
           produtoId:
-            type: string
+            type: number
           precoMedio:
             type: integer
           detalhe:
@@ -553,7 +553,7 @@ components:
       xml:
         name: ListaPrecoMedio
     #json lista de produtos para venda
-    ListaPodutos:
+    ListaProdutos:
       type: array
       minItems: 0
       items:
@@ -571,7 +571,7 @@ components:
       type: object
       properties:
         utilizadorId:
-          type: string
+          type: number
         listaProduto: 
           type: array
           minItems: 1
@@ -580,7 +580,7 @@ components:
             type: object
             properties:
               produtoId:
-                type: string
+                type: number
             required: 
               - produtoId
       #xml associas produto ao cliente
@@ -591,7 +591,7 @@ components:
       type: object
       properties:
         utilizadorId:
-          type: string
+          type: number
         listaProduto: 
           type: array
           minItems: 0
@@ -612,7 +612,7 @@ components:
       items:
         properties:
           produtoId:
-            type: string
+            type: number
           nome: 
             type: string
           valorPoupado: 
@@ -653,7 +653,7 @@ components:
       #xml utilizador criar conta
       xml:
         name: Utilizador
-    #json utilizador iniciar sessao
+    #json utilizador iniciar sessão
     Login:
       type: object
       required:
