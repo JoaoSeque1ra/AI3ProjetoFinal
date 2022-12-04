@@ -2,7 +2,7 @@ openapi: 3.0.0
 info:
   description: |
     API de produtos perecíveis.
-    Encontra aqui os produtos perecíveis que estão perto do fim de validade e contriui para a redução de alimentos desperdiçados
+    Encontra aqui os produtos perecíveis que estão perto do fim de validade e contribui para a redução de alimentos desperdiçados
     url: https://virtserver.swaggerhub.co
   version: "1.0.0"
   title: Gestão de Produtos Perecíveis
@@ -12,7 +12,7 @@ info:
     url: 'http://www.apache.org/licenses/LICENSE-2.0.html'
 servers:
   # Added by API Auto Mocking Plugin
-  - description: Encontra aqui os produtos perecíveis que estão perto do fim de validade e contriui para a redução de alimentos desperdiçados
+  - description: Encontra aqui os produtos perecíveis que estão perto do fim de validade e contribui para a redução de alimentos desperdiçados
     url: https://virtserver.swaggerhub.com/RAQUELALMEIDA15/promo-validade/1.0.0
   - url: 'https://promovalidade.swagger.io/v2'
 tags:
@@ -35,90 +35,11 @@ paths:
         '401':
           description: Sem autorização
       security:
-        - promovalidade_auth:
+        - promoValidade_auth:
             - 'write:produtos'
             - 'read:produtos'
       requestBody:
         $ref: '#/components/requestBodies/Produto'
-  '/produto/{produtoId}':
-    get:
-      tags:
-        - produto
-      summary: Encontrar um produto pelo produtoId
-      description: Returna um unico produto mais detalhado
-      operationId: getProdutoById
-      parameters:
-        - name: produtoId
-          in: path
-          description: produtoId necessario
-          required: true
-          schema:
-            type: integer
-      responses:
-        '200':
-          description: Produto enviado com sucesso
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Produto'
-            application/xml:
-              schema:
-                $ref: '#/components/schemas/Produto'
-        '400':
-          description: Erro no envio da informação do produto
-        '404':
-          description: Produto não encontrado {produtoId invalido}
-      security:
-        - api_key: []
-    put:
-      tags:
-        - produto
-      summary: Atualizar um produto atraves do produtoId
-      operationId: updateProduto
-      parameters:
-        - name: produtoId
-          in: path
-          description: produtoId necessario
-          required: true
-          schema:
-            type: integer
-      responses:
-        '200':
-          description: Produto atualizado com sucesso
-        '400':
-          description:   Erro na atualização do produto
-        '404':
-          description: Produto não encontrado {produtoId invalido}
-      security:
-        - promovalidade_auth:
-            - 'write:produtos'
-            - 'read:produtos'
-      requestBody:
-        $ref: '#/components/requestBodies/Produto'
-    delete:
-      tags:
-        - produto
-      summary: Eliminar um produto pelo produtoId
-      operationId: deleteProduto
-      parameters:
-        - name: produtoId
-          in: path
-          description: produtoId necessario para eliminar
-          required: true
-          schema:
-            type: integer
-      responses:
-        '200':
-          description: Produto eliminado com sucesso
-        '400':
-          description: produtoId invalido
-        '404':
-          description: Produto não encontrado
-      security:
-        - promovalidade_auth:
-            - 'write:produtos'
-            - 'read:produtos'
-  /produto/listProduto:
     get:
       tags: 
         - produto
@@ -139,6 +60,82 @@ paths:
           description: Erro ao enviar lista
         '404':
           description: Não existem produtos na base de dados
+  '/produto/{produtoId}':
+    get:
+      tags:
+        - produto
+      summary: Encontrar um produto pelo produtoId
+      description: Retorna um único produto mais detalhado
+      operationId: getProdutoById
+      parameters:
+        - name: produtoId
+          in: path
+          description: produtoId necessário
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Produto enviado com sucesso
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Produto'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/Produto'
+        '400':
+          description: Erro no envio da informação do produto
+        '404':
+          description: Produto não encontrado {produtoId invalido}
+    put:
+      tags:
+        - produto
+      summary: Atualizar um produto através do produtoId
+      operationId: updateProduto
+      parameters:
+        - name: produtoId
+          in: path
+          description: produtoId necessário
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Produto atualizado com sucesso
+        '400':
+          description:   Erro na atualização do produto
+        '404':
+          description: Produto não encontrado {produtoId invalido}
+      security:
+        - promoValidade_auth:
+            - 'write:produtos'
+            - 'read:produtos'
+      requestBody:
+        $ref: '#/components/requestBodies/Produto'
+    delete:
+      tags:
+        - produto
+      summary: Eliminar um produto pelo produtoId
+      operationId: deleteProduto
+      parameters:
+        - name: produtoId
+          in: path
+          description: produtoId necessário para eliminar
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Produto eliminado com sucesso
+        '400':
+          description: produtoId invalido
+        '404':
+          description: Produto não encontrado
+      security:
+        - promoValidade_auth:
+            - 'write:produtos'
+            - 'read:produtos'
   /produto/listPrecoMedio:
     get:
       tags: 
@@ -165,7 +162,7 @@ paths:
       tags:
         - produto
       summary: Encontrar produtos por categoria
-      description: Multiplos produtos enviados consoante a categoria selecionada
+      description: Múltiplos produtos enviados consoante a categoria selecionada
       operationId: findByCategoria
       parameters:
         - name: categoria
@@ -196,8 +193,8 @@ paths:
     get:
       tags:
         - produto
-      summary: Listar todos os produtos e as suas quantidades não desperdicadas
-      description: Listar todos os produtos e as suas quantidades não desperdicadas, divido por peso liquido e peso bruto
+      summary: Listar todos os produtos e as suas quantidades não desperdiçadas
+      description: Listar todos os produtos e as suas quantidades não desperdiçadas, divido por peso liquido e peso bruto
       operationId: getListProdutosNaoDesperdicados
       responses:
         '200':
@@ -227,6 +224,10 @@ paths:
           description: Erro
         '404':
           description: Utilizador invalido
+      security:
+        - promoValidade_auth:
+            - 'write:produtos'
+            - 'read:produtos'
       requestBody:
         content:
           application/json:
@@ -266,6 +267,10 @@ paths:
           description: Erro
         '404':
           description: Utilizador não foi encontrado
+      security:
+        - promoValidade_auth:
+            - 'write:produtos'
+            - 'read:produtos'
   /utilizador:
     post:
       tags:
@@ -287,7 +292,6 @@ paths:
             schema:
               $ref: '#/components/schemas/Utilizador'
         required: true
-  /utilizador/login:
     get:
       tags:
         - utilizador
@@ -308,7 +312,7 @@ paths:
             type: string
       responses:
         '200':
-          description: successful operation
+          description: Utilizador logado com sucesso
           content:
             application/json:
               schema:
@@ -325,8 +329,8 @@ paths:
       summary: Logout do utilizador
       operationId: logoutUtilizador
       responses:
-        default:
-          description: successful operation
+        '200':
+          description: Logout efetuado com sucesso
   '/utilizador/{email}':
     get:
       tags:
@@ -336,7 +340,7 @@ paths:
       parameters:
         - name: email
           in: path
-          description: Necessario enviar o email do utilizador pretendido
+          description: Necessário enviar o email do utilizador pretendido
           required: true
           schema:
             type: string
@@ -363,7 +367,7 @@ paths:
       parameters:
         - name: email
           in: path
-          description: email do utilizador necessario
+          description: email do utilizador necessário
           required: true
           schema:
             type: string
@@ -392,25 +396,25 @@ paths:
       parameters:
         - name: email
           in: path
-          description: email necessario
+          description: email necessário
           required: true
           schema:
             type: string
       responses:
         '200':
-          description: Elimiado com sucesso
+          description: Eliminado com sucesso
         '400':
           description: Erro
         '404':
           description: Utilizador não encontrado
       security:
-        - promovalidade_auth:
+        - promoValidade_auth:
             - 'write:utilizador'
             - 'read:utilizador'
 externalDocs:
   description: Find out more about Swagger
   url: 'http://swagger.io'
-#inicio dos componentes que depois referenciamos /components/schemas/oquequisermosreferenciar
+#inicio dos componentes que depois referenciamos /components/schemas/oQueQuisermosReferenciar
 components:
   schemas:
     #json produto 
@@ -673,7 +677,7 @@ components:
             type: string
           valorPoupado: 
             type: number
-          quatidadeNaoDesperdicada:
+          quantidadeNaoDesperdicada:
             type: number
           pesoLiquidoNaoDesperdicado:
             type: number
@@ -757,13 +761,13 @@ components:
       description: Lista de utilizador object
       required: true
   securitySchemes:
-    promovalidade_auth:
+    promoValidade_auth:
       type: oauth2
       flows:
         implicit:
           authorizationUrl: 'http://petstore.swagger.io/oauth/dialog'
           scopes:
-            'write:protudos': modificar os produtos na conta
+            'write:produtos': modificar os produtos na conta
             'read:produtos': ler os produtos
     api_key:
       type: apiKey
