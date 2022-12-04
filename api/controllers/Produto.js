@@ -18,7 +18,7 @@ module.exports.getListPrecoMedio = function getListPrecoMedio(req, res, next) {
   Produto.getListPrecoMedio()
     .then(function (response) {
       if(!response)
-        return res.status(200).send("Lista de preço medio enviado");
+        return res.status(200).send("Lista de preço medio enviado ");
       return res.status(404).send("Não existe");
     })
     .catch(function (response) {
