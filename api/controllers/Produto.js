@@ -45,23 +45,24 @@ module.exports.getListProdutosNaoDesperdicados = function getListProdutosNaoDesp
 };
 
 module.exports.getListarAssociarProdutoUtilizador = function getListarAssociarProdutoUtilizador(req, res, next, utilizadorId) {
-  Produto.getListarAssociarProdutoUtilizador(utilizadorId)
+    const { utilizadorId } = req.swagger.params
+    Produto.getListarAssociarProdutoUtilizador(utilizadorId)
     .then(function (response) {
-      res.status(200).send("OLA");
+      res.status(200).send("Enviada a lista com sucesso");
     })
     .catch(function (response) {
-      res.status(200).send("OLA");
+      res.status(404).send("Utilizador não encontrado");
     });
 };
 
-module.exports.getProduto = function getProduto(req, res, next) {
+module.exports.getProduto = function getProduto(req, res) {
   const { produtoId } = req.swagger.params
   Produto.getProduto(produtoId)
     .then(function (response) {
-      res.status(200).send("OLA");
+      res.status(200).send("Lista de Produtos enviados");
     })
     .catch(function (response) {
-      res.status(200).send("OLA");
+      res.status(400).send("Erro ao enviar lista");
     });
 };
 
@@ -88,10 +89,10 @@ module.exports.postAssociarProdutoCliente = function postAssociarProdutoCliente(
 module.exports.postProduto = function postProduto(req, res, next, body) {
   Produto.postProduto(body)
     .then(function (response) {
-      res.status(200).send("OLA");
+      res.status(200).send("Produto adicionado com sucesso");
     })
     .catch(function (response) {
-      res.status(200).send("OLA");
+      res.status(400).send("Request body do produto invalido");
     });
 };
 
