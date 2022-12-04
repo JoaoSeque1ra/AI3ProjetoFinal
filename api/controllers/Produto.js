@@ -57,14 +57,18 @@ module.exports.getListarAssociarProdutoUtilizador = function getListarAssociarPr
     });
 };
 
-module.exports.getProduto = function getProduto(req, res, next) {
+module.exports.getProduto = function getProduto(req, res) {
   const { produtoId } = req.swagger.params
+
   Produto.getProduto(produtoId)
     .then(function (response) {
-      res.status(200).send("OLA");
+      if(!response)
+        return res.status(404).send("Produto não encontrado");
+
+      res.status(200).send("Produto enviado com sucesso");
     })
     .catch(function (response) {
-      res.status(200).send("OLA");
+      res.status(400).send("Erro no envio da informação do produto");
     });
 };
 
