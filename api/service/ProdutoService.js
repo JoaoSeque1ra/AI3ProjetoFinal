@@ -49,7 +49,7 @@ exports.getListPrecoMedio = function () {
     if (Object.keys(examples).length > 0) {
       resolve(examples[Object.keys(examples)[0]]);
     } else {
-      resolve();
+      reject();
     }
   });
 }
@@ -142,7 +142,7 @@ exports.getListProdutos = function () {
     if (Object.keys(examples).length > 0) {
       resolve(examples[Object.keys(examples)[0]]);
     } else {
-      resolve();
+      reject();
     }
   });
 }
@@ -175,7 +175,7 @@ exports.getListProdutosNaoDesperdicados = function () {
     if (Object.keys(examples).length > 0) {
       resolve(examples[Object.keys(examples)[0]]);
     } else {
-      resolve();
+      reject();
     }
   });
 }
@@ -216,7 +216,7 @@ exports.getListarAssociarProdutoUtilizador = function (utilizadorId) {
     if (Object.keys(examples).length > 0) {
       resolve(examples[Object.keys(examples)[0]]);
     } else {
-      resolve();
+      reject();
     }
   });
 }
@@ -271,7 +271,7 @@ exports.getProduto = function (produtoId) {
     if (Object.keys(examples).length > 0) {
       resolve(examples[Object.keys(examples)[0]]);
     } else {
-      resolve();
+      reject();
     }
   });
 }
@@ -365,7 +365,7 @@ exports.getProdutoByCategoria = function (categoria) {
     if (Object.keys(examples).length > 0) {
       resolve(examples[Object.keys(examples)[0]]);
     } else {
-      resolve();
+      reject();
     }
   });
 }
