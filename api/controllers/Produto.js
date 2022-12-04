@@ -1,7 +1,15 @@
 'use strict';
 
+const sequelize = require("../config/database")
+
+const ProdutoTable = require("../model/Produto")
+
 var utils = require('../utils/writer.js');
-var Produto = require('../service/ProdutoService');
+const Produto = require('../service/ProdutoService');
+
+sequelize.sync({
+  // force:true
+})
 
 module.exports.addProduto = function addProduto(req, res, next, body) {
   Produto.addProduto(body)
@@ -54,9 +62,12 @@ module.exports.getListPrecoMedio = function getListPrecoMedio(req, res, next) {
 };
 
 module.exports.getListProdutos = function getListProdutos(req, res, next) {
-  Produto.getListProdutos()
-    .then(function (response) {
-      utils.writeJson(res, response);
+  ProdutoTable.findAll()
+    .then((response) => {
+      console.log(!!response)
+      if(!!response)
+        return res.json({status: 404})
+      utils.writeJson(res, response)
     })
     .catch(function (response) {
       utils.writeJson(res, response);

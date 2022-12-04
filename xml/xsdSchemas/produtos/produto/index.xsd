@@ -39,7 +39,7 @@
                 <xsd:element name="saturados" minOccurs="1" maxOccurs="1" />
                 <xsd:element name="hidratosDeCarbono" minOccurs="1" maxOccurs="1" />
                 <xsd:element name="acucar" minOccurs="1" maxOccurs="1" />
-                <xsd:element name="fibra" minOccurs="0" maxOccurs="1" />
+                <xsd:element name="fibra" minOccurs="1" maxOccurs="1" />
                 <xsd:element name="proteina" minOccurs="1" maxOccurs="1" />
                 <xsd:element name="sal" minOccurs="1" maxOccurs="1" />
             </xsd:sequence>
