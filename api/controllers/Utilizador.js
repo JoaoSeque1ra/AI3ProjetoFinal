@@ -44,12 +44,13 @@ module.exports.logoutUtilizador = function logoutUtilizador(req, res, next) {
 };
 
 module.exports.patchUtilizador = function patchUtilizador(req, res, next, body, email) {
+  const { email } = res.locals.oas?.params;
   Utilizador.patchUtilizador(body, email)
     .then(function (response) {
-      utils.writeJson(res, response);
+      res.status(200).send("Atualizado utilizador com sucesso");
     })
     .catch(function (response) {
-      utils.writeJson(res, response);
+      res.status(404).send("Utilizador não foi encontrado");
     });
 };
 
