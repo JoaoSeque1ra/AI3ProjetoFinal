@@ -7,10 +7,13 @@ module.exports.deleteProduto = function deleteProduto(req, res) {
   const { produtoId } = res.locals.oas?.params;
   Produto.deleteProduto(produtoId)
     .then(function (response) {
-      res.status(200).send("OLA");
+      res.status(200).send("Produto eliminado");
     })
     .catch(function (response) {
-      res.status(400).send("Adeus");
+      if(!!response)
+        return res.status(400).send("o produto não foi eleminado");
+
+      res.status(400).send("o produto não foi eleminado")
     });
 };
 
@@ -101,6 +104,7 @@ module.exports.postAssociarProdutoCliente = function postAssociarProdutoCliente(
 };
 
 module.exports.postProduto = function postProduto(req, res, next, body) {
+  
   Produto.postProduto(body)
     .then(function (response) {
       res.status(200).send("Produto adicionado com sucesso");

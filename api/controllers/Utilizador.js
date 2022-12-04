@@ -23,7 +23,9 @@ module.exports.getUtilizador = function getUtilizador(req, res) {
 
   Utilizador.getUtilizador(utilizador, password)
     .then(function (response) {
-      res.status(200).send("Utilizador logado com sucesso")
+      if(!response)
+        res.status(200).send("Utilizador logado com sucesso");
+        return res.status(404).send("utilizador perdido");
     })
     .catch(function (response) {
       res.status(400).send("Utilizador invalido")
