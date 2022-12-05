@@ -27,6 +27,13 @@ paths:
       responses:
         '200':
           description: Produto adicionado com sucesso
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Produto'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/Produto'
         '400':
           description: Request body do produto invalido
         '401':
@@ -99,6 +106,13 @@ paths:
       responses:
         '200':
           description: Produto atualizado com sucesso
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Produto'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/Produto'
         '400':
           description:   Erro na atualização do produto
         '404':
@@ -301,17 +315,35 @@ paths:
       responses:
         '200':
           description: Utilizador logado com sucesso
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Utilizador'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/Utilizador'
         '400':
           description: Utilizador invalido
-  /utilizador/logout:
+  /utilizador/{email}/logout:
     get:
       tags:
         - utilizador
       summary: Logout do utilizador
       operationId: logoutUtilizador
+      parameters:
+        - name: email
+          in: path
+          description: Necessário enviar o email do utilizador pretendido
+          required: true
+          schema:
+            type: string
       responses:
         '200':
           description: Logout efetuado com sucesso
+        '400':
+          description: Input invalido
+        '404':
+          description: Utilizador não existe
       security:
       - bearerAuth: []
   '/utilizador/{email}':
@@ -346,8 +378,8 @@ paths:
     patch:
       tags:
         - utilizador
-      summary: Updated utilizador
-      description: So consegue ser realizado por um utilizador logado
+      summary: Updated utilizador do tipo de utilizador
+      description: Atualizar um tipo de utilizador
       operationId: patchUtilizador
       parameters:
         - name: email
@@ -359,10 +391,57 @@ paths:
       responses:
         '200':
           description: Atualizado utilizador com sucesso
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UtilizadorChangeTipo'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/UtilizadorChangeTipo'
         '400':
           description: Erro ao atualizar
         '404':
           description: Utilizador não foi encontrado
+      security:
+      - bearerAuth: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UtilizadorChangeTipo'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/UtilizadorChangeTipo'
+        required: true
+    put:
+      tags:
+        - utilizador
+      summary: Atualiza um utilizador
+      description: Atualiza um utilizador, com base no requestBody
+      operationId: putUtilizador
+      parameters:
+        - name: email
+          in: path
+          description: email do utilizador necessário
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Utilizador atualizado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Utilizador'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/Utilizador'
+        '400':
+          description: Input invalido
+        '403':
+          description: Sem autorização
+        '404':
+          description: Utilizador não existe
       security:
       - bearerAuth: []
       requestBody:
@@ -711,11 +790,6 @@ components:
     Utilizador:
       type: object
       properties:
-        tipo:
-          type: string
-          enum:
-            - utilizador
-            - admin
         nome:
           type: string
         apelido:
@@ -730,7 +804,6 @@ components:
           type: string
           pattern: '[9]{1}[0-9]{2}[0-9]{3}[0-9]{3}$'
       required:
-        - tipo
         - nome
         - apelido
         - email
@@ -738,6 +811,16 @@ components:
       #xml utilizador criar conta
       xml:
         name: Utilizador
+    UtilizadorChangeTipo:
+      type: object
+      properties:
+        tipo:
+          type: string
+          enum:
+            - utilizador
+            - admin
+      required:
+        - tipo
     #json utilizador iniciar sessão
     Login:
       type: object

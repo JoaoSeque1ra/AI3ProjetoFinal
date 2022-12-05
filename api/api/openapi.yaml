@@ -164,7 +164,7 @@ paths:
         "404":
           description: Não existem produtos na base dados
       x-swagger-router-controller: Produto
-  /produto/findByCategoria/{categoria}:
+  /produto/findByCategoria/{categoriaId}:
     get:
       tags:
       - produto
@@ -172,18 +172,13 @@ paths:
       description: Múltiplos produtos enviados consoante a categoria selecionada
       operationId: getProdutoByCategoria
       parameters:
-      - name: categoria
+      - name: categoriaId
         in: path
         description: É necessário o envio da categoria para puder ser enviado a lista
           de produtos correta
         required: true
-        style: simple
-        explode: true
         schema:
-          type: array
-          items:
-            type: string
-            default: todos
+          type: integer
       responses:
         "200":
           description: Lista de produtos enviado consoante a categoria
@@ -263,9 +258,7 @@ paths:
         style: simple
         explode: true
         schema:
-          type: array
-          items:
-            type: string
+          type: integer
       responses:
         "200":
           description: Enviada a lista com sucesso
@@ -499,8 +492,8 @@ components:
         produtoId: 0
         percentagemDesconto: 0.23021358869347652298387174596427939832210540771484375
         data:
-          dataValidade: dataValidade
-          dataProducao: dataProducao
+          dataValidade: 29/12/2012
+          dataProducao: 29/12/2012
           id: 7
         categoria:
           name: name
@@ -515,7 +508,7 @@ components:
         nutricaoPontuacao: nutricaoPontuacao
         informacaoNutricional:
           hidratosDeCarbono: 0.1231513536777255612975068288506008684635162353515625
-          peso: 0
+          peso: 1
           energia: 0.2027123023002321833274663731572218239307403564453125
           saturados: 0.7386281948385884366103937281877733767032623291015625
           proteina: 0.1489415909854170383397331534069962799549102783203125
@@ -643,7 +636,7 @@ components:
           format: double
       example:
         hidratosDeCarbono: 0.1231513536777255612975068288506008684635162353515625
-        peso: 0
+        peso: 1
         energia: 0.2027123023002321833274663731572218239307403564453125
         saturados: 0.7386281948385884366103937281877733767032623291015625
         proteina: 0.1489415909854170383397331534069962799549102783203125
@@ -663,14 +656,14 @@ components:
         id:
           type: integer
         dataValidade:
-          pattern: "/([0-9]{4})-(?:[0-9]{2})-([0-9]{2})/"
+          pattern: ^(((0[1-9]|[12][0-9]|3[01])[- /.](0[13578]|1[02])|(0[1-9]|[12][0-9]|30)[- /.](0[469]|11)|(0[1-9]|1\d|2[0-8])[- /.]02)[- /.]\d{4}|29[- /.]02[- /.](\d{2}(0[48]|[2468][048]|[13579][26])|([02468][048]|[1359][26])00))$
           type: string
         dataProducao:
-          pattern: "/([0-9]{4})-(?:[0-9]{2})-([0-9]{2})/"
+          pattern: ^(((0[1-9]|[12][0-9]|3[01])[- /.](0[13578]|1[02])|(0[1-9]|[12][0-9]|30)[- /.](0[469]|11)|(0[1-9]|1\d|2[0-8])[- /.]02)[- /.]\d{4}|29[- /.]02[- /.](\d{2}(0[48]|[2468][048]|[13579][26])|([02468][048]|[1359][26])00))$
           type: string
       example:
-        dataValidade: dataValidade
-        dataProducao: dataProducao
+        dataValidade: "29/12/2022"
+        dataProducao: "29/12/2022"
         id: 7
       xml:
         name: data
@@ -773,7 +766,7 @@ components:
       example:
         tipo: utilizador
         password: password
-        contacto: contacto
+        contacto: "910933857"
         apelido: apelido
         nome: nome
         email: user@exemple.com
@@ -846,7 +839,7 @@ components:
           nutricaoPontuacao: nutricaoPontuacao
           informacaoNutricional:
             hidratosDeCarbono: 0.1231513536777255612975068288506008684635162353515625
-            peso: 0
+            peso: 1
             energia: 0.2027123023002321833274663731572218239307403564453125
             saturados: 0.7386281948385884366103937281877733767032623291015625
             proteina: 0.1489415909854170383397331534069962799549102783203125
