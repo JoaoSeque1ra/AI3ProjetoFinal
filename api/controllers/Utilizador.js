@@ -3,85 +3,62 @@
 var utils = require('../utils/writer.js');
 var Utilizador = require('../service/UtilizadorService');
 
-module.exports.deleteUtilizador = function deleteUtilizador(req, res) {
-  const { email } = req.swagger.params
-
+module.exports.deleteUtilizador = function deleteUtilizador (req, res, next, email) {
   Utilizador.deleteUtilizador(email)
     .then(function (response) {
-      res.status(200).send("Utilizador eliminado com sucesso")
+      utils.writeJson(res, response);
     })
     .catch(function (response) {
-      if (!!response)
-        return res.status(404).send("Utilizador não existe")
-
-      res.status(400).send("Utilizador não foi eliminado")
+      utils.writeJson(res, response);
     });
 };
 
-module.exports.getUtilizador = function getUtilizador(req, res) {
-  const { utilizador, password } = req.swagger.params
-
+module.exports.getUtilizador = function getUtilizador (req, res, next, utilizador, password) {
   Utilizador.getUtilizador(utilizador, password)
     .then(function (response) {
-      if (!response)
-        return res.status(404).send("utilizador não existe");
-
-      res.status(200).send("Utilizador logado com sucesso");
+      utils.writeJson(res, response);
     })
     .catch(function (response) {
-      res.status(400).send("Utilizador invalido")
+      utils.writeJson(res, response);
     });
 };
 
-module.exports.getUtilizadorByEmail = function getUtilizadorByEmail(req, res) {
-  const { email } = req.swagger.params
-
+module.exports.getUtilizadorByEmail = function getUtilizadorByEmail (req, res, next, email) {
   Utilizador.getUtilizadorByEmail(email)
     .then(function (response) {
-      if (!response)
-        return res.status(404).send("Utilizador não existe");
-
-      res.status(200).send("Utilizador enviado com sucesso");
+      utils.writeJson(res, response);
     })
     .catch(function (response) {
-      res.status(400).send("Input inválido")
+      utils.writeJson(res, response);
     });
 };
 
-module.exports.logoutUtilizador = function logoutUtilizador(req, res) {
+module.exports.logoutUtilizador = function logoutUtilizador (req, res, next) {
   Utilizador.logoutUtilizador()
     .then(function (response) {
-      res.status(200).send("Logout efetuado com sucesso");
+      utils.writeJson(res, response);
     })
     .catch(function (response) {
-      res.status(400).send("Input inválido")
+      utils.writeJson(res, response);
     });
 };
 
-module.exports.patchUtilizador = function patchUtilizador(req, res) {
-  const { email } = res.locals.oas?.params;
-  const body = req.swagger.body
-
+module.exports.patchUtilizador = function patchUtilizador (req, res, next, body, email) {
   Utilizador.patchUtilizador(body, email)
     .then(function (response) {
-      if(!response)
-        return res.status(404).send("Utilizador não existe");
-
-      res.status(200).send("Atualizado utilizador com sucesso");
+      utils.writeJson(res, response);
     })
     .catch(function (response) {
-      res.status(400).send("Input inválido");
+      utils.writeJson(res, response);
     });
 };
 
-module.exports.postUtilizador = function postUtilizador(req, res) {
-  const body = req.swagger.body
-
+module.exports.postUtilizador = function postUtilizador (req, res, next, body) {
   Utilizador.postUtilizador(body)
     .then(function (response) {
-      res.status(200).send("Utilizador criado com sucesso")
+      utils.writeJson(res, response);
     })
     .catch(function (response) {
-      res.status(400).send("Erro na criacao de um utilizador")
+      utils.writeJson(res, response);
     });
 };

@@ -24,32 +24,32 @@ exports.getListPrecoMedio = function () {
   return new Promise(function (resolve, reject) {
     var examples = {};
     examples['application/json'] = [{
-      "produtoId": 0.8008281904610115,
-      "precoMedio": 6,
+      "produtoId": 0,
+      "precoMedio": 0.6027456183070403,
       "detalhe": {
-        "precoUnitario": 5.637376656633329,
+        "precoUnitario": 0.5637376656633328,
         "codigo": 5,
         "nome": "nome",
         "id": 1,
-        "precoKilo": 2.3021358869347655,
+        "precoKilo": 0.23021358869347652,
         "descricao": "descricao"
       }
     }, {
-      "produtoId": 0.8008281904610115,
-      "precoMedio": 6,
+      "produtoId": 0,
+      "precoMedio": 0.6027456183070403,
       "detalhe": {
-        "precoUnitario": 5.637376656633329,
+        "precoUnitario": 0.5637376656633328,
         "codigo": 5,
         "nome": "nome",
         "id": 1,
-        "precoKilo": 2.3021358869347655,
+        "precoKilo": 0.23021358869347652,
         "descricao": "descricao"
       }
     }];
     if (Object.keys(examples).length > 0) {
       resolve(examples[Object.keys(examples)[0]]);
     } else {
-      reject();
+      resolve();
     }
   });
 }
@@ -66,75 +66,75 @@ exports.getListProdutos = function () {
     var examples = {};
     examples['application/json'] = [{
       "produto": {
-        "precoUnitario": 1.0,
-        "precoPromocional": 1.0,
-        "produtoId": 1,
-        "percentagemDesconto": 1.0,
+        "precoUnitario": 0.5962133916683182,
+        "precoPromocional": 0.5637376656633328,
+        "produtoId": 0,
+        "percentagemDesconto": 0.23021358869347652,
         "data": {
-          "dataValidade": "2000-01-23",
-          "dataProducao": "2000-01-23",
+          "dataValidade": "dataValidade",
+          "dataProducao": "dataProducao",
           "id": 7
         },
         "categoria": {
           "name": "name",
-          "id": 6.027456183070403
+          "id": 6
         },
         "origem": "origem",
         "nome": "nome",
-        "precoKilo": 1.0,
+        "precoKilo": 0.7061401241503109,
         "informacao": {
           "informacaoCurta": "informacaoCurta",
           "informacaoComprida": "informacaoComprida",
-          "id": 1.4658129805029452
+          "id": 1
         },
         "nutricaoPontuacao": "nutricaoPontuacao",
         "informacaoNutricional": {
-          "hidratosDeCarbono": 1.2315135367772556,
-          "peso": 3,
-          "energia": 2.027123023002322,
-          "saturados": 7.386281948385884,
-          "proteina": 1.4894159098541704,
+          "hidratosDeCarbono": 0.12315135367772556,
+          "peso": 0,
+          "energia": 0.20271230230023218,
+          "saturados": 0.7386281948385884,
+          "proteina": 0.14894159098541704,
           "id": 9,
-          "lipidos": 4.145608029883936,
-          "acucar": 1.0246457001441578,
-          "sal": 6.84685269835264
+          "lipidos": 0.4145608029883936,
+          "acucar": 0.10246457001441578,
+          "sal": 0.684685269835264
         },
         "codigoBarras": 1
       }
     }, {
       "produto": {
-        "precoUnitario": 1.0,
-        "precoPromocional": 1.0,
-        "produtoId": 1,
-        "percentagemDesconto": 1.0,
+        "precoUnitario": 0.5962133916683182,
+        "precoPromocional": 0.5637376656633328,
+        "produtoId": 0,
+        "percentagemDesconto": 0.23021358869347652,
         "data": {
-          "dataValidade": "2000-01-23",
-          "dataProducao": "2000-01-23",
+          "dataValidade": "dataValidade",
+          "dataProducao": "dataProducao",
           "id": 7
         },
         "categoria": {
           "name": "name",
-          "id": 6.027456183070403
+          "id": 6
         },
         "origem": "origem",
         "nome": "nome",
-        "precoKilo": 1.0,
+        "precoKilo": 0.7061401241503109,
         "informacao": {
           "informacaoCurta": "informacaoCurta",
           "informacaoComprida": "informacaoComprida",
-          "id": 1.4658129805029452
+          "id": 1
         },
         "nutricaoPontuacao": "nutricaoPontuacao",
         "informacaoNutricional": {
-          "hidratosDeCarbono": 1.2315135367772556,
-          "peso": 3,
-          "energia": 2.027123023002322,
-          "saturados": 7.386281948385884,
-          "proteina": 1.4894159098541704,
+          "hidratosDeCarbono": 0.12315135367772556,
+          "peso": 0,
+          "energia": 0.20271230230023218,
+          "saturados": 0.7386281948385884,
+          "proteina": 0.14894159098541704,
           "id": 9,
-          "lipidos": 4.145608029883936,
-          "acucar": 1.0246457001441578,
-          "sal": 6.84685269835264
+          "lipidos": 0.4145608029883936,
+          "acucar": 0.10246457001441578,
+          "sal": 0.684685269835264
         },
         "codigoBarras": 1
       }
@@ -142,7 +142,7 @@ exports.getListProdutos = function () {
     if (Object.keys(examples).length > 0) {
       resolve(examples[Object.keys(examples)[0]]);
     } else {
-      reject();
+      resolve();
     }
   });
 }
@@ -158,19 +158,19 @@ exports.getListProdutosNaoDesperdicados = function () {
   return new Promise(function (resolve, reject) {
     var examples = {};
     examples['application/json'] = [{
-      "produtoId": 0.8008281904610115,
-      "mediaDesconto": 5.637376656633329,
-      "valorPoupado": 6.027456183070403,
-      "quantidadeNaoDesperdicada": 1.4658129805029452,
+      "produtoId": 0,
+      "mediaDesconto": 0.5637376656633328,
+      "valorPoupado": 0.6027456183070403,
+      "quantidadeNaoDesperdicada": 0.14658129805029452,
       "nome": "nome",
-      "pesoLiquidoNaoDesperdicado": 5.962133916683182
+      "pesoLiquidoNaoDesperdicado": 0.5962133916683182
     }, {
-      "produtoId": 0.8008281904610115,
-      "mediaDesconto": 5.637376656633329,
-      "valorPoupado": 6.027456183070403,
-      "quantidadeNaoDesperdicada": 1.4658129805029452,
+      "produtoId": 0,
+      "mediaDesconto": 0.5637376656633328,
+      "valorPoupado": 0.6027456183070403,
+      "quantidadeNaoDesperdicada": 0.14658129805029452,
       "nome": "nome",
-      "pesoLiquidoNaoDesperdicado": 5.962133916683182
+      "pesoLiquidoNaoDesperdicado": 0.5962133916683182
     }];
     if (Object.keys(examples).length > 0) {
       resolve(examples[Object.keys(examples)[0]]);
@@ -194,24 +194,24 @@ exports.getListarAssociarProdutoUtilizador = function (utilizadorId) {
     examples['application/json'] = {
       "listaProduto": [{
         "produto": {
-          "precoUnitario": 5.637376656633329,
+          "precoUnitario": 0.5637376656633328,
           "codigo": 5,
           "nome": "nome",
           "id": 1,
-          "precoKilo": 2.3021358869347655,
+          "precoKilo": 0.23021358869347652,
           "descricao": "descricao"
         }
       }, {
         "produto": {
-          "precoUnitario": 5.637376656633329,
+          "precoUnitario": 0.5637376656633328,
           "codigo": 5,
           "nome": "nome",
           "id": 1,
-          "precoKilo": 2.3021358869347655,
+          "precoKilo": 0.23021358869347652,
           "descricao": "descricao"
         }
       }],
-      "utilizadorId": 0.8008281904610115
+      "utilizadorId": 0
     };
     if (Object.keys(examples).length > 0) {
       resolve(examples[Object.keys(examples)[0]]);
@@ -233,38 +233,38 @@ exports.getProduto = function (produtoId) {
   return new Promise(function (resolve, reject) {
     var examples = {};
     examples['application/json'] = {
-      "precoUnitario": 1.0,
-      "precoPromocional": 1.0,
-      "produtoId": 1,
-      "percentagemDesconto": 1.0,
+      "precoUnitario": 0.5962133916683182,
+      "precoPromocional": 0.5637376656633328,
+      "produtoId": 0,
+      "percentagemDesconto": 0.23021358869347652,
       "data": {
-        "dataValidade": "2000-01-23",
-        "dataProducao": "2000-01-23",
+        "dataValidade": "dataValidade",
+        "dataProducao": "dataProducao",
         "id": 7
       },
       "categoria": {
         "name": "name",
-        "id": 6.027456183070403
+        "id": 6
       },
       "origem": "origem",
       "nome": "nome",
-      "precoKilo": 1.0,
+      "precoKilo": 0.7061401241503109,
       "informacao": {
         "informacaoCurta": "informacaoCurta",
         "informacaoComprida": "informacaoComprida",
-        "id": 1.4658129805029452
+        "id": 1
       },
       "nutricaoPontuacao": "nutricaoPontuacao",
       "informacaoNutricional": {
-        "hidratosDeCarbono": 1.2315135367772556,
-        "peso": 3,
-        "energia": 2.027123023002322,
-        "saturados": 7.386281948385884,
-        "proteina": 1.4894159098541704,
+        "hidratosDeCarbono": 0.12315135367772556,
+        "peso": 0,
+        "energia": 0.20271230230023218,
+        "saturados": 0.7386281948385884,
+        "proteina": 0.14894159098541704,
         "id": 9,
-        "lipidos": 4.145608029883936,
-        "acucar": 1.0246457001441578,
-        "sal": 6.84685269835264
+        "lipidos": 0.4145608029883936,
+        "acucar": 0.10246457001441578,
+        "sal": 0.684685269835264
       },
       "codigoBarras": 1
     };
@@ -289,75 +289,75 @@ exports.getProdutoByCategoria = function (categoria) {
     var examples = {};
     examples['application/json'] = [{
       "produto": {
-        "precoUnitario": 1.0,
-        "precoPromocional": 1.0,
-        "produtoId": 1,
-        "percentagemDesconto": 1.0,
+        "precoUnitario": 0.5962133916683182,
+        "precoPromocional": 0.5637376656633328,
+        "produtoId": 0,
+        "percentagemDesconto": 0.23021358869347652,
         "data": {
-          "dataValidade": "2000-01-23",
-          "dataProducao": "2000-01-23",
+          "dataValidade": "dataValidade",
+          "dataProducao": "dataProducao",
           "id": 7
         },
         "categoria": {
           "name": "name",
-          "id": 6.027456183070403
+          "id": 6
         },
         "origem": "origem",
         "nome": "nome",
-        "precoKilo": 1.0,
+        "precoKilo": 0.7061401241503109,
         "informacao": {
           "informacaoCurta": "informacaoCurta",
           "informacaoComprida": "informacaoComprida",
-          "id": 1.4658129805029452
+          "id": 1
         },
         "nutricaoPontuacao": "nutricaoPontuacao",
         "informacaoNutricional": {
-          "hidratosDeCarbono": 1.2315135367772556,
-          "peso": 3,
-          "energia": 2.027123023002322,
-          "saturados": 7.386281948385884,
-          "proteina": 1.4894159098541704,
+          "hidratosDeCarbono": 0.12315135367772556,
+          "peso": 0,
+          "energia": 0.20271230230023218,
+          "saturados": 0.7386281948385884,
+          "proteina": 0.14894159098541704,
           "id": 9,
-          "lipidos": 4.145608029883936,
-          "acucar": 1.0246457001441578,
-          "sal": 6.84685269835264
+          "lipidos": 0.4145608029883936,
+          "acucar": 0.10246457001441578,
+          "sal": 0.684685269835264
         },
         "codigoBarras": 1
       }
     }, {
       "produto": {
-        "precoUnitario": 1.0,
-        "precoPromocional": 1.0,
-        "produtoId": 1,
-        "percentagemDesconto": 1.0,
+        "precoUnitario": 0.5962133916683182,
+        "precoPromocional": 0.5637376656633328,
+        "produtoId": 0,
+        "percentagemDesconto": 0.23021358869347652,
         "data": {
-          "dataValidade": "2000-01-23",
-          "dataProducao": "2000-01-23",
+          "dataValidade": "dataValidade",
+          "dataProducao": "dataProducao",
           "id": 7
         },
         "categoria": {
           "name": "name",
-          "id": 6.027456183070403
+          "id": 6
         },
         "origem": "origem",
         "nome": "nome",
-        "precoKilo": 1.0,
+        "precoKilo": 0.7061401241503109,
         "informacao": {
           "informacaoCurta": "informacaoCurta",
           "informacaoComprida": "informacaoComprida",
-          "id": 1.4658129805029452
+          "id": 1
         },
         "nutricaoPontuacao": "nutricaoPontuacao",
         "informacaoNutricional": {
-          "hidratosDeCarbono": 1.2315135367772556,
-          "peso": 3,
-          "energia": 2.027123023002322,
-          "saturados": 7.386281948385884,
-          "proteina": 1.4894159098541704,
+          "hidratosDeCarbono": 0.12315135367772556,
+          "peso": 0,
+          "energia": 0.20271230230023218,
+          "saturados": 0.7386281948385884,
+          "proteina": 0.14894159098541704,
           "id": 9,
-          "lipidos": 4.145608029883936,
-          "acucar": 1.0246457001441578,
-          "sal": 6.84685269835264
+          "lipidos": 0.4145608029883936,
+          "acucar": 0.10246457001441578,
+          "sal": 0.684685269835264
         },
         "codigoBarras": 1
       }
@@ -388,7 +388,7 @@ exports.postAssociarProdutoCliente = function (body) {
 /**
  * Adicionar um novo produto
  *
- * body Produto Produto object que precisa de ser adicionado
+ * body Produto  (optional)
  * no response value expected for this operation
  **/
 exports.postProduto = function (body) {
@@ -402,7 +402,7 @@ exports.postProduto = function (body) {
  * Atualizar um produto através do produtoId
  * Atualiza um produto
  *
- * body Produto Produto object que precisa de ser adicionado
+ * body Produto  (optional)
  * produtoId Integer produtoId necessário
  * no response value expected for this operation
  **/

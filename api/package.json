@@ -4,10 +4,8 @@
   "description": "API de produtos perecíveis. Encontra aqui os produtos perecíveis que estão perto do fim de validade e contribui para a redução de alimentos desperdiçados url: https://virtserver.swaggerhub.co ",
   "main": "index.js",
   "scripts": {
-    "prestart": "npm install",
-    "start": "node index.js",
-    "predev": "npm i",
-    "dev": "nodemon index.js"
+	"prestart": "npm install",
+	"start": "node index.js"
   },
   "keywords": [
     "swagger"
@@ -17,7 +15,6 @@
   "dependencies": {
     "connect": "^3.2.0",
     "js-yaml": "^3.3.0",
-    "nodemon": "^2.0.20",
     "oas3-tools": "^2.2.3"
   }
 }

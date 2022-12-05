@@ -3,138 +3,102 @@
 var utils = require('../utils/writer.js');
 var Produto = require('../service/ProdutoService');
 
-module.exports.deleteProduto = function deleteProduto(req, res) {
-  const { produtoId } = res.locals.oas?.params;
-
+module.exports.deleteProduto = function deleteProduto(req, res, next, produtoId) {
   Produto.deleteProduto(produtoId)
     .then(function (response) {
-      res.status(200).send("Produto eliminado");
+      utils.writeJson(res, response);
     })
     .catch(function (response) {
-      if(!!response)
-        return res.status(404).send("Produto não existe");
-
-      res.status(400).send("Input inválido")
+      utils.writeJson(res, response);
     });
 };
 
-module.exports.getListPrecoMedio = function getListPrecoMedio(req, res) {
+module.exports.getListPrecoMedio = function getListPrecoMedio(req, res, next) {
   Produto.getListPrecoMedio()
     .then(function (response) {
-      if(!response)
-        return res.status(200).send("Lista de preço medio enviado ");
-
-      return res.status(404).send("Não existem produtos na base dados");
+      utils.writeJson(res, response);
     })
     .catch(function (response) {
-      res.status(400).send("Erro ao enviar a lista");
+      utils.writeJson(res, response);
     });
 };
 
-module.exports.getListProdutos = function getListProdutos(req, res) {
+module.exports.getListProdutos = function getListProdutos(req, res, next) {
   Produto.getListProdutos()
     .then(function (response) {
-      if(!response)
-        return res.status(404).send("Não existem produtos na base de dados")
-      res.status(200).send("Lista de produtos enviados");
+      utils.writeJson(res, response);
     })
     .catch(function (response) {
-      res.status(400).send("Erro ao enviar a lista");
+      utils.writeJson(res, response);
     });
 };
 
-module.exports.getListProdutosNaoDesperdicados = function getListProdutosNaoDesperdicados(req, res) {
+module.exports.getListProdutosNaoDesperdicados = function getListProdutosNaoDesperdicados(req, res, next) {
   Produto.getListProdutosNaoDesperdicados()
     .then(function (response) {
-      if(!response)
-        return res.status(404).send("Não existe produtos na base de dados");
-      
-      return res.status(200).send("Lista de produtos não desperdicados enviada");
+      utils.writeJson(res, response);
     })
     .catch(function (response) {
-      res.status(400).send("Erro ao enviar a lista");
+      utils.writeJson(res, response);
     });
 };
 
-module.exports.getListarAssociarProdutoUtilizador = function getListarAssociarProdutoUtilizador(req, res) {
-    const { utilizadorId } = req.swagger.params
-
-    Produto.getListarAssociarProdutoUtilizador(utilizadorId)
+module.exports.getListarAssociarProdutoUtilizador = function getListarAssociarProdutoUtilizador(req, res, next, utilizadorId) {
+  Produto.getListarAssociarProdutoUtilizador(utilizadorId)
     .then(function (response) {
-      if(!response)
-        return res.status(404).send("Utilizador não foi encontrado")
-      res.status(200).send("Enviada a lista com sucesso");
+      utils.writeJson(res, response);
     })
     .catch(function (response) {
-      res.status(400).send("Input inválido");
+      utils.writeJson(res, response);
     });
 };
 
-module.exports.getProduto = function getProduto(req, res) {
-  const { produtoId } = req.swagger.params
-
+module.exports.getProduto = function getProduto(req, res, next, produtoId) {
   Produto.getProduto(produtoId)
     .then(function (response) {
-      if(!response)
-        return res.status(404).send("Produto não encontrado");
-
-      res.status(200).send("Produto enviado com sucesso");
+      utils.writeJson(res, response);
     })
     .catch(function (response) {
-      res.status(400).send("Erro no envio da informação do produto");
+      utils.writeJson(res, response);
     });
 };
 
-module.exports.getProdutoByCategoria = function getProdutoByCategoria(req, res) {
-  const { categoria } = req.swagger.params
-
+module.exports.getProdutoByCategoria = function getProdutoByCategoria(req, res, next, categoria) {
   Produto.getProdutoByCategoria(categoria)
     .then(function (response) {
-      if(!response)
-        return res.status(404).send("Lista de produtos enviado consoante a categoria");
-
-      res.status(200).send("Lista de produtos enviado consoante a categoria");
+      utils.writeJson(res, response);
     })
     .catch(function (response) {
-      res.status(400).send("Invalido");
+      utils.writeJson(res, response);
     });
 };
 
-module.exports.postAssociarProdutoCliente = function postAssociarProdutoCliente(req, res) {
-  const body = req.swagger.body
-  
+module.exports.postAssociarProdutoCliente = function postAssociarProdutoCliente(req, res, next, body) {
   Produto.postAssociarProdutoCliente(body)
     .then(function (response) {
-      res.status(200).send("Associação feita com sucesso");
+      utils.writeJson(res, response);
     })
     .catch(function (response) {
-      res.status(400).send("Input inválido");
+      utils.writeJson(res, response);
     });
 };
 
-module.exports.postProduto = function postProduto(req, res) {
-  const body = req.swagger.body
-  
+module.exports.postProduto = function postProduto(req, res, next, body) {
   Produto.postProduto(body)
     .then(function (response) {
-      return res.status(200).send("Produto adicionado com sucesso");
+      utils.writeJson(res, response);
     })
     .catch(function (response) {
-      res.status(400).send("Request body do produto invalido");
+      utils.writeJson(res, response);
     });
 };
 
-module.exports.putProduto = function putProduto(req, res) {
-  const { produtoId } = req.swagger.params
-  const body = req.swagger.params
-
+module.exports.putProduto = function putProduto(req, res, next, body, produtoId) {
   Produto.putProduto(body, produtoId)
     .then(function (response) {
-      res.status(200).send("Produto atualizado com sucesso");
+      utils.writeJson(res, response);
     })
     .catch(function (response) {
-      if(!!response)
-        return res.status(404).send("Produto não encontrado")
-      res.status(400).send("Erro na atualização do produto");
+      utils.writeJson(res, response);
     });
 };

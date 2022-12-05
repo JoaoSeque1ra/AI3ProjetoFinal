@@ -14,10 +14,7 @@ externalDocs:
   description: Find out more about Swagger
   url: http://swagger.io
 servers:
-- url: https://virtserver.swaggerhub.com/RAQUELALMEIDA15/promo-validade/1.0.0
-  description: Encontra aqui os produtos perecíveis que estão perto do fim de validade
-    e contribui para a redução de alimentos desperdiçados
-- url: https://promovalidade.swagger.io/v2
+- url: /
 tags:
 - name: produto
   description: Operação de produtos perecíveis
@@ -61,9 +58,7 @@ paths:
         "401":
           description: Sem autorização
       security:
-      - promoValidade_auth:
-        - write:produtos
-        - read:produtos
+      - bearerAuth: []
       x-swagger-router-controller: Produto
   /produto/{produtoId}:
     get:
@@ -121,9 +116,7 @@ paths:
         "404":
           description: "Produto não encontrado {produtoId invalido}"
       security:
-      - promoValidade_auth:
-        - write:produtos
-        - read:produtos
+      - bearerAuth: []
       x-swagger-router-controller: Produto
     delete:
       tags:
@@ -147,9 +140,7 @@ paths:
         "404":
           description: Produto não encontrado
       security:
-      - promoValidade_auth:
-        - write:produtos
-        - read:produtos
+      - bearerAuth: []
       x-swagger-router-controller: Produto
   /produto/listPrecoMedio:
     get:
@@ -254,9 +245,7 @@ paths:
         "404":
           description: Utilizador invalido
       security:
-      - promoValidade_auth:
-        - write:produtos
-        - read:produtos
+      - bearerAuth: []
       x-swagger-router-controller: Produto
   /produto/associarProdutoUtilizador/{utilizadorId}:
     get:
@@ -292,9 +281,7 @@ paths:
         "404":
           description: Utilizador não foi encontrado
       security:
-      - promoValidade_auth:
-        - write:produtos
-        - read:produtos
+      - bearerAuth: []
       x-swagger-router-controller: Produto
   /utilizador:
     get:
@@ -355,6 +342,8 @@ paths:
       responses:
         "200":
           description: Logout efetuado com sucesso
+      security:
+      - bearerAuth: []
       x-swagger-router-controller: Utilizador
   /utilizador/{email}:
     get:
@@ -385,6 +374,8 @@ paths:
           description: Erro ao enviar o utilizador
         "404":
           description: Utilizador não encontrado
+      security:
+      - bearerAuth: []
       x-swagger-router-controller: Utilizador
     delete:
       tags:
@@ -409,9 +400,7 @@ paths:
         "404":
           description: Utilizador não encontrado
       security:
-      - promoValidade_auth:
-        - write:utilizador
-        - read:utilizador
+      - bearerAuth: []
       x-swagger-router-controller: Utilizador
     patch:
       tags:
@@ -444,6 +433,8 @@ paths:
           description: Erro ao atualizar
         "404":
           description: Utilizador não foi encontrado
+      security:
+      - bearerAuth: []
       x-swagger-router-controller: Utilizador
 components:
   schemas:
@@ -465,95 +456,83 @@ components:
       type: object
       properties:
         produtoId:
-          maximum: 1
-          minimum: 1
           type: integer
         nome:
-          maximum: 1
-          minimum: 1
           type: string
         categoria:
           $ref: '#/components/schemas/Categoria'
         informacao:
           $ref: '#/components/schemas/Informacao'
         precoUnitario:
-          maximum: 1
-          minimum: 1
+          minimum: 0
+          exclusiveMinimum: true
           type: number
           format: double
         precoPromocional:
-          maximum: 1
-          minimum: 1
+          minimum: 0
+          exclusiveMinimum: true
           type: number
           format: double
         percentagemDesconto:
-          maximum: 1
-          minimum: 1
+          minimum: 0
+          exclusiveMinimum: true
           type: number
           format: double
         precoKilo:
-          maximum: 1
-          minimum: 1
+          minimum: 0
+          exclusiveMinimum: true
           type: number
           format: double
         informacaoNutricional:
           $ref: '#/components/schemas/InformacaoNutricional'
         origem:
-          maximum: 1
-          minimum: 1
           type: string
         nutricaoPontuacao:
-          maximum: 1
-          minimum: 1
           type: string
         data:
           $ref: '#/components/schemas/Data'
         codigoBarras:
-          maximum: 1
-          minimum: 1
           type: integer
       example:
-        precoUnitario: 1
-        precoPromocional: 1
-        produtoId: 1
-        percentagemDesconto: 1
+        precoUnitario: 0.59621339166831821554382031536079011857509613037109375
+        precoPromocional: 0.5637376656633328320111786524648778140544891357421875
+        produtoId: 0
+        percentagemDesconto: 0.23021358869347652298387174596427939832210540771484375
         data:
-          dataValidade: 2000-01-23
-          dataProducao: 2000-01-23
+          dataValidade: dataValidade
+          dataProducao: dataProducao
           id: 7
         categoria:
           name: name
-          id: 6.02745618307040320615897144307382404804229736328125
+          id: 6
         origem: origem
         nome: nome
-        precoKilo: 1
+        precoKilo: 0.7061401241503109105224211816675961017608642578125
         informacao:
           informacaoCurta: informacaoCurta
           informacaoComprida: informacaoComprida
-          id: 1.46581298050294517310021547018550336360931396484375
+          id: 1
         nutricaoPontuacao: nutricaoPontuacao
         informacaoNutricional:
-          hidratosDeCarbono: 1.231513536777255612975068288506008684635162353515625
-          peso: 3
-          energia: 2.027123023002321833274663731572218239307403564453125
-          saturados: 7.3862819483858839220147274318151175975799560546875
-          proteina: 1.489415909854170383397331534069962799549102783203125
+          hidratosDeCarbono: 0.1231513536777255612975068288506008684635162353515625
+          peso: 0
+          energia: 0.2027123023002321833274663731572218239307403564453125
+          saturados: 0.7386281948385884366103937281877733767032623291015625
+          proteina: 0.1489415909854170383397331534069962799549102783203125
           id: 9
-          lipidos: 4.1456080298839363962315474054776132106781005859375
-          acucar: 1.024645700144157789424070870154537260532379150390625
-          sal: 6.8468526983526398765889098285697400569915771484375
+          lipidos: 0.4145608029883935952142337555414997041225433349609375
+          acucar: 0.1024645700144157789424070870154537260532379150390625
+          sal: 0.68468526983526400986335147536010481417179107666015625
         codigoBarras: 1
       xml:
         name: Produto
     Informacao:
-      maximum: 1
-      minimum: 0
       required:
       - id
       type: object
       properties:
         id:
-          type: number
+          type: integer
         informacaoCurta:
           maxLength: 150
           type: string
@@ -562,12 +541,17 @@ components:
       example:
         informacaoCurta: informacaoCurta
         informacaoComprida: informacaoComprida
-        id: 1.46581298050294517310021547018550336360931396484375
+        id: 1
       xml:
         name: informacao
     Detalhe:
       required:
+      - codigo
+      - descricao
       - id
+      - nome
+      - precoKilo
+      - precoUnitario
       type: object
       properties:
         id:
@@ -579,100 +563,114 @@ components:
         codigo:
           type: integer
         precoUnitario:
+          minimum: 0
+          exclusiveMinimum: true
           type: number
           format: double
         precoKilo:
+          minimum: 0
+          exclusiveMinimum: true
           type: number
           format: double
       example:
-        precoUnitario: 5.63737665663332876420099637471139430999755859375
+        precoUnitario: 0.5637376656633328320111786524648778140544891357421875
         codigo: 5
         nome: nome
         id: 1
-        precoKilo: 2.3021358869347654518833223846741020679473876953125
+        precoKilo: 0.23021358869347652298387174596427939832210540771484375
         descricao: descricao
       xml:
         name: detalhe
     Categoria:
-      maximum: 1
-      minimum: 1
       required:
       - id
+      - name
       type: object
       properties:
         id:
-          type: number
+          type: integer
         name:
           type: string
       example:
         name: name
-        id: 6.02745618307040320615897144307382404804229736328125
+        id: 6
       xml:
         name: Categoria
     InformacaoNutricional:
-      maximum: 1
-      minimum: 1
       required:
+      - acucar
+      - energia
+      - hidratosDeCarbono
       - id
+      - lipidos
+      - peso
+      - proteina
       type: object
       properties:
         id:
           type: integer
         peso:
+          minimum: 0
+          exclusiveMinimum: true
           type: integer
         energia:
+          minimum: 0
           type: number
           format: double
         lipidos:
+          minimum: 0
           type: number
           format: double
         saturados:
+          minimum: 0
           type: number
           format: double
         hidratosDeCarbono:
+          minimum: 0
           type: number
           format: double
         acucar:
+          minimum: 0
           type: number
           format: double
         proteina:
+          minimum: 0
           type: number
           format: double
         sal:
+          minimum: 0
           type: number
           format: double
       example:
-        hidratosDeCarbono: 1.231513536777255612975068288506008684635162353515625
-        peso: 3
-        energia: 2.027123023002321833274663731572218239307403564453125
-        saturados: 7.3862819483858839220147274318151175975799560546875
-        proteina: 1.489415909854170383397331534069962799549102783203125
+        hidratosDeCarbono: 0.1231513536777255612975068288506008684635162353515625
+        peso: 0
+        energia: 0.2027123023002321833274663731572218239307403564453125
+        saturados: 0.7386281948385884366103937281877733767032623291015625
+        proteina: 0.1489415909854170383397331534069962799549102783203125
         id: 9
-        lipidos: 4.1456080298839363962315474054776132106781005859375
-        acucar: 1.024645700144157789424070870154537260532379150390625
-        sal: 6.8468526983526398765889098285697400569915771484375
+        lipidos: 0.4145608029883935952142337555414997041225433349609375
+        acucar: 0.1024645700144157789424070870154537260532379150390625
+        sal: 0.68468526983526400986335147536010481417179107666015625
       xml:
         name: informacaoNutricional
     Data:
       required:
+      - dataProducao
+      - dataValidade
       - id
       type: object
       properties:
         id:
           type: integer
         dataValidade:
-          maximum: 1
-          minimum: 1
+          pattern: "/([0-9]{4})-(?:[0-9]{2})-([0-9]{2})/"
           type: string
-          format: date
         dataProducao:
-          maximum: 1
-          minimum: 1
+          pattern: "/([0-9]{4})-(?:[0-9]{2})-([0-9]{2})/"
           type: string
-          format: date
       example:
-        dataValidade: 2000-01-23
-        dataProducao: 2000-01-23
+        dataValidade: dataValidade
+        dataProducao: dataProducao
         id: 7
       xml:
         name: data
@@ -693,10 +691,12 @@ components:
       items:
         $ref: '#/components/schemas/ListaProdutos_inner'
     AssociarProdutoCliente:
+      required:
+      - utilizadorId
       type: object
       properties:
         utilizadorId:
-          type: number
+          type: integer
         listaProduto:
           minItems: 1
           uniqueItems: true
@@ -706,10 +706,12 @@ components:
       xml:
         name: AssociarProdutoCliente
     ListaProdutosAssociados:
+      required:
+      - utilizadorId
       type: object
       properties:
         utilizadorId:
-          type: number
+          type: integer
         listaProduto:
           minItems: 0
           type: array
@@ -718,20 +720,20 @@ components:
       example:
         listaProduto:
         - produto:
-            precoUnitario: 5.63737665663332876420099637471139430999755859375
+            precoUnitario: 0.5637376656633328320111786524648778140544891357421875
             codigo: 5
             nome: nome
             id: 1
-            precoKilo: 2.3021358869347654518833223846741020679473876953125
+            precoKilo: 0.23021358869347652298387174596427939832210540771484375
             descricao: descricao
         - produto:
-            precoUnitario: 5.63737665663332876420099637471139430999755859375
+            precoUnitario: 0.5637376656633328320111786524648778140544891357421875
             codigo: 5
             nome: nome
             id: 1
-            precoKilo: 2.3021358869347654518833223846741020679473876953125
+            precoKilo: 0.23021358869347652298387174596427939832210540771484375
             descricao: descricao
-        utilizadorId: 0.80082819046101150206595775671303272247314453125
+        utilizadorId: 0
       xml:
         name: ListaProdutosAssociados
     ListaProdutosNaoDesperdicados:
@@ -792,23 +794,29 @@ components:
       xml:
         name: Login
     ListaPrecoMedio_inner:
+      required:
+      - precoMedio
+      - produtoId
       type: object
       properties:
         produtoId:
-          type: number
-        precoMedio:
           type: integer
+        precoMedio:
+          minimum: 0
+          exclusiveMinimum: true
+          type: number
+          format: double
         detalhe:
           $ref: '#/components/schemas/Detalhe'
       example:
-        produtoId: 0.80082819046101150206595775671303272247314453125
-        precoMedio: 6
+        produtoId: 0
+        precoMedio: 0.602745618307040320615897144307382404804229736328125
         detalhe:
-          precoUnitario: 5.63737665663332876420099637471139430999755859375
+          precoUnitario: 0.5637376656633328320111786524648778140544891357421875
           codigo: 5
           nome: nome
           id: 1
-          precoKilo: 2.3021358869347654518833223846741020679473876953125
+          precoKilo: 0.23021358869347652298387174596427939832210540771484375
           descricao: descricao
     ListaProdutos_inner:
       type: object
@@ -817,35 +825,35 @@ components:
           $ref: '#/components/schemas/Produto'
       example:
         produto:
-          precoUnitario: 1
-          precoPromocional: 1
-          produtoId: 1
-          percentagemDesconto: 1
+          precoUnitario: 0.59621339166831821554382031536079011857509613037109375
+          precoPromocional: 0.5637376656633328320111786524648778140544891357421875
+          produtoId: 0
+          percentagemDesconto: 0.23021358869347652298387174596427939832210540771484375
           data:
-            dataValidade: 2000-01-23
-            dataProducao: 2000-01-23
+            dataValidade: dataValidade
+            dataProducao: dataProducao
             id: 7
           categoria:
             name: name
-            id: 6.02745618307040320615897144307382404804229736328125
+            id: 6
           origem: origem
           nome: nome
-          precoKilo: 1
+          precoKilo: 0.7061401241503109105224211816675961017608642578125
           informacao:
             informacaoCurta: informacaoCurta
             informacaoComprida: informacaoComprida
-            id: 1.46581298050294517310021547018550336360931396484375
+            id: 1
           nutricaoPontuacao: nutricaoPontuacao
           informacaoNutricional:
-            hidratosDeCarbono: 1.231513536777255612975068288506008684635162353515625
-            peso: 3
-            energia: 2.027123023002321833274663731572218239307403564453125
-            saturados: 7.3862819483858839220147274318151175975799560546875
-            proteina: 1.489415909854170383397331534069962799549102783203125
+            hidratosDeCarbono: 0.1231513536777255612975068288506008684635162353515625
+            peso: 0
+            energia: 0.2027123023002321833274663731572218239307403564453125
+            saturados: 0.7386281948385884366103937281877733767032623291015625
+            proteina: 0.1489415909854170383397331534069962799549102783203125
             id: 9
-            lipidos: 4.1456080298839363962315474054776132106781005859375
-            acucar: 1.024645700144157789424070870154537260532379150390625
-            sal: 6.8468526983526398765889098285697400569915771484375
+            lipidos: 0.4145608029883935952142337555414997041225433349609375
+            acucar: 0.1024645700144157789424070870154537260532379150390625
+            sal: 0.68468526983526400986335147536010481417179107666015625
           codigoBarras: 1
     AssociarProdutoCliente_listaProduto:
       required:
@@ -853,7 +861,7 @@ components:
       type: object
       properties:
         produtoId:
-          type: number
+          type: integer
     ListaProdutosAssociados_listaProduto:
       required:
       - produto
@@ -863,11 +871,11 @@ components:
           $ref: '#/components/schemas/Detalhe'
       example:
         produto:
-          precoUnitario: 5.63737665663332876420099637471139430999755859375
+          precoUnitario: 0.5637376656633328320111786524648778140544891357421875
           codigo: 5
           nome: nome
           id: 1
-          precoKilo: 2.3021358869347654518833223846741020679473876953125
+          precoKilo: 0.23021358869347652298387174596427939832210540771484375
           descricao: descricao
     ListaProdutosNaoDesperdicados_inner:
       required:
@@ -879,27 +887,38 @@ components:
       - valorPoupado
       properties:
         produtoId:
-          type: number
+          type: integer
         nome:
           type: string
         valorPoupado:
+          minimum: 0
+          exclusiveMinimum: true
           type: number
+          format: double
         quantidadeNaoDesperdicada:
+          minimum: 0
+          exclusiveMinimum: true
           type: number
+          format: double
         pesoLiquidoNaoDesperdicado:
+          minimum: 0
+          exclusiveMinimum: true
           type: number
+          format: double
         mediaDesconto:
+          minimum: 0
+          exclusiveMinimum: true
           type: number
+          format: double
       example:
-        produtoId: 0.80082819046101150206595775671303272247314453125
-        mediaDesconto: 5.63737665663332876420099637471139430999755859375
-        valorPoupado: 6.02745618307040320615897144307382404804229736328125
-        quantidadeNaoDesperdicada: 1.46581298050294517310021547018550336360931396484375
+        produtoId: 0
+        mediaDesconto: 0.5637376656633328320111786524648778140544891357421875
+        valorPoupado: 0.602745618307040320615897144307382404804229736328125
+        quantidadeNaoDesperdicada: 0.146581298050294517310021547018550336360931396484375
         nome: nome
-        pesoLiquidoNaoDesperdicado: 5.962133916683182377482808078639209270477294921875
+        pesoLiquidoNaoDesperdicado: 0.59621339166831821554382031536079011857509613037109375
   requestBodies:
     Produto:
-      description: Produto object que precisa de ser adicionado
       content:
         application/json:
           schema:
@@ -907,26 +926,8 @@ components:
         application/xml:
           schema:
             $ref: '#/components/schemas/Produto'
-      required: true
-    UserArray:
-      description: Lista de utilizador object
-      content:
-        application/json:
-          schema:
-            type: array
-            items:
-              $ref: '#/components/schemas/Utilizador'
-      required: true
   securitySchemes:
-    promoValidade_auth:
-      type: oauth2
-      flows:
-        implicit:
-          authorizationUrl: http://petstore.swagger.io/oauth/dialog
-          scopes:
-            write:produtos: modificar os produtos na conta
-            read:produtos: ler os produtos
-    api_key:
-      type: apiKey
-      name: api_key
-      in: header
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
