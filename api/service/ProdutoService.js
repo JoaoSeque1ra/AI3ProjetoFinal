@@ -24,26 +24,26 @@ exports.getListPrecoMedio = function () {
   return new Promise(function (resolve, reject) {
     var examples = {};
     examples['application/json'] = [{
-      "produtoId": 0,
-      "precoMedio": 0.6027456183070403,
+      "produtoId": 1,
+      "precoMedio": 4.15,
       "detalhe": {
-        "precoUnitario": 0.5637376656633328,
-        "codigo": 5,
-        "nome": "nome",
+        "precoUnitario": 4,
+        "codigo": 546546513,
+        "nome": "Bolo de chocolate",
         "id": 1,
-        "precoKilo": 0.23021358869347652,
-        "descricao": "descricao"
+        "precoKilo": 14.32,
+        "descricao": "Bolo"
       }
     }, {
-      "produtoId": 0,
-      "precoMedio": 0.6027456183070403,
+      "produtoId": 2,
+      "precoMedio": 1.25,
       "detalhe": {
-        "precoUnitario": 0.5637376656633328,
-        "codigo": 5,
-        "nome": "nome",
-        "id": 1,
-        "precoKilo": 0.23021358869347652,
-        "descricao": "descricao"
+        "precoUnitario": 1.25,
+        "codigo": 794654654,
+        "nome": "Bolacha Maria",
+        "id": 2,
+        "precoKilo": 26.59,
+        "descricao": "Bolacha"
       }
     }];
     if (Object.keys(examples).length > 0) {
@@ -66,77 +66,77 @@ exports.getListProdutos = function () {
     var examples = {};
     examples['application/json'] = [{
       "produto": {
-        "precoUnitario": 0.5962133916683182,
-        "precoPromocional": 0.5637376656633328,
-        "produtoId": 0,
-        "percentagemDesconto": 0.23021358869347652,
+        "precoUnitario": 5.2,
+        "precoPromocional": 4.2,
+        "produtoId": 1,
+        "percentagemDesconto": 20.0,
         "data": {
-          "dataValidade": "dataValidade",
-          "dataProducao": "dataProducao",
-          "id": 7
-        },
-        "categoria": {
-          "name": "name",
-          "id": 6
-        },
-        "origem": "origem",
-        "nome": "nome",
-        "precoKilo": 0.7061401241503109,
-        "informacao": {
-          "informacaoCurta": "informacaoCurta",
-          "informacaoComprida": "informacaoComprida",
+          "dataValidade": "01/01/2022",
+          "dataProducao": "01/12/2022",
           "id": 1
         },
-        "nutricaoPontuacao": "nutricaoPontuacao",
-        "informacaoNutricional": {
-          "hidratosDeCarbono": 0.12315135367772556,
-          "peso": 0,
-          "energia": 0.20271230230023218,
-          "saturados": 0.7386281948385884,
-          "proteina": 0.14894159098541704,
-          "id": 9,
-          "lipidos": 0.4145608029883936,
-          "acucar": 0.10246457001441578,
-          "sal": 0.684685269835264
+        "categoria": {
+          "name": "Pedra",
+          "id": 1
         },
-        "codigoBarras": 1
+        "origem": "Portugal",
+        "nome": "Pedra espetacular",
+        "precoKilo": 5.2,
+        "informacao": {
+          "informacaoCurta": "Uma pedra muito boa",
+          "informacaoComprida": "Pedra da mais alta qualidade",
+          "id": 1
+        },
+        "nutricaoPontuacao": "A",
+        "informacaoNutricional": {
+          "hidratosDeCarbono": 50.0,
+          "peso": 100,
+          "energia": 256.3,
+          "saturados": 1.0,
+          "proteina": 53.2,
+          "id": 1,
+          "lipidos": 23.1,
+          "acucar": 0.3,
+          "sal": 0.1
+        },
+        "codigoBarras": 149843216
       }
     }, {
       "produto": {
-        "precoUnitario": 0.5962133916683182,
-        "precoPromocional": 0.5637376656633328,
-        "produtoId": 0,
-        "percentagemDesconto": 0.23021358869347652,
+        "precoUnitario": 53.25,
+        "precoPromocional": 40.65,
+        "produtoId": 2,
+        "percentagemDesconto": 13.25,
         "data": {
-          "dataValidade": "dataValidade",
-          "dataProducao": "dataProducao",
-          "id": 7
+          "dataValidade": "09/09/2022",
+          "dataProducao": "23/12/2025",
+          "id": 2
         },
         "categoria": {
-          "name": "name",
-          "id": 6
+          "name": "Pedra Inclinada",
+          "id": 2
         },
-        "origem": "origem",
-        "nome": "nome",
-        "precoKilo": 0.7061401241503109,
+        "origem": "Portugal",
+        "nome": "Pedra espetacular, mas inclinada",
+        "precoKilo": 50.23,
         "informacao": {
-          "informacaoCurta": "informacaoCurta",
-          "informacaoComprida": "informacaoComprida",
-          "id": 1
+          "informacaoCurta": "Uma pedra muito boa, mas inclinada",
+          "informacaoComprida": "Pedra da mais alta qualidade, ligeiramente inclinada, mas só um pouco mesmo",
+          "id": 2
         },
-        "nutricaoPontuacao": "nutricaoPontuacao",
+        "nutricaoPontuacao": "B",
         "informacaoNutricional": {
-          "hidratosDeCarbono": 0.12315135367772556,
-          "peso": 0,
-          "energia": 0.20271230230023218,
-          "saturados": 0.7386281948385884,
-          "proteina": 0.14894159098541704,
-          "id": 9,
-          "lipidos": 0.4145608029883936,
-          "acucar": 0.10246457001441578,
-          "sal": 0.684685269835264
+          "hidratosDeCarbono": 50.0,
+          "peso": 100,
+          "energia": 256.3,
+          "saturados": 1.0,
+          "proteina": 53.2,
+          "id": 1,
+          "lipidos": 23.1,
+          "acucar": 0.3,
+          "sal": 0.1
         },
-        "codigoBarras": 1
+        "codigoBarras": 786454997
       }
     }];
     if (Object.keys(examples).length > 0) {
@@ -158,19 +158,19 @@ exports.getListProdutosNaoDesperdicados = function () {
   return new Promise(function (resolve, reject) {
     var examples = {};
     examples['application/json'] = [{
-      "produtoId": 0,
-      "mediaDesconto": 0.5637376656633328,
-      "valorPoupado": 0.6027456183070403,
-      "quantidadeNaoDesperdicada": 0.14658129805029452,
-      "nome": "nome",
-      "pesoLiquidoNaoDesperdicado": 0.5962133916683182
+      "produtoId": 1,
+      "mediaDesconto": 12.23,
+      "valorPoupado": 2645.2,
+      "quantidadeNaoDesperdicada": 120.32,
+      "nome": "Sopa da pedra",
+      "pesoLiquidoNaoDesperdicado": 235.1
     }, {
-      "produtoId": 0,
-      "mediaDesconto": 0.5637376656633328,
-      "valorPoupado": 0.6027456183070403,
-      "quantidadeNaoDesperdicada": 0.14658129805029452,
-      "nome": "nome",
-      "pesoLiquidoNaoDesperdicado": 0.5962133916683182
+      "produtoId": 2,
+      "mediaDesconto": 1.0,
+      "valorPoupado": 10.23,
+      "quantidadeNaoDesperdicada": 10.23,
+      "nome": "Bolo de pedra",
+      "pesoLiquidoNaoDesperdicado": 12.2
     }];
     if (Object.keys(examples).length > 0) {
       resolve(examples[Object.keys(examples)[0]]);
@@ -194,24 +194,24 @@ exports.getListarAssociarProdutoUtilizador = function (utilizadorId) {
     examples['application/json'] = {
       "listaProduto": [{
         "produto": {
-          "precoUnitario": 0.5637376656633328,
-          "codigo": 5,
-          "nome": "nome",
+          "precoUnitario": 10.2,
+          "codigo": 464875321,
+          "nome": "Bolacha",
           "id": 1,
-          "precoKilo": 0.23021358869347652,
-          "descricao": "descricao"
+          "precoKilo": 1.12,
+          "descricao": "Bolacha maria, mesmo deliciosa"
         }
       }, {
         "produto": {
-          "precoUnitario": 0.5637376656633328,
-          "codigo": 5,
-          "nome": "nome",
-          "id": 1,
-          "precoKilo": 0.23021358869347652,
-          "descricao": "descricao"
+          "precoUnitario": 1,
+          "codigo": 5456963520,
+          "nome": "Pedra pesada",
+          "id": 2,
+          "precoKilo": 1,
+          "descricao": "Uma pedra extremamente pesada"
         }
       }],
-      "utilizadorId": 0
+      "utilizadorId": 1
     };
     if (Object.keys(examples).length > 0) {
       resolve(examples[Object.keys(examples)[0]]);
@@ -233,40 +233,40 @@ exports.getProduto = function (produtoId) {
   return new Promise(function (resolve, reject) {
     var examples = {};
     examples['application/json'] = {
-      "precoUnitario": 0.5962133916683182,
-      "precoPromocional": 0.5637376656633328,
-      "produtoId": 0,
-      "percentagemDesconto": 0.23021358869347652,
+      "precoUnitario": 53.25,
+      "precoPromocional": 40.65,
+      "produtoId": 2,
+      "percentagemDesconto": 13.25,
       "data": {
-        "dataValidade": "dataValidade",
-        "dataProducao": "dataProducao",
-        "id": 7
+        "dataValidade": "09/09/2022",
+        "dataProducao": "23/12/2025",
+        "id": 2
       },
       "categoria": {
-        "name": "name",
-        "id": 6
+        "name": "Pedra Inclinada",
+        "id": 2
       },
-      "origem": "origem",
-      "nome": "nome",
-      "precoKilo": 0.7061401241503109,
+      "origem": "Portugal",
+      "nome": "Pedra espetacular, mas inclinada",
+      "precoKilo": 50.23,
       "informacao": {
-        "informacaoCurta": "informacaoCurta",
-        "informacaoComprida": "informacaoComprida",
-        "id": 1
+        "informacaoCurta": "Uma pedra muito boa, mas inclinada",
+        "informacaoComprida": "Pedra da mais alta qualidade, ligeiramente inclinada, mas só um pouco mesmo",
+        "id": 2
       },
-      "nutricaoPontuacao": "nutricaoPontuacao",
+      "nutricaoPontuacao": "B",
       "informacaoNutricional": {
-        "hidratosDeCarbono": 0.12315135367772556,
-        "peso": 0,
-        "energia": 0.20271230230023218,
-        "saturados": 0.7386281948385884,
-        "proteina": 0.14894159098541704,
-        "id": 9,
-        "lipidos": 0.4145608029883936,
-        "acucar": 0.10246457001441578,
-        "sal": 0.684685269835264
+        "hidratosDeCarbono": 50.0,
+        "peso": 100,
+        "energia": 256.3,
+        "saturados": 1.0,
+        "proteina": 53.2,
+        "id": 1,
+        "lipidos": 23.1,
+        "acucar": 0.3,
+        "sal": 0.1
       },
-      "codigoBarras": 1
+      "codigoBarras": 786454997
     };
     if (Object.keys(examples).length > 0) {
       resolve(examples[Object.keys(examples)[0]]);
@@ -289,77 +289,77 @@ exports.getProdutoByCategoria = function (categoria) {
     var examples = {};
     examples['application/json'] = [{
       "produto": {
-        "precoUnitario": 0.5962133916683182,
-        "precoPromocional": 0.5637376656633328,
-        "produtoId": 0,
-        "percentagemDesconto": 0.23021358869347652,
+        "precoUnitario": 5.2,
+        "precoPromocional": 4.2,
+        "produtoId": 1,
+        "percentagemDesconto": 20.0,
         "data": {
-          "dataValidade": "dataValidade",
-          "dataProducao": "dataProducao",
-          "id": 7
-        },
-        "categoria": {
-          "name": "name",
-          "id": 6
-        },
-        "origem": "origem",
-        "nome": "nome",
-        "precoKilo": 0.7061401241503109,
-        "informacao": {
-          "informacaoCurta": "informacaoCurta",
-          "informacaoComprida": "informacaoComprida",
+          "dataValidade": "01/01/2022",
+          "dataProducao": "01/12/2022",
           "id": 1
         },
-        "nutricaoPontuacao": "nutricaoPontuacao",
-        "informacaoNutricional": {
-          "hidratosDeCarbono": 0.12315135367772556,
-          "peso": 0,
-          "energia": 0.20271230230023218,
-          "saturados": 0.7386281948385884,
-          "proteina": 0.14894159098541704,
-          "id": 9,
-          "lipidos": 0.4145608029883936,
-          "acucar": 0.10246457001441578,
-          "sal": 0.684685269835264
+        "categoria": {
+          "name": "Pedra",
+          "id": 1
         },
-        "codigoBarras": 1
+        "origem": "Portugal",
+        "nome": "Pedra espetacular",
+        "precoKilo": 5.2,
+        "informacao": {
+          "informacaoCurta": "Uma pedra muito boa",
+          "informacaoComprida": "Pedra da mais alta qualidade",
+          "id": 1
+        },
+        "nutricaoPontuacao": "A",
+        "informacaoNutricional": {
+          "hidratosDeCarbono": 50.0,
+          "peso": 100,
+          "energia": 256.3,
+          "saturados": 1.0,
+          "proteina": 53.2,
+          "id": 1,
+          "lipidos": 23.1,
+          "acucar": 0.3,
+          "sal": 0.1
+        },
+        "codigoBarras": 149843216
       }
     }, {
       "produto": {
-        "precoUnitario": 0.5962133916683182,
-        "precoPromocional": 0.5637376656633328,
-        "produtoId": 0,
-        "percentagemDesconto": 0.23021358869347652,
+        "precoUnitario": 53.25,
+        "precoPromocional": 40.65,
+        "produtoId": 2,
+        "percentagemDesconto": 13.25,
         "data": {
-          "dataValidade": "dataValidade",
-          "dataProducao": "dataProducao",
-          "id": 7
+          "dataValidade": "09/09/2022",
+          "dataProducao": "23/12/2025",
+          "id": 2
         },
         "categoria": {
-          "name": "name",
-          "id": 6
+          "name": "Pedra Inclinada",
+          "id": 2
         },
-        "origem": "origem",
-        "nome": "nome",
-        "precoKilo": 0.7061401241503109,
+        "origem": "Portugal",
+        "nome": "Pedra espetacular, mas inclinada",
+        "precoKilo": 50.23,
         "informacao": {
-          "informacaoCurta": "informacaoCurta",
-          "informacaoComprida": "informacaoComprida",
-          "id": 1
+          "informacaoCurta": "Uma pedra muito boa, mas inclinada",
+          "informacaoComprida": "Pedra da mais alta qualidade, ligeiramente inclinada, mas só um pouco mesmo",
+          "id": 2
         },
-        "nutricaoPontuacao": "nutricaoPontuacao",
+        "nutricaoPontuacao": "B",
         "informacaoNutricional": {
-          "hidratosDeCarbono": 0.12315135367772556,
-          "peso": 0,
-          "energia": 0.20271230230023218,
-          "saturados": 0.7386281948385884,
-          "proteina": 0.14894159098541704,
-          "id": 9,
-          "lipidos": 0.4145608029883936,
-          "acucar": 0.10246457001441578,
-          "sal": 0.684685269835264
+          "hidratosDeCarbono": 50.0,
+          "peso": 100,
+          "energia": 256.3,
+          "saturados": 1.0,
+          "proteina": 53.2,
+          "id": 1,
+          "lipidos": 23.1,
+          "acucar": 0.3,
+          "sal": 0.1
         },
-        "codigoBarras": 1
+        "codigoBarras": 786454997
       }
     }];
     if (Object.keys(examples).length > 0) {
@@ -389,11 +389,52 @@ exports.postAssociarProdutoCliente = function (body) {
  * Adicionar um novo produto
  *
  * body Produto  (optional)
- * no response value expected for this operation
+ * returns Produto
  **/
 exports.postProduto = function (body) {
   return new Promise(function (resolve, reject) {
-    resolve();
+    var examples = {};
+    examples['application/json'] = {
+      "precoUnitario": 5.2,
+      "precoPromocional": 4.2,
+      "produtoId": 1,
+      "percentagemDesconto": 20.0,
+      "data": {
+        "dataValidade": "01/01/2022",
+        "dataProducao": "01/12/2022",
+        "id": 1
+      },
+      "categoria": {
+        "name": "Pedra",
+        "id": 1
+      },
+      "origem": "Portugal",
+      "nome": "Pedra espetacular",
+      "precoKilo": 5.2,
+      "informacao": {
+        "informacaoCurta": "Uma pedra muito boa",
+        "informacaoComprida": "Pedra da mais alta qualidade",
+        "id": 1
+      },
+      "nutricaoPontuacao": "A",
+      "informacaoNutricional": {
+        "hidratosDeCarbono": 50.0,
+        "peso": 100,
+        "energia": 256.3,
+        "saturados": 1.0,
+        "proteina": 53.2,
+        "id": 1,
+        "lipidos": 23.1,
+        "acucar": 0.3,
+        "sal": 0.1
+      },
+      "codigoBarras": 1498432168432163
+    };
+    if (Object.keys(examples).length > 0) {
+      resolve(examples[Object.keys(examples)[0]]);
+    } else {
+      reject();
+    }
   });
 }
 
@@ -404,11 +445,52 @@ exports.postProduto = function (body) {
  *
  * body Produto  (optional)
  * produtoId Integer produtoId necessário
- * no response value expected for this operation
+ * returns Produto
  **/
 exports.putProduto = function (body, produtoId) {
   return new Promise(function (resolve, reject) {
-    resolve();
+    var examples = {};
+    examples['application/json'] = {
+      "precoUnitario": 5.2,
+      "precoPromocional": 4.2,
+      "produtoId": 1,
+      "percentagemDesconto": 20.0,
+      "data": {
+        "dataValidade": "31/12/2022",
+        "dataProducao": "01/01/2022",
+        "id": 1
+      },
+      "categoria": {
+        "name": "Pedra",
+        "id": 1
+      },
+      "origem": "Portugal",
+      "nome": "Pedra espetacular",
+      "precoKilo": 5.2,
+      "informacao": {
+        "informacaoCurta": "Uma pedra muito boa",
+        "informacaoComprida": "Pedra da mais alta qualidade",
+        "id": 1
+      },
+      "nutricaoPontuacao": "A",
+      "informacaoNutricional": {
+        "hidratosDeCarbono": 50.0,
+        "peso": 100,
+        "energia": 256.3,
+        "saturados": 1.0,
+        "proteina": 53.2,
+        "id": 1,
+        "lipidos": 23.1,
+        "acucar": 0.3,
+        "sal": 0.1
+      },
+      "codigoBarras": 1498432168432163
+    };
+    if (Object.keys(examples).length > 0) {
+      resolve(examples[Object.keys(examples)[0]]);
+    } else {
+      reject();
+    }
   });
 }
 

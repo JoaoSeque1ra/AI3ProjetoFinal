@@ -20,11 +20,23 @@ exports.deleteUtilizador = function (email) {
  *
  * utilizador String nome do utilizador
  * password String palavra passe do utilizador
- * no response value expected for this operation
+ * returns Utilizador
  **/
 exports.getUtilizador = function (utilizador, password) {
   return new Promise(function (resolve, reject) {
-    resolve();
+    var examples = {};
+    examples['application/json'] = {
+      "password": "1234",
+      "contacto": "contacto",
+      "apelido": "910933857",
+      "nome": "Hugo",
+      "email": "hugo@exemple.com"
+    };
+    if (Object.keys(examples).length > 0) {
+      resolve(examples[Object.keys(examples)[0]]);
+    } else {
+      reject();
+    }
   });
 }
 
@@ -39,12 +51,11 @@ exports.getUtilizadorByEmail = function (email) {
   return new Promise(function (resolve, reject) {
     var examples = {};
     examples['application/json'] = {
-      "tipo": "utilizador",
-      "password": "password",
+      "password": "1234",
       "contacto": "contacto",
-      "apelido": "apelido",
-      "nome": "nome",
-      "email": "user@exemple.com"
+      "apelido": "910933857",
+      "nome": "Hugo",
+      "email": "hugo@exemple.com"
     };
     if (Object.keys(examples).length > 0) {
       resolve(examples[Object.keys(examples)[0]]);
@@ -58,9 +69,10 @@ exports.getUtilizadorByEmail = function (email) {
 /**
  * Logout do utilizador
  *
+ * email String Necessário enviar o email do utilizador pretendido
  * no response value expected for this operation
  **/
-exports.logoutUtilizador = function () {
+exports.logoutUtilizador = function (email) {
   return new Promise(function (resolve, reject) {
     resolve();
   });
@@ -68,16 +80,24 @@ exports.logoutUtilizador = function () {
 
 
 /**
- * Updated utilizador
- * So consegue ser realizado por um utilizador logado
+ * Updated utilizador do tipo de utilizador
+ * Atualizar um tipo de utilizador
  *
- * body Utilizador 
+ * body UtilizadorChangeTipo 
  * email String email do utilizador necessário
- * no response value expected for this operation
+ * returns UtilizadorChangeTipo
  **/
 exports.patchUtilizador = function (body, email) {
   return new Promise(function (resolve, reject) {
-    resolve();
+    var examples = {};
+    examples['application/json'] = {
+      "tipo": "utilizador"
+    };
+    if (Object.keys(examples).length > 0) {
+      resolve(examples[Object.keys(examples)[0]]);
+    } else {
+      reject();
+    }
   });
 }
 
@@ -95,3 +115,29 @@ exports.postUtilizador = function (body) {
   });
 }
 
+
+/**
+ * Atualiza um utilizador
+ * Atualiza um utilizador, com base no requestBody
+ *
+ * body Utilizador 
+ * email String email do utilizador necessário
+ * returns Utilizador
+ **/
+exports.putUtilizador = function (body, email) {
+  return new Promise(function (resolve, reject) {
+    var examples = {};
+    examples['application/json'] = {
+      "password": "45311645",
+      "contacto": "908492940",
+      "apelido": "Bernardo",
+      "nome": "Hugo",
+      "email": "hugo@gamil.com"
+    };
+    if (Object.keys(examples).length > 0) {
+      resolve(examples[Object.keys(examples)[0]]);
+    } else {
+      reject();
+    }
+  });
+}

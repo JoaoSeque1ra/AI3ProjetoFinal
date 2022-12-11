@@ -33,8 +33,8 @@ module.exports.getUtilizadorByEmail = function getUtilizadorByEmail (req, res, n
     });
 };
 
-module.exports.logoutUtilizador = function logoutUtilizador (req, res, next) {
-  Utilizador.logoutUtilizador()
+module.exports.logoutUtilizador = function logoutUtilizador (req, res, next, email) {
+  Utilizador.logoutUtilizador(email)
     .then(function (response) {
       utils.writeJson(res, response);
     })
@@ -55,6 +55,16 @@ module.exports.patchUtilizador = function patchUtilizador (req, res, next, body,
 
 module.exports.postUtilizador = function postUtilizador (req, res, next, body) {
   Utilizador.postUtilizador(body)
+    .then(function (response) {
+      utils.writeJson(res, response);
+    })
+    .catch(function (response) {
+      utils.writeJson(res, response);
+    });
+};
+
+module.exports.putUtilizador = function putUtilizador (req, res, next, body, email) {
+  Utilizador.putUtilizador(body, email)
     .then(function (response) {
       utils.writeJson(res, response);
     })
