@@ -184,6 +184,12 @@ paths:
       responses:
         '200':
           description: Lista de produtos enviado consoante a categoria
+          headers:
+            Cache-Control:
+              schema:
+                type: string
+                description: Cache-Control
+
           content:
             application/json:
               schema:
